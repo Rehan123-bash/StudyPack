@@ -275,11 +275,13 @@ def run_judge(notes, pack, llm):
     raw = llm.generate("E1", sysj, fill(usrj, notes=notes, pack_text=render_pack_text(pack)),
                        temperature=TEMPERATURES["E1"], json_mode=True)
     data, _ = parse_json(raw)
+    if isinstance(data, list):  # same repair as the main chain
+        data = data[0] if len(data) == 1 and isinstance(data[0], dict) and "questions" in data[0] else {"questions": data}
     return data or {"questions": [], "outside_statements": None, "error": "judge returned no JSON"}
 
 
 def judge_metrics(judgement):
-    qs = judgement.get("questions", []) or []
+    qs = _dicts(judgement.get("questions"))
     n = len(qs)
     yes = sum(1 for q in qs if str(q.get("supported", "")).lower() == "yes")
     higher = sum(1 for q in qs if str(q.get("bloom_level", "")).lower() in HIGHER_ORDER)
