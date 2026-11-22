@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Developer instruction is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}}",
+  "calls": [],
+  "run_at": "2026-11-22T11:26:59"
+}
