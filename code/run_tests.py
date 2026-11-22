@@ -2,7 +2,7 @@
 
 Usage (from the repo root, with GEMINI_API_KEY set):
     python code/run_tests.py                      # all 14 test cases + v1/v2/v3 comparison
-    python code/run_tests.py --model gemini-2.5-flash-lite
+    python code/run_tests.py --model gemini-3.5-flash-lite
     python code/run_tests.py --cases 1,2,3        # only some cases
     python code/run_tests.py --fresh              # ignore saved outputs and call the API again
 

@@ -1,6 +1,6 @@
 # Prompt v1 — P0 single prompt (baseline from Milestone 1)
 # Step: whole task in one call
-# Model: gemini-2.5-flash-lite, temperature default, plain-text output
+# Model: gemini-3.5-flash-lite, temperature default, plain-text output
 # Variables: {notes} = the lecture notes text
 
 ### SYSTEM

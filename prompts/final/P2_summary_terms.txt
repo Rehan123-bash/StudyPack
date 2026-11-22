@@ -1,7 +1,7 @@
 # Prompt P2 — Summary and key terms (final, v3)
 # Step 2 of 4
 # Purpose: write a short summary and key-term definitions, each linked to line numbers in the notes.
-# Model: gemini-2.5-flash-lite, temperature 0.3, JSON output
+# Model: gemini-3.5-flash-lite, temperature 0.3, JSON output
 # Variables: {numbered_notes} = numbered notes, {concepts_json} = concepts from P1,
 #            {max_terms} = maximum number of key terms (10)
 

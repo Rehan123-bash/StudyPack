@@ -17,7 +17,7 @@ Topics the notes only name but never explain are flagged as gaps.
 
 ## How it works
 
-A 4-step prompt chain on **Gemini 2.5 Flash-Lite** (Google AI Studio free tier), with code checks between steps:
+A 4-step prompt chain on **Gemini 3.5 Flash-Lite** (Google AI Studio free tier), with code checks between steps:
 
 | Step | Prompt | What it does |
 |---|---|---|

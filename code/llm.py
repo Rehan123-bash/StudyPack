@@ -80,7 +80,7 @@ class GeminiLLM:
                         continue
                     raise RuntimeError(
                         "Daily free-tier quota used up for this model. Try another model "
-                        "(e.g. gemini-2.5-flash-lite) or another team member's API key."
+                        "(e.g. gemini-3.5-flash-lite) or another team member's API key."
                     ) from e
                 time.sleep(delay)
                 delay = min(delay * 2, 90)

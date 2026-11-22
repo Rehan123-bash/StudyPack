@@ -2,7 +2,7 @@
 # Step 1 of 4
 # Purpose: check the input is lecture notes, find the topic and list each concept with its line numbers
 #          and whether the notes explain it or only mention it (used for gap flags).
-# Model: gemini-2.5-flash-lite, temperature 0.2, JSON output
+# Model: gemini-3.5-flash-lite, temperature 0.2, JSON output
 # Variables: {numbered_notes} = the notes with "L<n>: " before every non-empty line
 
 ### SYSTEM

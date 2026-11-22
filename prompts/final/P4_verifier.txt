@@ -2,7 +2,7 @@
 # Step 4 of 4
 # Purpose: check every answer against the notes; only SUPPORTED answers whose quote is found
 #          in the notes (checked by code) reach the student.
-# Model: gemini-2.5-flash-lite, temperature 0.0, JSON output
+# Model: gemini-3.5-flash-lite, temperature 0.0, JSON output
 # Variables: {numbered_notes} = numbered notes, {questions_json} = questions from P3
 
 ### SYSTEM

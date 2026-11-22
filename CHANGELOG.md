@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-11-22
+- Re-ran test 5 after the parser fix: 13 of 14 tests pass (test 12 still fails: 9 questions from 4-line notes, limit was 8). App screenshots of tests 1, 8 and 11 saved in docs/screenshots/. Model used for all final results: gemini-3.5-flash-lite.
 - Fourth test run (gemini-3.5-flash-lite, chosen automatically): 12 of 14 tests passed. Test 5 crashed because a prompt returned a JSON list instead of an object; the app crashed the same way once in the screenshot run (test 1). Fixed: the parser now repairs list replies and skips non-object items, and records the step as not strictly valid JSON. The app now shows the error message instead of hiding it. Test 12 failed honestly (9 questions from 4-line notes); kept as a known limitation.
 - Third test run failed: gemini-2.5-flash-lite is no longer available to new API users (404 NOT_FOUND). Added code/probe_models.py, which picks the first model that works on our free tier before each run; the test runner now stops at the first refused request.
 - Second test run stopped at the first call: the free-tier daily limit for gemini-2.5-flash on our project was already used up (the failed first run also counted). Switched the app and tests to gemini-2.5-flash-lite, which has its own daily limit, and added an optional backup key (GEMINI_API_KEY_2) for long test runs. Deleted the outputs of the two failed runs (still in git history) so all results come from one model.

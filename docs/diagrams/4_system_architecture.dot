@@ -10,7 +10,7 @@ digraph G {
     llm  [label="code/llm.py\nGemini client, retry,\ncall log", fillcolor="#EEF2E6", color="#6B8E4E"];
     pr   [label="prompts/final/\nP1-P4 .txt", fillcolor="#FFFFFF"];
     sec  [label="App secret:\nGEMINI_API_KEY", fillcolor="#FBE6E6", color="#B24A4A"]; }
-  gem [label="Gemini API\n(Google AI Studio free tier)\ngemini-2.5-flash-lite", fillcolor="#E3ECFA", color="#3D6BB3"];
+  gem [label="Gemini API\n(Google AI Studio free tier)\ngemini-3.5-flash-lite", fillcolor="#E3ECFA", color="#3D6BB3"];
   subgraph cluster_repo { label="GitHub repo"; style="rounded"; color="#9AA5B8";
     tr  [label="code/run_tests.py\n(test runner + judge E1)", fillcolor="#EEF2E6", color="#6B8E4E"];
     td  [label="test-data/\ninputs, test_cases.json,\noutputs", fillcolor="#FFFFFF"]; }
