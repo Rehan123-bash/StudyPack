@@ -1,0 +1,39 @@
+name: Run StudyPack tests
+
+# Runs the 14-case test set against the real Gemini API and commits the outputs.
+# Needs a repository secret named GEMINI_API_KEY (Settings -> Secrets and variables -> Actions).
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "Gemini model"
+        default: "gemini-2.5-flash"
+  push:
+    branches: [main]
+    paths: [".github/run-tests-trigger"]
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Run test set against Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python code/run_tests.py --model "${{ github.event.inputs.model || 'gemini-2.5-flash' }}"
+      - name: Commit outputs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add test-data/outputs
+          git commit -m "Add test run outputs ($(date -u +%Y-%m-%d))" || echo "nothing to commit"
+          git pull --rebase && git push
