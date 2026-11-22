@@ -106,7 +106,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
     s1 = _call_json(llm, "P1", sys1, fill(usr1, numbered_notes=numbered), log)
     if not s1.get("is_lecture_notes", True):
         return {"status": "rejected", "reason": s1.get("reason") or "This does not look like lecture notes.",
-                "api_calls": 1, "log": log}
+                "api_calls": 1, "log": log, "steps": {"P1": s1}}
 
     concepts = s1.get("concepts", []) or []
     explained = [c for c in concepts if c.get("coverage") == "explained"]
@@ -122,6 +122,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
                                            max_terms=MAX_TERMS), log)
 
     questions, note, checks = [], "", {}
+    steps = {"P1": s1, "P2": s2}
     calls = 2
     if explained:
         say(3, "Step 3/4: Writing practice questions")
@@ -131,6 +132,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
                                                difficulty=difficulty), log)
         questions = s3.get("questions", []) or []
         note = s3.get("note", "") or ""
+        steps["P3"] = json.loads(json.dumps(s3))  # raw copy before code adds fields
         calls = 3
         for i, q in enumerate(questions, 1):
             q["id"] = q.get("id") or f"Q{i}"
@@ -144,6 +146,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
             s4 = _call_json(llm, "P4", sys4, fill(usr4, numbered_notes=numbered,
                                                    questions_json=json.dumps(slim, ensure_ascii=False)), log)
             checks = {c.get("id"): c for c in s4.get("checks", []) or []}
+            steps["P4"] = s4
             calls = 4
     else:
         note = "Your notes only mention topics without explaining them, so no questions were written."
@@ -168,6 +171,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
         "status": "ok",
         "topic": s1.get("topic", ""),
         "languages": s1.get("languages", []),
+        "concepts": concepts,
         "summary": s2.get("summary", ""),
         "key_terms": s2.get("key_terms", []) or [],
         "questions": verified,
@@ -184,6 +188,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
         },
         "api_calls": calls,
         "log": log,
+        "steps": steps,  # raw output of each prompt, kept as evidence for the prompt sheets
     }
 
 

@@ -1,6 +1,6 @@
 # StudyPack: Lecture Notes to Verified Study Packs
 
-Prompt Engineering mini-project (SCSE4041), problem **C2: Lecture notes to study pack**.
+Prompt Engineering mini-project (SCSE4041), batch 72, faculty: Sonal Kukreja. Problem **C2: Lecture notes to study pack**.
 
 StudyPack turns one topic's lecture notes into a short summary, key terms and practice questions with answers.
 Every answer is checked against the notes before the student sees it, and each question shows the exact line of the notes it came from.
@@ -12,7 +12,8 @@ Topics the notes only name but never explain are flagged as gaps.
 
 | Member | Enrollment no. | Main task |
 |---|---|---|
-| `<name>` | `<S24CSEU....>` | `<task>` |
+| Rehan Ahmad (leader) | S24CSEU2732 | Prompt design (v1 to v3, P1-P4), Streamlit app, deployment, repository, reel |
+| Aniket Yadav | S24CSEU2725 | Test set and expected results, test runner and judge prompt E1, test table and error analysis, diagrams, research abstract |
 
 ## How it works
 
