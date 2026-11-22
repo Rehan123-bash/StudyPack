@@ -25,7 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pipeline  # noqa: E402
-from llm import DEFAULT_MODEL, GeminiLLM, get_api_key  # noqa: E402
+from llm import DEFAULT_MODEL, GeminiLLM, get_api_keys  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "test-data"
@@ -161,10 +161,10 @@ def main():
     ap.add_argument("--interval", type=float, default=7.0, help="seconds between API calls (free tier ~10/min)")
     args = ap.parse_args()
 
-    key = get_api_key()
-    if not key:
+    keys = get_api_keys()
+    if not keys:
         sys.exit("Set GEMINI_API_KEY first (see README).")
-    llm = GeminiLLM(key, model=args.model, min_interval=args.interval)
+    llm = GeminiLLM(keys, model=args.model, min_interval=args.interval)
 
     cases = json.loads((DATA / "test_cases.json").read_text(encoding="utf-8"))
     if args.cases != "all":

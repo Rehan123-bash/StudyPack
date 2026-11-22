@@ -13,7 +13,7 @@ from llm import DEFAULT_MODEL, GeminiLLM  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SAMPLES = ROOT / "test-data" / "inputs"
-MODELS = [DEFAULT_MODEL, "gemini-2.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.5-flash"]
+MODELS = [DEFAULT_MODEL, "gemini-2.5-flash", "gemini-3.1-flash-lite", "gemini-3.5-flash"]
 
 st.set_page_config(page_title="StudyPack", page_icon="📚", layout="wide")
 

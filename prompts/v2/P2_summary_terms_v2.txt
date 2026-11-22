@@ -1,5 +1,5 @@
 # Prompt v2 — P2 summary and key terms (step 2 of a 3-step chain)
-# Model: gemini-2.5-flash, temperature 0.3, JSON output
+# Model: gemini-2.5-flash-lite, temperature 0.3, JSON output
 # Variables: {notes} = lecture notes, {concepts_json} = output of P1
 
 ### SYSTEM

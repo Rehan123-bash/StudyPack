@@ -2,7 +2,7 @@
 # Step 3 of 4
 # Purpose: write practice questions at mixed Bloom's levels in the chosen format, each with an answer,
 #          source line numbers and an exact supporting quote from the notes.
-# Model: gemini-2.5-flash, temperature 0.4, JSON output
+# Model: gemini-2.5-flash-lite, temperature 0.4, JSON output
 # Examples included: 1 (one question on a different topic, to show the format)
 # Variables: {numbered_notes} = numbered notes, {concepts_json} = concepts from P1,
 #            {num_questions} = how many questions, {question_format} = mixed / mcq / short / flashcard,

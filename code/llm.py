@@ -5,7 +5,7 @@ import os
 import re
 import time
 
-DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_MODEL = "gemini-2.5-flash-lite"
 
 
 def get_api_key():
@@ -13,15 +13,24 @@ def get_api_key():
     return os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
 
 
+def get_api_keys():
+    """Main key plus optional backup keys (another team member's project) for long test runs."""
+    names = ("GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3")
+    return [os.environ[n] for n in names if os.environ.get(n)]
+
+
 class GeminiLLM:
     def __init__(self, api_key, model=DEFAULT_MODEL, min_interval=0.0, max_retries=5):
         from google import genai  # imported here so the rest of the code works without the SDK
         from google.genai import types
 
-        if not api_key:
+        keys = [api_key] if isinstance(api_key, str) else list(api_key or [])
+        if not keys:
             raise ValueError("No Gemini API key. Set GEMINI_API_KEY.")
         # v1beta: the stable v1 endpoint rejects system instructions ("Developer instruction is not enabled")
-        self.client = genai.Client(api_key=api_key, http_options=types.HttpOptions(api_version="v1beta"))
+        self._clients = [genai.Client(api_key=k, http_options=types.HttpOptions(api_version="v1beta")) for k in keys]
+        self._key_index = 0
+        self.client = self._clients[0]
         self.model = model
         self.min_interval = min_interval  # seconds between calls, to stay under the free-tier RPM
         self.max_retries = max_retries
@@ -65,6 +74,10 @@ class GeminiLLM:
                 if not retryable or attempt == self.max_retries:
                     raise
                 if "per day" in msg.lower() or "PerDay" in msg:
+                    if self._key_index + 1 < len(self._clients):  # daily quota is per project: try the backup key
+                        self._key_index += 1
+                        self.client = self._clients[self._key_index]
+                        continue
                     raise RuntimeError(
                         "Daily free-tier quota used up for this model. Try another model "
                         "(e.g. gemini-2.5-flash-lite) or another team member's API key."

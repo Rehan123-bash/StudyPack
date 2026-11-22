@@ -7,7 +7,7 @@ on:
     inputs:
       model:
         description: "Gemini model"
-        default: "gemini-2.5-flash"
+        default: "gemini-2.5-flash-lite"
   push:
     branches: [main]
     paths: [".github/run-tests-trigger"]
@@ -28,8 +28,9 @@ jobs:
       - name: Run test set against Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           PYTHONUNBUFFERED: "1"
-        run: python code/run_tests.py --model "${{ github.event.inputs.model || 'gemini-2.5-flash' }}"
+        run: python code/run_tests.py --model "${{ github.event.inputs.model || 'gemini-2.5-flash-lite' }}"
       - name: Screenshots of real runs in the app
         if: always()
         continue-on-error: true

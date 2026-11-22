@@ -1,5 +1,5 @@
 # Prompt v2 — P3 practice questions (step 3 of a 3-step chain)
-# Model: gemini-2.5-flash, temperature 0.4, JSON output
+# Model: gemini-2.5-flash-lite, temperature 0.4, JSON output
 # Variables: {notes} = lecture notes, {concepts_json} = output of P1,
 #            {num_questions} = number of questions, {question_format} = mixed / mcq / short / flashcard
 

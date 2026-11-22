@@ -1,6 +1,6 @@
 # Prompt E1 — Evaluation judge (used only for testing, NOT part of the final app)
 # Purpose: score any version's study pack (v1, v2 or v3) the same way, so prompt versions can be compared.
-# Model: gemini-2.5-flash, temperature 0.0, JSON output
+# Model: gemini-2.5-flash-lite, temperature 0.0, JSON output
 # Variables: {notes} = original lecture notes, {pack_text} = the study pack rendered as plain text
 # Limitation: the judge is the same model family as the generator, so a team member also checks
 #             a sample of judgements by hand.
