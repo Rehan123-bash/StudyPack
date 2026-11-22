@@ -1,0 +1,21 @@
+# Prompt v2 — P2 summary and key terms (step 2 of a 3-step chain)
+# Model: gemini-2.5-flash, temperature 0.3, JSON output
+# Variables: {notes} = lecture notes, {concepts_json} = output of P1
+
+### SYSTEM
+You are a study assistant. Use only the lecture notes you are given. Return only valid JSON.
+
+### USER
+Lecture notes:
+"""
+{notes}
+"""
+
+Concepts:
+{concepts_json}
+
+Write a summary of the notes in under 200 words and up to 10 key terms with one-line definitions.
+Do not include anything that is not in the notes.
+
+Return JSON in exactly this format:
+{"summary": "", "key_terms": [{"term": "", "definition": ""}]}

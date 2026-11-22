@@ -1,0 +1,19 @@
+# Prompt v1 — P0 single prompt (baseline from Milestone 1)
+# Step: whole task in one call
+# Model: gemini-2.5-flash, temperature default, plain-text output
+# Variables: {notes} = the lecture notes text
+
+### SYSTEM
+(none)
+
+### USER
+You are a study assistant. Using ONLY the lecture notes below, create:
+1. A summary in under 200 words.
+2. 10 key terms with one-line definitions.
+3. 5 practice questions with answers.
+Do not include anything that is not in the notes.
+
+Notes:
+"""
+{notes}
+"""

@@ -1,0 +1,18 @@
+# Prompt v2 — P1 concept list (step 1 of a 3-step chain)
+# Change from v1: the single prompt was split into 3 steps with JSON output.
+# Model: gemini-2.5-flash, temperature 0.2, JSON output
+# Variables: {notes} = the lecture notes text
+
+### SYSTEM
+You are a study assistant. Use only the lecture notes you are given. Return only valid JSON.
+
+### USER
+Lecture notes:
+"""
+{notes}
+"""
+
+List the main topic and the concepts these notes teach (max 15).
+
+Return JSON in exactly this format:
+{"topic": "", "concepts": ["", ""]}

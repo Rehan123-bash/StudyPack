@@ -1,0 +1,22 @@
+# Prompt v2 — P3 practice questions (step 3 of a 3-step chain)
+# Model: gemini-2.5-flash, temperature 0.4, JSON output
+# Variables: {notes} = lecture notes, {concepts_json} = output of P1,
+#            {num_questions} = number of questions, {question_format} = mixed / mcq / short / flashcard
+
+### SYSTEM
+You are a study assistant. Use only the lecture notes you are given. Return only valid JSON.
+
+### USER
+Lecture notes:
+"""
+{notes}
+"""
+
+Concepts:
+{concepts_json}
+
+Write {num_questions} practice questions with answers. Question format: {question_format}.
+For mcq, give 4 options. Do not include anything that is not in the notes.
+
+Return JSON in exactly this format:
+{"questions": [{"id": "Q1", "type": "", "question": "", "options": [], "answer": ""}]}
