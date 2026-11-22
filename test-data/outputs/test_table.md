@@ -1,4 +1,4 @@
-# Test table (12/14 passed, model gemini-3.5-flash-lite)
+# Test table (13/14 passed, model gemini-3.5-flash-lite)
 
 | Test no. | Input (short) | Type | Expected output | Actual output (short) | Pass / Fail | Why it failed |
 |---|---|---|---|---|---|---|
@@ -6,7 +6,7 @@
 | 2 | DBMS notes: Normalization | Normal | Summary <=200 words, >=6 key terms, >=6 of 8 questions verified, >=2 Apply/Analyze, >=80% of quotes found in notes | 8 Qs verified (0 removed); 3 Apply/Analyze; 7 terms; summary 165 words; quotes found 8/8 | Pass |  |
 | 3 | CN notes: TCP vs UDP | Normal | >=5 of 6 questions verified, incl. >=1 compare/apply question, >=80% of quotes found | 6 Qs verified (0 removed); 1 Apply/Analyze; 8 terms; summary 103 words; quotes found 6/6 | Pass |  |
 | 4 | DSA notes: BST, difficulty = challenging | Normal | >=4 of 6 verified, >=3 of them Apply/Analyze | 6 Qs verified (0 removed); 6 Apply/Analyze; 7 terms; summary 142 words; quotes found 6/6 | Pass |  |
-| 5 | PE notes: prompting techniques | Normal | Summary <=200 words, >=6 key terms, >=6 of 8 verified, >=2 Apply/Analyze | Error: AttributeError: 'list' object has no attribute 'get' | Fail | status=error; no pack produced; no pack produced; no pack produced; no pack produced; no pack produced |
+| 5 | PE notes: prompting techniques | Normal | Summary <=200 words, >=6 key terms, >=6 of 8 verified, >=2 Apply/Analyze | 8 Qs verified (0 removed); 2 Apply/Analyze; 8 terms; summary 171 words; quotes found 8/8 | Pass |  |
 | 6 | SE notes: SDLC, format = MCQ | Normal | >=4 of 5 verified, all MCQ with 4 options | 5 Qs verified (0 removed); 2 Apply/Analyze; 6 terms; summary 150 words; quotes found 5/5 | Pass |  |
 | 7 | ML notes: overfitting, format = flashcards | Normal | >=6 of 8 verified, all flashcards | 8 Qs verified (0 removed); 0 Apply/Analyze; 10 terms; summary 176 words; quotes found 8/8 | Pass |  |
 | 8 | Thin notes: compiler phases, most only named | Edge | >=3 topics flagged as mentioned-but-not-explained; <=4 questions, only on explained topics | 4 Qs verified (0 removed); 1 Apply/Analyze; 2 terms; summary 77 words; 6 gap flags; quotes found 4/4 | Pass |  |

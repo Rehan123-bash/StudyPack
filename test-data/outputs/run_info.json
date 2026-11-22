@@ -1,9 +1,9 @@
 {
   "model": "gemini-3.5-flash-lite",
-  "finished_at": "2026-11-22T12:30:18",
+  "finished_at": "2026-11-22T12:40:33",
   "test_cases": 14,
-  "passed": 12,
-  "api_calls_total": 97,
-  "input_tokens_total": 81675,
-  "output_tokens_total": 44505
+  "passed": 13,
+  "api_calls_total": 98,
+  "input_tokens_total": 83026,
+  "output_tokens_total": 44808
 }

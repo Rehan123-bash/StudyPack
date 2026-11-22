@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "What is zero-shot prompting?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What can happen if you use examples that are too similar",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "Why is chain-of-thought (CoT) prompting useful",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is the purpose of role prompting?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "You need a model output that can be easily read",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    },
+    {
+      "question": "What is a main advantage of prompt chaining?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "If you want a model to generate creative and varied outputs",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    },
+    {
+      "question": "How can you reduce hallucination in a language model?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.21,
+      "input_tokens": 1423,
+      "output_tokens": 345
+    }
+  ],
+  "run_at": "2026-11-22T12:40:33"
+}

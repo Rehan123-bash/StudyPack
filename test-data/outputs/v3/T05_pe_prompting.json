@@ -1,35 +1,608 @@
 {
-  "status": "error",
-  "error": "AttributeError: 'list' object has no attribute 'get'",
+  "status": "ok",
+  "topic": "Prompting Techniques",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Zero-shot prompting",
+      "lines": [
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Few-shot prompting",
+      "lines": [
+        3
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Chain-of-thought (CoT) prompting",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Role prompting",
+      "lines": [
+        5
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Output format specification",
+      "lines": [
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Prompt chaining",
+      "lines": [
+        7
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Temperature",
+      "lines": [
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Hallucination",
+      "lines": [
+        9
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "Prompt Engineering Week 4 covers various prompting techniques and concepts. Zero-shot prompting involves giving the model only an instruction without examples for simple tasks. Few-shot prompting includes a few worked input and output examples to show the expected format and style, though overly similar examples can cause the model to copy them too closely. Chain-of-thought prompting asks the model to reason step by step to improve accuracy on multi-step problems like arithmetic and logic puzzles. Role prompting assigns the model a specific role to set its tone and focus. Output format specification directs the model to use an exact format, such as a table or JSON schema, for easier program reading. Prompt chaining breaks a complex task into smaller, independently testable steps where each output feeds the next prompt. Temperature controls randomness, with low values yielding consistent outputs and high values yielding creative ones. Finally, hallucination occurs when a model produces false or unsupported fluent text, which can be reduced by grounding the model in provided documents and asking for citations.",
+  "key_terms": [
+    {
+      "term": "Zero-shot prompting",
+      "definition": "Zero-shot prompting is a technique where the model is given only an instruction with no examples, working well for simple and common tasks.",
+      "lines": [
+        2
+      ]
+    },
+    {
+      "term": "Few-shot prompting",
+      "definition": "Few-shot prompting is a technique where the prompt includes a few worked input and output examples before the real input to show the expected format and style.",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "term": "Chain-of-thought (CoT) prompting",
+      "definition": "Chain-of-thought prompting asks the model to reason step by step before giving the final answer to improve accuracy on multi-step problems.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Role prompting",
+      "definition": "Role prompting gives the model a specific role, such as a strict code reviewer, to set the tone and focus of the answer.",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "term": "Output format specification",
+      "definition": "Output format specification involves telling the model the exact format, like a JSON schema or a table, to make the output easier for programs to read and check.",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "term": "Prompt chaining",
+      "definition": "Prompt chaining splits a complex task into smaller steps where the output of one prompt becomes the input of the next.",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "term": "Temperature",
+      "definition": "Temperature is a parameter that controls randomness, where a low temperature gives more predictable outputs and a higher temperature gives more varied, creative outputs.",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "term": "Hallucination",
+      "definition": "Hallucination is when the model produces fluent text that is false or not supported by the given source.",
+      "lines": [
+        9
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is zero-shot prompting?",
+      "options": [],
+      "answer": "Prompting where the model is given only an instruction with no examples.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "Zero-shot prompting: the model is given only an instruction, with no examples.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The lecture notes explicitly define zero-shot prompting as giving the model only an instruction with no examples."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "What can happen if you use examples that are too similar to each other in few-shot prompting?",
+      "options": [
+        "A) The model will refuse to answer.",
+        "B) The model can copy them too closely.",
+        "C) The model will generate a JSON schema.",
+        "D) The model will hallucinate facts."
+      ],
+      "answer": "B) The model can copy them too closely.",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "Using examples that are too similar to each other can make the model copy them too closely.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The lecture notes explicitly state that using examples that are too similar can make the model copy them too closely."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "Why is chain-of-thought (CoT) prompting useful for multi-step problems like arithmetic?",
+      "options": [],
+      "answer": "It asks the model to reason step by step before giving the final answer, which often improves accuracy.",
+      "source_lines": [
+        4
+      ],
+      "source_quote": "the prompt asks the model to reason step by step before giving the final answer. It often improves accuracy on multi-step problems such as arithmetic and logic puzzles.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that CoT prompting asks the model to reason step by step, which often improves accuracy on multi-step problems like arithmetic."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is the purpose of role prompting?",
+      "options": [],
+      "answer": "To set the tone and focus of the answer by giving the model a specific role.",
+      "source_lines": [
+        5
+      ],
+      "source_quote": "The role sets the tone and focus of the answer.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that role prompting gives the model a role which sets the tone and focus of the answer."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "You need a model output that can be easily read and checked by a program. Which prompting technique should you use?",
+      "options": [],
+      "answer": "Output format specification, by telling the model the exact format like a JSON schema or a table.",
+      "source_lines": [
+        6
+      ],
+      "source_quote": "Output format specification: telling the model the exact format (for example a JSON schema or a table) makes the output easier for programs to read and check.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that telling the model the exact format makes the output easier for programs to read and check."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "What is a main advantage of prompt chaining?",
+      "options": [
+        "A) It eliminates the need for instructions entirely.",
+        "B) Each step is easier to test and fix on its own.",
+        "C) It completely prevents model hallucination.",
+        "D) It increases the temperature automatically."
+      ],
+      "answer": "B) Each step is easier to test and fix on its own.",
+      "source_lines": [
+        7
+      ],
+      "source_quote": "Each step is easier to test and fix on its own.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes explicitly state that with prompt chaining, each step is easier to test and fix on its own."
+    },
+    {
+      "id": "Q7",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "If you want a model to generate creative and varied outputs, how should you adjust the temperature compared to a predictable output?",
+      "options": [],
+      "answer": "You should use a higher temperature, whereas a low temperature close to 0 gives consistent and predictable outputs.",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "A low temperature (close to 0) gives more consistent, predictable outputs. A higher temperature gives more varied, creative outputs.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that a higher temperature gives more varied, creative outputs, while a low temperature gives consistent, predictable outputs."
+    },
+    {
+      "id": "Q8",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "How can you reduce hallucination in a language model?",
+      "options": [],
+      "answer": "By grounding the model in provided documents and asking it to cite them.",
+      "source_lines": [
+        9
+      ],
+      "source_quote": "Grounding the model in provided documents and asking it to cite them reduces hallucination.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that grounding the model in provided documents and asking it to cite them reduces hallucination."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 8,
+    "verified": 8,
+    "removed": 0,
+    "quote_found": 8,
+    "line_count": 9
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": false,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Prompting Techniques",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Zero-shot prompting",
+          "lines": [
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Few-shot prompting",
+          "lines": [
+            3
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Chain-of-thought (CoT) prompting",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Role prompting",
+          "lines": [
+            5
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Output format specification",
+          "lines": [
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Prompt chaining",
+          "lines": [
+            7
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Temperature",
+          "lines": [
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Hallucination",
+          "lines": [
+            9
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "Prompt Engineering Week 4 covers various prompting techniques and concepts. Zero-shot prompting involves giving the model only an instruction without examples for simple tasks. Few-shot prompting includes a few worked input and output examples to show the expected format and style, though overly similar examples can cause the model to copy them too closely. Chain-of-thought prompting asks the model to reason step by step to improve accuracy on multi-step problems like arithmetic and logic puzzles. Role prompting assigns the model a specific role to set its tone and focus. Output format specification directs the model to use an exact format, such as a table or JSON schema, for easier program reading. Prompt chaining breaks a complex task into smaller, independently testable steps where each output feeds the next prompt. Temperature controls randomness, with low values yielding consistent outputs and high values yielding creative ones. Finally, hallucination occurs when a model produces false or unsupported fluent text, which can be reduced by grounding the model in provided documents and asking for citations.",
+      "key_terms": [
+        {
+          "term": "Zero-shot prompting",
+          "definition": "Zero-shot prompting is a technique where the model is given only an instruction with no examples, working well for simple and common tasks.",
+          "lines": [
+            2
+          ]
+        },
+        {
+          "term": "Few-shot prompting",
+          "definition": "Few-shot prompting is a technique where the prompt includes a few worked input and output examples before the real input to show the expected format and style.",
+          "lines": [
+            3
+          ]
+        },
+        {
+          "term": "Chain-of-thought (CoT) prompting",
+          "definition": "Chain-of-thought prompting asks the model to reason step by step before giving the final answer to improve accuracy on multi-step problems.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Role prompting",
+          "definition": "Role prompting gives the model a specific role, such as a strict code reviewer, to set the tone and focus of the answer.",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "term": "Output format specification",
+          "definition": "Output format specification involves telling the model the exact format, like a JSON schema or a table, to make the output easier for programs to read and check.",
+          "lines": [
+            6
+          ]
+        },
+        {
+          "term": "Prompt chaining",
+          "definition": "Prompt chaining splits a complex task into smaller steps where the output of one prompt becomes the input of the next.",
+          "lines": [
+            7
+          ]
+        },
+        {
+          "term": "Temperature",
+          "definition": "Temperature is a parameter that controls randomness, where a low temperature gives more predictable outputs and a higher temperature gives more varied, creative outputs.",
+          "lines": [
+            8
+          ]
+        },
+        {
+          "term": "Hallucination",
+          "definition": "Hallucination is when the model produces fluent text that is false or not supported by the given source.",
+          "lines": [
+            9
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is zero-shot prompting?",
+          "options": [],
+          "answer": "Prompting where the model is given only an instruction with no examples.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "Zero-shot prompting: the model is given only an instruction, with no examples."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "What can happen if you use examples that are too similar to each other in few-shot prompting?",
+          "options": [
+            "A) The model will refuse to answer.",
+            "B) The model can copy them too closely.",
+            "C) The model will generate a JSON schema.",
+            "D) The model will hallucinate facts."
+          ],
+          "answer": "B) The model can copy them too closely.",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "Using examples that are too similar to each other can make the model copy them too closely."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "Why is chain-of-thought (CoT) prompting useful for multi-step problems like arithmetic?",
+          "options": [],
+          "answer": "It asks the model to reason step by step before giving the final answer, which often improves accuracy.",
+          "source_lines": [
+            4
+          ],
+          "source_quote": "the prompt asks the model to reason step by step before giving the final answer. It often improves accuracy on multi-step problems such as arithmetic and logic puzzles."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is the purpose of role prompting?",
+          "options": [],
+          "answer": "To set the tone and focus of the answer by giving the model a specific role.",
+          "source_lines": [
+            5
+          ],
+          "source_quote": "The role sets the tone and focus of the answer."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "You need a model output that can be easily read and checked by a program. Which prompting technique should you use?",
+          "options": [],
+          "answer": "Output format specification, by telling the model the exact format like a JSON schema or a table.",
+          "source_lines": [
+            6
+          ],
+          "source_quote": "Output format specification: telling the model the exact format (for example a JSON schema or a table) makes the output easier for programs to read and check."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "What is a main advantage of prompt chaining?",
+          "options": [
+            "A) It eliminates the need for instructions entirely.",
+            "B) Each step is easier to test and fix on its own.",
+            "C) It completely prevents model hallucination.",
+            "D) It increases the temperature automatically."
+          ],
+          "answer": "B) Each step is easier to test and fix on its own.",
+          "source_lines": [
+            7
+          ],
+          "source_quote": "Each step is easier to test and fix on its own."
+        },
+        {
+          "id": "Q7",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "If you want a model to generate creative and varied outputs, how should you adjust the temperature compared to a predictable output?",
+          "options": [],
+          "answer": "You should use a higher temperature, whereas a low temperature close to 0 gives consistent and predictable outputs.",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "A low temperature (close to 0) gives more consistent, predictable outputs. A higher temperature gives more varied, creative outputs."
+        },
+        {
+          "id": "Q8",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "How can you reduce hallucination in a language model?",
+          "options": [],
+          "answer": "By grounding the model in provided documents and asking it to cite them.",
+          "source_lines": [
+            9
+          ],
+          "source_quote": "Grounding the model in provided documents and asking it to cite them reduces hallucination."
+        }
+      ]
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The lecture notes explicitly define zero-shot prompting as giving the model only an instruction with no examples."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "The lecture notes explicitly state that using examples that are too similar can make the model copy them too closely."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that CoT prompting asks the model to reason step by step, which often improves accuracy on multi-step problems like arithmetic."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that role prompting gives the model a role which sets the tone and focus of the answer."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that telling the model the exact format makes the output easier for programs to read and check."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "The notes explicitly state that with prompt chaining, each step is easier to test and fix on its own."
+        },
+        {
+          "id": "Q7",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that a higher temperature gives more varied, creative outputs, while a low temperature gives consistent, predictable outputs."
+        },
+        {
+          "id": "Q8",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that grounding the model in provided documents and asking it to cite them reduces hallucination."
+        }
+      ]
+    }
+  },
   "calls": [
     {
       "prompt_id": "P1",
       "model": "gemini-3.5-flash-lite",
-      "seconds": 4.9,
+      "seconds": 1.28,
       "input_tokens": 675,
       "output_tokens": 346
     },
     {
       "prompt_id": "P2",
       "model": "gemini-3.5-flash-lite",
-      "seconds": 2.24,
+      "seconds": 2.49,
       "input_tokens": 740,
-      "output_tokens": 651
+      "output_tokens": 677
     },
     {
       "prompt_id": "P3",
       "model": "gemini-3.5-flash-lite",
-      "seconds": 7.86,
+      "seconds": 3.42,
       "input_tokens": 1126,
-      "output_tokens": 1188
+      "output_tokens": 1117
     },
     {
       "prompt_id": "P4",
       "model": "gemini-3.5-flash-lite",
-      "seconds": 1.5,
-      "input_tokens": 1236,
-      "output_tokens": 348
+      "seconds": 1.38,
+      "input_tokens": 1164,
+      "output_tokens": 351
     }
   ],
-  "run_at": "2026-11-22T12:20:11"
+  "run_at": "2026-11-22T12:40:26"
 }
