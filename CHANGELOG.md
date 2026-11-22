@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-11-22
+- First test run in GitHub Actions failed on every call: the Gemini v1 endpoint rejected system instructions (400 INVALID_ARGUMENT). Fixed by using the v1beta API; the test runner now retries saved runs that ended in an error.
+- Added screenshot script (code/screenshots.py) that runs real test inputs through the app and saves screenshots for the report.
 - Added final 4-step prompt chain P1–P4 (`prompts/final/`): concept extractor with input check, summary and key terms, question generator, verifier.
 - Added line-numbered notes and exact source quotes for every answer, checked by code (feedback from Milestone 1: "show where each answer comes from").
 - Added gap flags for topics the notes mention but never explain (feedback: "flag gaps, not just errors").

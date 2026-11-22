@@ -59,7 +59,7 @@ st.title("📚 StudyPack")
 st.write("Turn lecture notes into a summary, key terms and practice questions. "
          "**Every answer is checked against your notes** and linked to the line it came from.")
 
-samples = {"(none)": ""} | {p.stem: p.read_text(encoding="utf-8") for p in sorted(SAMPLES.glob("T0[1-9]*.txt"))}
+samples = {"(none)": ""} | {p.stem: p.read_text(encoding="utf-8") for p in sorted(SAMPLES.glob("T*.txt"))}
 tab_paste, tab_upload = st.tabs(["Paste notes", "Upload a file (.txt, .md, .pdf)"])
 with tab_paste:
     sample = st.selectbox("Or try a sample from our test set", list(samples))

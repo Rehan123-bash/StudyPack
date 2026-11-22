@@ -123,7 +123,9 @@ def save(path, data):
 
 def cached_run(path, fresh, fn, llm):
     if path.exists() and not fresh:
-        return json.loads(path.read_text(encoding="utf-8"))
+        saved = json.loads(path.read_text(encoding="utf-8"))
+        if saved.get("status") != "error":  # errors (e.g. a broken earlier run) are retried
+            return saved
     before = len(llm.calls)
     try:
         result = fn()

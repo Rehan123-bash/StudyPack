@@ -16,10 +16,12 @@ def get_api_key():
 class GeminiLLM:
     def __init__(self, api_key, model=DEFAULT_MODEL, min_interval=0.0, max_retries=5):
         from google import genai  # imported here so the rest of the code works without the SDK
+        from google.genai import types
 
         if not api_key:
             raise ValueError("No Gemini API key. Set GEMINI_API_KEY.")
-        self.client = genai.Client(api_key=api_key)
+        # v1beta: the stable v1 endpoint rejects system instructions ("Developer instruction is not enabled")
+        self.client = genai.Client(api_key=api_key, http_options=types.HttpOptions(api_version="v1beta"))
         self.model = model
         self.min_interval = min_interval  # seconds between calls, to stay under the free-tier RPM
         self.max_retries = max_retries
