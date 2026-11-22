@@ -88,9 +88,13 @@ def _dicts(items):
     return [x for x in (items or []) if isinstance(x, dict)]
 
 
-def _call_json(llm, prompt_id, system, user, log):
-    raw = llm.generate(prompt_id, system, user, temperature=TEMPERATURES.get(prompt_id), json_mode=True)
-    data, strict = parse_json(raw)
+def _call_json(llm, prompt_id, system, user, log, attempts=2):
+    for attempt in range(attempts):  # a broken JSON reply is retried once
+        raw = llm.generate(prompt_id, system, user, temperature=TEMPERATURES.get(prompt_id), json_mode=True)
+        data, strict = parse_json(raw)
+        if data is not None:
+            break
+        log.append({"step": prompt_id, "json_valid": False, "parsed": False, "retry": attempt + 1 < attempts})
     # The model sometimes wraps the object in a list ([{...}]) or returns only the list. Repair it, but
     # record the step as not strictly valid so the test results show it.
     if isinstance(data, list):

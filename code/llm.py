@@ -92,11 +92,13 @@ def parse_json(text):
         return json.loads(text), True
     except Exception:
         pass
-    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip())
-    match = re.search(r"\{.*\}", cleaned, re.S)
-    if match:
+    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip())
+    # Parse the first complete JSON value (object or list) and ignore anything after it.
+    starts = [i for i in (cleaned.find("{"), cleaned.find("[")) if i >= 0]
+    if starts:
         try:
-            return json.loads(match.group(0)), False
+            data, _ = json.JSONDecoder().raw_decode(cleaned[min(starts):])
+            return data, False
         except Exception:
             pass
     return None, False
