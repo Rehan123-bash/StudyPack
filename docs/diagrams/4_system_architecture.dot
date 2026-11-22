@@ -1,0 +1,20 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Helvetica", fontsize=12, bgcolor="white", pad=0.3, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#F4F6FA", color="#5B6B86", penwidth=1.2, margin="0.18,0.08"];
+  edge  [fontname="Helvetica", fontsize=10, color="#5B6B86", arrowsize=0.7];
+  user [label="Student / evaluator\n(web browser)", shape=box, fillcolor="#FFFFFF"];
+  subgraph cluster_cloud { label="Streamlit Community Cloud (free)"; style="rounded"; color="#9AA5B8";
+    app  [label="code/app.py\nStreamlit UI", fillcolor="#FFF4DC", color="#B98A2E"];
+    pipe [label="code/pipeline.py\n4-step chain + code checks", fillcolor="#EEF2E6", color="#6B8E4E"];
+    llm  [label="code/llm.py\nGemini client, retry,\ncall log", fillcolor="#EEF2E6", color="#6B8E4E"];
+    pr   [label="prompts/final/\nP1-P4 .txt", fillcolor="#FFFFFF"];
+    sec  [label="App secret:\nGEMINI_API_KEY", fillcolor="#FBE6E6", color="#B24A4A"]; }
+  gem [label="Gemini API\n(Google AI Studio free tier)\ngemini-2.5-flash", fillcolor="#E3ECFA", color="#3D6BB3"];
+  subgraph cluster_repo { label="GitHub repo"; style="rounded"; color="#9AA5B8";
+    tr  [label="code/run_tests.py\n(test runner + judge E1)", fillcolor="#EEF2E6", color="#6B8E4E"];
+    td  [label="test-data/\ninputs, test_cases.json,\noutputs", fillcolor="#FFFFFF"]; }
+  user -> app [label="notes +\nsettings"]; app -> user [label="study pack"];
+  app -> pipe [label="function call"]; pipe -> llm; llm -> gem [label="HTTPS"]; pr -> pipe; sec -> llm [style=dashed];
+  tr -> pipe; td -> tr; tr -> td [label="results"];
+}

@@ -1,0 +1,20 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Helvetica", fontsize=12, bgcolor="white", pad=0.3, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#F4F6FA", color="#5B6B86", penwidth=1.2, margin="0.18,0.08"];
+  edge  [fontname="Helvetica", fontsize=10, color="#5B6B86", arrowsize=0.7];
+  subgraph cluster_in { label="Inputs"; style="rounded,dashed"; color="#9AA5B8";
+    i1 [label="Notes text\n(paste, .txt, .md,\ntext PDF)", fillcolor="#FFFFFF"];
+    i2 [label="Settings\nnum_questions, format,\ndifficulty", fillcolor="#FFFFFF"]; }
+  n  [label="numbered_notes\n(text)", fillcolor="#EEF2E6", color="#6B8E4E"];
+  o1 [label="P1 output\n{is_lecture_notes, topic,\nlanguages, concepts[]}", fillcolor="#E3ECFA", color="#3D6BB3"];
+  o2 [label="P2 output\n{summary, key_terms[]}", fillcolor="#E3ECFA", color="#3D6BB3"];
+  o3 [label="P3 output\n{questions[], note}", fillcolor="#E3ECFA", color="#3D6BB3"];
+  o4 [label="P4 output\n{checks[]: id, verdict,\nreason}", fillcolor="#E3ECFA", color="#3D6BB3"];
+  subgraph cluster_out { label="Outputs"; style="rounded,dashed"; color="#9AA5B8";
+    out1 [label="Study pack in the app\n(tabs: summary, questions,\ngaps, removed)", fillcolor="#FFF4DC", color="#B98A2E"];
+    out2 [label="Downloads\nstudy_pack.md\nstudy_pack.json", fillcolor="#FFF4DC", color="#B98A2E"]; }
+  i1 -> n; n -> o1; n -> o2; n -> o3; n -> o4;
+  o1 -> o2 [label="concepts"]; o1 -> o3 [label="concepts"]; i2 -> o3;
+  o3 -> o4 [label="questions"]; o2 -> out1; o3 -> out1; o4 -> out1; o1 -> out1 [label="gaps"]; out1 -> out2;
+}

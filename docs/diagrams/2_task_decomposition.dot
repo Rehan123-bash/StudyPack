@@ -1,0 +1,15 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Helvetica", fontsize=12, bgcolor="white", pad=0.3, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#F4F6FA", color="#5B6B86", penwidth=1.2, margin="0.18,0.08"];
+  edge  [fontname="Helvetica", fontsize=10, color="#5B6B86", arrowsize=0.7];
+  root [label="Make a verified study pack\nfrom one topic's lecture notes", fillcolor="#FFF4DC", color="#B98A2E"];
+  a [label="1. Understand the notes\n(P1)"]; b [label="2. Explain\n(P2)"]; c [label="3. Practise\n(P3)"]; d [label="4. Make it trustworthy\n(P4 + code)"]; e [label="5. Show what's missing\n(code)"];
+  a1 [label="Is this lecture notes?", fillcolor="#FFFFFF"]; a2 [label="Topic + concept list\nwith line numbers", fillcolor="#FFFFFF"]; a3 [label="Explained or only\nmentioned?", fillcolor="#FFFFFF"];
+  b1 [label="Summary\n(<= 200 words)", fillcolor="#FFFFFF"]; b2 [label="Key terms +\ndefinitions + lines", fillcolor="#FFFFFF"];
+  c1 [label="Bloom's mix\n(Remember to Analyze)", fillcolor="#FFFFFF"]; c2 [label="Format: MCQ / short /\nflashcard / mixed", fillcolor="#FFFFFF"]; c3 [label="Answer + source lines\n+ exact quote", fillcolor="#FFFFFF"];
+  d1 [label="Quote found in notes?\n(code)", fillcolor="#FFFFFF"]; d2 [label="Answer supported?\n(P4 verifier)", fillcolor="#FFFFFF"]; d3 [label="Drop failures,\nshow why", fillcolor="#FFFFFF"];
+  e1 [label="List topics named\nbut not explained", fillcolor="#FFFFFF"];
+  root -> {a b c d e};
+  a -> {a1 a2 a3}; b -> {b1 b2}; c -> {c1 c2 c3}; d -> {d1 d2 d3}; e -> e1;
+}

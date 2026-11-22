@@ -1,0 +1,24 @@
+digraph G {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=12, bgcolor="white", pad=0.3, nodesep=0.35, ranksep=0.45];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#F4F6FA", color="#5B6B86", penwidth=1.2, margin="0.18,0.08"];
+  edge  [fontname="Helvetica", fontsize=10, color="#5B6B86", arrowsize=0.7];
+  notes  [label="Lecture notes + settings\n(questions, format, difficulty)", fillcolor="#FFFFFF"];
+  chk    [label="Code: input check\n(empty / too long?)", fillcolor="#EEF2E6", color="#6B8E4E"];
+  num    [label="Code: number every line\n(L1, L2, ...)", fillcolor="#EEF2E6", color="#6B8E4E"];
+  p1     [label="P1 Concept extractor\nis it lecture notes? topic, concepts,\nexplained vs mentioned_only", fillcolor="#E3ECFA", color="#3D6BB3"];
+  p2     [label="P2 Summary + key terms\n(each term linked to lines)", fillcolor="#E3ECFA", color="#3D6BB3"];
+  p3     [label="P3 Question generator\nBloom's mix, format, answer,\nsource lines + exact quote", fillcolor="#E3ECFA", color="#3D6BB3"];
+  qc     [label="Code: is the quote really\nin the notes?", fillcolor="#EEF2E6", color="#6B8E4E"];
+  p4     [label="P4 Verifier\nSUPPORTED / PARTLY / UNSUPPORTED", fillcolor="#E3ECFA", color="#3D6BB3"];
+  merge  [label="Code: keep only SUPPORTED\n+ quote found", fillcolor="#EEF2E6", color="#6B8E4E"];
+  gaps   [label="Code: gap flags\n(mentioned_only concepts)", fillcolor="#EEF2E6", color="#6B8E4E"];
+  pack   [label="Study pack\nsummary · key terms · verified questions\ngaps · removed questions", fillcolor="#FFF4DC", color="#B98A2E"];
+  rej    [label="Rejected with a message\n(no study pack)", fillcolor="#FBE6E6", color="#B24A4A"];
+
+  notes -> chk; chk -> num [label=" ok"]; chk -> rej [label=" empty", style=dashed];
+  num -> p1; p1 -> rej [label=" not notes", style=dashed];
+  p1 -> p2 [label=" concepts JSON"]; p1 -> gaps [style=dotted];
+  p2 -> p3; p3 -> qc -> p4 -> merge -> pack; gaps -> pack;
+  {rank=same; rej; num}
+}
