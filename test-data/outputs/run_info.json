@@ -1,0 +1,9 @@
+{
+  "model": "gemini-2.5-flash-lite",
+  "finished_at": "2026-11-22T11:52:29",
+  "test_cases": 14,
+  "passed": 1,
+  "api_calls_total": 0,
+  "input_tokens_total": 0,
+  "output_tokens_total": 0
+}

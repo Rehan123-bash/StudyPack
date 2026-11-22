@@ -1,0 +1,7 @@
+# Prompt version comparison (normal test cases 1-7, model gemini-2.5-flash-lite)
+
+| Version | Test cases | Runs OK | Valid JSON | Questions shown to student | Supported by notes (judge) | Apply/Analyze or higher (judge) | Outside facts in summary/terms (judge) | Questions with verified source link | Avg seconds per pack | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| v1 | 7 | 0 | n/a (plain text) | 0 | - | - | 0 | - | 0.0 |  |
+| v2 | 7 | 0 | 0/0 steps | 0 | - | - | 0 | - | 0.0 |  |
+| v3 | 7 | 0 | 0/0 steps | 0 | - | - | 0 | - | 0.0 | 0 of 0 generated questions removed by checker |
