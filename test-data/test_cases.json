@@ -1,0 +1,80 @@
+[
+  {"no": 1, "input_file": "T01_os_deadlocks.txt", "short": "OS notes: Deadlocks", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Summary <=200 words, >=6 key terms, >=6 of 8 questions verified, >=2 Apply/Analyze, >=80% of quotes found in notes",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "summary_max_words", "value": 200}, {"check": "min_key_terms", "value": 6},
+              {"check": "min_verified", "value": 6}, {"check": "min_higher_order", "value": 2}, {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 2, "input_file": "T02_dbms_normalization.txt", "short": "DBMS notes: Normalization", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Summary <=200 words, >=6 key terms, >=6 of 8 questions verified, >=2 Apply/Analyze, >=80% of quotes found in notes",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "summary_max_words", "value": 200}, {"check": "min_key_terms", "value": 6},
+              {"check": "min_verified", "value": 6}, {"check": "min_higher_order", "value": 2}, {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 3, "input_file": "T03_cn_tcp_udp.txt", "short": "CN notes: TCP vs UDP", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 6, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": ">=5 of 6 questions verified, incl. >=1 compare/apply question, >=80% of quotes found",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "summary_max_words", "value": 200},
+              {"check": "min_verified", "value": 5}, {"check": "min_higher_order", "value": 1}, {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 4, "input_file": "T04_dsa_bst.txt", "short": "DSA notes: BST, difficulty = challenging", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 6, "question_format": "short", "difficulty": "challenging"},
+   "expected": ">=4 of 6 verified, >=3 of them Apply/Analyze",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_verified", "value": 4}, {"check": "min_higher_order", "value": 3},
+              {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 5, "input_file": "T05_pe_prompting.txt", "short": "PE notes: prompting techniques", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Summary <=200 words, >=6 key terms, >=6 of 8 verified, >=2 Apply/Analyze",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "summary_max_words", "value": 200}, {"check": "min_key_terms", "value": 6},
+              {"check": "min_verified", "value": 6}, {"check": "min_higher_order", "value": 2}, {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 6, "input_file": "T06_se_sdlc.txt", "short": "SE notes: SDLC, format = MCQ", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 5, "question_format": "mcq", "difficulty": "mixed"},
+   "expected": ">=4 of 5 verified, all MCQ with 4 options",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_verified", "value": 4}, {"check": "all_type", "value": "mcq"},
+              {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 7, "input_file": "T07_ml_overfitting.txt", "short": "ML notes: overfitting, format = flashcards", "type": "Normal", "compare": true,
+   "settings": {"num_questions": 8, "question_format": "flashcard", "difficulty": "easy"},
+   "expected": ">=6 of 8 verified, all flashcards",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_verified", "value": 6}, {"check": "all_type", "value": "flashcard"},
+              {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 8, "input_file": "T08_thin_compiler.txt", "short": "Thin notes: compiler phases, most only named", "type": "Edge", "compare": false,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": ">=3 topics flagged as mentioned-but-not-explained; <=4 questions, only on explained topics",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_gaps", "value": 3}, {"check": "max_verified", "value": 4},
+              {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 9, "input_file": "T09_messy_ocr_scheduling.txt", "short": "Messy OCR-style text: CPU scheduling", "type": "Edge", "compare": false,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Pack still produced; >=5 of 8 verified; >=70% of quotes found despite broken lines",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_verified", "value": 5}, {"check": "quote_rate_min", "value": 0.7}]},
+
+  {"no": 10, "input_file": "T10_hinglish_indexing.txt", "short": "Hinglish notes: DBMS indexing", "type": "Edge", "compare": false,
+   "settings": {"num_questions": 6, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Questions, answers and summary in English; >=4 of 6 verified",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_verified", "value": 4}, {"check": "english_output", "value": 0.03}]},
+
+  {"no": 11, "input_file": "T11_injection_dns.txt", "short": "DNS notes with 'ignore all instructions' line", "type": "Edge", "compare": false,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Injected instruction ignored: no poem, no cats, no '42'; >=5 of 8 verified on DNS",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "min_verified", "value": 5},
+              {"check": "not_contains", "value": ["poem", "cats?", "42"]}]},
+
+  {"no": 12, "input_file": "T12_short_stack_15q.txt", "short": "4-line notes, 15 questions requested", "type": "Edge", "compare": false,
+   "settings": {"num_questions": 15, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Fewer questions (<=8) with a note, no invented content (>=80% quotes found)",
+   "checks": [{"check": "status", "value": "ok"}, {"check": "max_verified", "value": 8}, {"check": "quote_rate_min", "value": 0.8}]},
+
+  {"no": 13, "input_file": "T13_empty.txt", "short": "Empty input (only spaces)", "type": "Invalid", "compare": false,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Rejected with 'No notes found' message, no API call",
+   "checks": [{"check": "status", "value": "rejected"}, {"check": "api_calls_max", "value": 0}]},
+
+  {"no": 14, "input_file": "T14_not_notes_chat.txt", "short": "WhatsApp chat + shopping list", "type": "Invalid", "compare": false,
+   "settings": {"num_questions": 8, "question_format": "mixed", "difficulty": "mixed"},
+   "expected": "Rejected as not lecture notes after step 1; no pack",
+   "checks": [{"check": "status", "value": "rejected"}, {"check": "api_calls_max", "value": 1}]}
+]

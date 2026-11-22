@@ -1,0 +1,21 @@
+Computer Networks - Transport Layer: TCP vs UDP
+
+The transport layer provides process-to-process delivery using port numbers.
+
+TCP (Transmission Control Protocol)
+- Connection-oriented: a connection is set up with a three-way handshake (SYN, SYN-ACK, ACK) before data is sent.
+- Reliable: uses sequence numbers, acknowledgements and retransmission of lost segments.
+- Delivers data in order.
+- Flow control using a sliding window, so a fast sender does not overwhelm a slow receiver.
+- Congestion control, so the sender slows down when the network is congested.
+- Header size is 20 to 60 bytes.
+- Used by HTTP/HTTPS, email (SMTP) and file transfer (FTP).
+
+UDP (User Datagram Protocol)
+- Connectionless: no handshake; each datagram is sent independently.
+- Unreliable: no acknowledgements and no retransmission; datagrams may be lost or arrive out of order.
+- Header size is fixed at 8 bytes, so overhead is low.
+- Faster, with lower delay, than TCP.
+- Used by DNS queries, online gaming, live video streaming and VoIP, where speed matters more than perfect delivery.
+
+Rule of thumb from class: choose TCP when every byte must arrive correctly and in order; choose UDP when low delay matters more than losing a few packets.

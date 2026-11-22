@@ -1,0 +1,17 @@
+Prompt Engineering - Week 4: Prompting Techniques
+
+Zero-shot prompting: the model is given only an instruction, with no examples. It works for simple, common tasks.
+
+Few-shot prompting: the prompt includes a few worked examples (input and output pairs) before the real input. The examples show the model the expected format and style. Using examples that are too similar to each other can make the model copy them too closely.
+
+Chain-of-thought (CoT) prompting: the prompt asks the model to reason step by step before giving the final answer. It often improves accuracy on multi-step problems such as arithmetic and logic puzzles.
+
+Role prompting: the prompt gives the model a role, such as "You are a strict code reviewer". The role sets the tone and focus of the answer.
+
+Output format specification: telling the model the exact format (for example a JSON schema or a table) makes the output easier for programs to read and check.
+
+Prompt chaining: a complex task is split into smaller steps, and the output of one prompt becomes the input of the next. Each step is easier to test and fix on its own.
+
+Temperature controls randomness. A low temperature (close to 0) gives more consistent, predictable outputs. A higher temperature gives more varied, creative outputs.
+
+Hallucination: the model produces fluent text that is false or not supported by the given source. Grounding the model in provided documents and asking it to cite them reduces hallucination.

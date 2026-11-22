@@ -1,0 +1,20 @@
+DBMS Lecture 7 - Normalization
+
+Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies.
+
+Functional dependency: X -> Y means that the value of X determines the value of Y. Example: RollNo -> StudentName.
+
+First Normal Form (1NF): every attribute contains only atomic (indivisible) values and there are no repeating groups. A column holding "Maths, Physics" in one cell violates 1NF.
+
+Second Normal Form (2NF): the table is in 1NF and every non-prime attribute is fully functionally dependent on the whole primary key. A partial dependency, where a non-prime attribute depends on only part of a composite key, violates 2NF.
+Example: in Enrollment(RollNo, CourseID, StudentName, Grade) with key (RollNo, CourseID), StudentName depends only on RollNo, so the table is not in 2NF. Fix: move StudentName to a separate Student(RollNo, StudentName) table.
+
+Third Normal Form (3NF): the table is in 2NF and there is no transitive dependency of a non-prime attribute on the key. A transitive dependency is when A -> B and B -> C, so C depends on A through B.
+Example: Student(RollNo, DeptID, DeptName). RollNo -> DeptID and DeptID -> DeptName, so DeptName is transitively dependent on RollNo. Fix: split into Student(RollNo, DeptID) and Department(DeptID, DeptName).
+
+BCNF (Boyce-Codd Normal Form) is a stricter version of 3NF: for every functional dependency X -> Y, X must be a superkey.
+
+Anomalies:
+- Insertion anomaly: we cannot add some data without adding other unrelated data.
+- Update anomaly: the same fact is stored in many rows, so changing it in one row and not the others makes the data inconsistent.
+- Deletion anomaly: deleting one row removes other facts we wanted to keep.

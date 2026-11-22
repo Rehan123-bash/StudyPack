@@ -1,0 +1,11 @@
+Compiler Design - phases (rough notes, lecture 2)
+
+- Lexical analysis: reads the source code characters and groups them into tokens such as keywords, identifiers and operators.
+- Syntax analysis
+- Semantic analysis
+- Intermediate code generation
+- Code optimization
+- Code generation
+- Symbol table: a data structure that stores information about identifiers, such as their name, type and scope.
+- Error handler
+(sir said to read the rest from the book)

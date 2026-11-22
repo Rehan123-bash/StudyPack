@@ -1,0 +1,19 @@
+Operating Systems - Unit 3: Deadlocks
+
+A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set.
+
+Four necessary conditions (Coffman conditions) must hold at the same time for a deadlock to occur:
+1. Mutual exclusion: at least one resource is non-sharable, so only one process can use it at a time.
+2. Hold and wait: a process holds at least one resource while waiting to acquire additional resources held by other processes.
+3. No preemption: a resource can be released only voluntarily by the process holding it.
+4. Circular wait: there is a set of processes {P0, P1, ..., Pn} where P0 waits for a resource held by P1, P1 waits for P2, and Pn waits for P0.
+
+Resource Allocation Graph (RAG): a directed graph with process nodes and resource nodes. A request edge goes from a process to a resource; an assignment edge goes from a resource to a process. If each resource type has only one instance, a cycle in the graph means a deadlock exists.
+
+Methods for handling deadlocks:
+- Prevention: make sure at least one of the four conditions can never hold.
+- Avoidance: the OS uses extra information about future requests to decide whether to grant a request. The Banker's algorithm is an avoidance algorithm.
+- Detection and recovery: allow deadlocks, detect them, then recover by terminating processes or preempting resources.
+- Ignorance: pretend deadlocks never happen (the ostrich algorithm), used by most general-purpose operating systems.
+
+A safe state is a state in which the system can allocate resources to every process in some order (a safe sequence) and still avoid deadlock. An unsafe state does not always lead to deadlock, but it may.

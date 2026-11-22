@@ -1,0 +1,14 @@
+DBMS - Indexing (class notes, Hinglish)
+
+Index ek data structure hai jo table mein search ko fast banata hai, bilkul book ke index ki tarah.
+Bina index ke, database ko poori table scan karni padti hai (full table scan), jo slow hota hai.
+
+Primary index: ye primary key par banta hai aur data file usi key ke order mein sorted hoti hai.
+Secondary index: ye non-key column par banta hai, data file us column ke order mein sorted nahi hoti.
+
+Dense index: har search key value ke liye index mein ek entry hoti hai.
+Sparse index: sirf kuch values ke liye entry hoti hai (jaise har block ka pehla record), isliye ye kam space leta hai.
+
+B+ tree: most databases index ke liye B+ tree use karte hain. Saara data leaf nodes mein hota hai aur leaf nodes ek linked list se jude hote hain, isliye range queries fast hoti hain.
+
+Trade-off: index se SELECT queries fast hoti hain, lekin INSERT, UPDATE aur DELETE slow ho jaate hain kyunki index ko bhi update karna padta hai, aur extra storage lagta hai.

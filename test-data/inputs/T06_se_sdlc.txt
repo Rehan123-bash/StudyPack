@@ -1,0 +1,13 @@
+Software Engineering - SDLC Models
+
+The Software Development Life Cycle (SDLC) is the set of phases used to build software: requirements, design, implementation, testing, deployment and maintenance.
+
+Waterfall model: phases are done one after another in a fixed order, and each phase must finish before the next begins. It is simple to manage and works when requirements are clear and stable. Its weakness is that changes are hard and costly once a phase is finished, and working software appears only late in the project.
+
+Iterative model: the software is built in repeated cycles. Each iteration produces a working version that is improved in the next iteration.
+
+Spiral model: combines iterative development with risk analysis. Each loop of the spiral has four parts: planning, risk analysis, engineering and evaluation. It is suited to large, high-risk projects.
+
+V-Model: an extension of waterfall where each development phase has a matching testing phase, for example unit testing matches module design and acceptance testing matches requirements analysis.
+
+Agile model: software is delivered in short iterations called sprints, usually 1 to 4 weeks long. Agile values working software, customer collaboration and responding to change. Scrum is a popular Agile framework with roles such as Product Owner and Scrum Master.

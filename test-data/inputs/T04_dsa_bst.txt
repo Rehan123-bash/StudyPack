@@ -1,0 +1,18 @@
+Data Structures - Binary Search Trees (BST)
+
+A binary search tree is a binary tree where, for every node, all keys in the left subtree are smaller than the node's key and all keys in the right subtree are larger.
+
+Search: start at the root. If the key equals the root's key, stop. If it is smaller, go left; if it is larger, go right. Repeat until the key is found or a null link is reached.
+
+Insertion: search for the key as above; when you reach a null link, insert the new node there. A new key is always inserted as a leaf.
+
+Inorder traversal (left, root, right) of a BST visits the keys in sorted (ascending) order.
+
+Deletion has three cases:
+1. The node is a leaf: just remove it.
+2. The node has one child: replace the node with its child.
+3. The node has two children: replace its key with its inorder successor (the smallest key in its right subtree), then delete the successor.
+
+Time complexity: search, insertion and deletion take O(h) time, where h is the height of the tree. For a balanced BST, h is about log2(n), so operations take O(log n). If keys are inserted in sorted order, the tree becomes skewed like a linked list, h becomes n, and operations take O(n).
+
+Self-balancing trees such as AVL trees keep the height close to log2(n) by doing rotations after insertions and deletions.

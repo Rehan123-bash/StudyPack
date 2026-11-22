@@ -1,0 +1,25 @@
+OS Notes  pg 14                                   CPU Sched-
+uling
+
+CPU scheduling decides which process in the ready
+queue gets the CPU next.
+
+FCFS (First Come First Serve) : the process that ar-
+rives first is run first.  Non-preemptive.  Simple but
+can cause the convoy effect - short processes wait
+behind one long process.
+
+SJF (Shortest Job First) : the process with the smal-
+lest burst time runs first .  Gives the minimum aver-
+age waiting time  but needs to know burst times in
+advance.  Can cause starvation of long processes.
+                                                      pg 15
+Round Robin (RR) : each process gets a fixed time
+quantum ( e.g. 4 ms ) , then goes to the back of the
+ready queue .  Preemptive.  Good for time-sharing sys-
+tems.  If the quantum is too large RR behaves like FCFS
+; if too small , too much time is spent on context
+switches .
+
+Waiting time = Turnaround time - Burst time
+Turnaround time = Completion time - Arrival time
