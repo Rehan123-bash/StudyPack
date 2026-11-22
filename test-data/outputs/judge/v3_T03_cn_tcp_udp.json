@@ -1,0 +1,45 @@
+{
+  "questions": [
+    {
+      "question": "What is the header size of UDP?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Which mechanism does TCP use to ensure that a fast sender does not overwhelm a slow receiver?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What are the three steps of the TCP connection-setting handshake?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Why is UDP faster and why does it have lower delay than TCP?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "According to the rule of thumb from class, which protocol should you choose when low delay matters more than losing a few packets?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What kind of delivery does the transport layer provide and what does it use to achieve it?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.21,
+      "input_tokens": 1168,
+      "output_tokens": 297
+    }
+  ],
+  "run_at": "2026-11-22T12:16:46"
+}

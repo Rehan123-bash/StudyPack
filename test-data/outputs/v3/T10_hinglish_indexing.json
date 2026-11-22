@@ -1,6 +1,527 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:52:08"
+  "status": "ok",
+  "topic": "DBMS Indexing",
+  "languages": [
+    "Hinglish",
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Index",
+      "lines": [
+        2,
+        3
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Primary index",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Secondary index",
+      "lines": [
+        5
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Dense index",
+      "lines": [
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Sparse index",
+      "lines": [
+        7
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "B+ tree",
+      "lines": [
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Trade-off",
+      "lines": [
+        9
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "An index is a data structure that makes searching in a table fast, similar to a book index. Without it, the database must perform a slow full table scan. A primary index is built on the primary key where the data file is sorted in that key's order, while a secondary index is built on a non-key column where the data file is not sorted by that column. A dense index has an entry for every search key value, whereas a sparse index has entries for only some values, taking up less space. Most databases use a B+ tree for indexing, where all data is in leaf nodes connected by a linked list, making range queries fast. The trade-off of using an index is that while SELECT queries become faster, INSERT, UPDATE, and DELETE operations become slower because the index must also be updated, and it requires extra storage.",
+  "key_terms": [
+    {
+      "term": "Index",
+      "definition": "An index is a data structure that makes searching in a table fast, just like a book index.",
+      "lines": [
+        2,
+        3
+      ]
+    },
+    {
+      "term": "Primary index",
+      "definition": "A primary index is built on the primary key, and the data file is sorted in the order of that key.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Secondary index",
+      "definition": "A secondary index is built on a non-key column, and the data file is not sorted in the order of that column.",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "term": "Dense index",
+      "definition": "A dense index contains an entry in the index for every single search key value.",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "term": "Sparse index",
+      "definition": "A sparse index contains entries for only some values, such as the first record of each block, which uses less space.",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "term": "B+ tree",
+      "definition": "A B+ tree is used by most databases for indexing, storing all data in leaf nodes that are connected by a linked list to make range queries fast.",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "term": "Trade-off",
+      "definition": "Indexes make SELECT queries fast, but they make INSERT, UPDATE, and DELETE operations slow because the index must be updated and extra storage is required.",
+      "lines": [
+        9
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is an index in a database?",
+      "options": [],
+      "answer": "An index is a data structure that makes searching in a table fast, just like an index in a book.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "Index ek data structure hai jo table mein search ko fast banata hai, bilkul book ke index ki tarah.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The answer matches the definition of an index given in line 2."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "What happens during a full table scan when there is no index?",
+      "options": [
+        "A) The database scans the entire table, which makes it slow.",
+        "B) The database automatically creates a sparse index.",
+        "C) SELECT queries become faster.",
+        "D) Data files are sorted by the primary key."
+      ],
+      "answer": "A) The database scans the entire table, which makes it slow.",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "Bina index ke, database ko poori table scan karni padti hai (full table scan), jo slow hota hai.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 3 explicitly states that without an index, the database must do a full table scan which is slow."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "How does a primary index differ from a secondary index regarding the ordering of the data file?",
+      "options": [],
+      "answer": "A primary index is built on a primary key and the data file is sorted in the order of that key, whereas a secondary index is built on a non-key column where the data file is not sorted in that column's order.",
+      "source_lines": [
+        4,
+        5
+      ],
+      "source_quote": "Primary index: ye primary key par banta hai aur data file usi key ke order mein sorted hoti hai. Secondary index: ye non-key column par banta hai, data file us column ke order mein sorted nahi hoti.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 4 and 5 fully support the comparison between primary and secondary indexes regarding file ordering."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "Why does a sparse index take up less space than a dense index?",
+      "options": [],
+      "answer": "A sparse index has entries for only some values (such as the first record of each block) rather than an entry for every search key value.",
+      "source_lines": [
+        6,
+        7
+      ],
+      "source_quote": "Sparse index: sirf kuch values ke liye entry hoti hai (jaise har block ka pehla record), isliye ye kam space leta hai.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 6 and 7 explain that a sparse index has entries only for some values, making it take less space."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "mcq",
+      "question": "If a database uses a B+ tree for indexing, where is all the data stored, and what feature makes range queries fast?",
+      "options": [
+        "A) All data is in root nodes, and root nodes are connected by a linked list.",
+        "B) All data is in leaf nodes, and leaf nodes are connected by a linked list.",
+        "C) All data is in sparse indexes, which eliminates full table scans.",
+        "D) All data is in non-key columns, and index updates are skipped."
+      ],
+      "answer": "B) All data is in leaf nodes, and leaf nodes are connected by a linked list.",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "Saara data leaf nodes mein hota hai aur leaf nodes ek linked list se jude hote hain, isliye range queries fast hoti hain.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 8 explicitly states that all data is in leaf nodes and leaf nodes are connected by a linked list making range queries fast."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "What is the trade-off of using an index on a database table regarding query performance and storage?",
+      "options": [],
+      "answer": "While indexes make SELECT queries fast, they cause INSERT, UPDATE, and DELETE queries to become slow because the index also has to be updated, and they require extra storage.",
+      "source_lines": [
+        9
+      ],
+      "source_quote": "Trade-off: index se SELECT queries fast hoti hain, lekin INSERT, UPDATE aur DELETE slow ho jaate hain kyunki index ko bhi update karna padta hai, aur extra storage lagta hai.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 9 outlines the exact trade-offs regarding SELECT, INSERT, UPDATE, DELETE speeds and extra storage."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 6,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 6,
+    "verified": 6,
+    "removed": 0,
+    "quote_found": 6,
+    "line_count": 9
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "DBMS Indexing",
+      "languages": [
+        "Hinglish",
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Index",
+          "lines": [
+            2,
+            3
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Primary index",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Secondary index",
+          "lines": [
+            5
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Dense index",
+          "lines": [
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Sparse index",
+          "lines": [
+            7
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "B+ tree",
+          "lines": [
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Trade-off",
+          "lines": [
+            9
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "An index is a data structure that makes searching in a table fast, similar to a book index. Without it, the database must perform a slow full table scan. A primary index is built on the primary key where the data file is sorted in that key's order, while a secondary index is built on a non-key column where the data file is not sorted by that column. A dense index has an entry for every search key value, whereas a sparse index has entries for only some values, taking up less space. Most databases use a B+ tree for indexing, where all data is in leaf nodes connected by a linked list, making range queries fast. The trade-off of using an index is that while SELECT queries become faster, INSERT, UPDATE, and DELETE operations become slower because the index must also be updated, and it requires extra storage.",
+      "key_terms": [
+        {
+          "term": "Index",
+          "definition": "An index is a data structure that makes searching in a table fast, just like a book index.",
+          "lines": [
+            2,
+            3
+          ]
+        },
+        {
+          "term": "Primary index",
+          "definition": "A primary index is built on the primary key, and the data file is sorted in the order of that key.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Secondary index",
+          "definition": "A secondary index is built on a non-key column, and the data file is not sorted in the order of that column.",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "term": "Dense index",
+          "definition": "A dense index contains an entry in the index for every single search key value.",
+          "lines": [
+            6
+          ]
+        },
+        {
+          "term": "Sparse index",
+          "definition": "A sparse index contains entries for only some values, such as the first record of each block, which uses less space.",
+          "lines": [
+            7
+          ]
+        },
+        {
+          "term": "B+ tree",
+          "definition": "A B+ tree is used by most databases for indexing, storing all data in leaf nodes that are connected by a linked list to make range queries fast.",
+          "lines": [
+            8
+          ]
+        },
+        {
+          "term": "Trade-off",
+          "definition": "Indexes make SELECT queries fast, but they make INSERT, UPDATE, and DELETE operations slow because the index must be updated and extra storage is required.",
+          "lines": [
+            9
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is an index in a database?",
+          "options": [],
+          "answer": "An index is a data structure that makes searching in a table fast, just like an index in a book.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "Index ek data structure hai jo table mein search ko fast banata hai, bilkul book ke index ki tarah."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "What happens during a full table scan when there is no index?",
+          "options": [
+            "A) The database scans the entire table, which makes it slow.",
+            "B) The database automatically creates a sparse index.",
+            "C) SELECT queries become faster.",
+            "D) Data files are sorted by the primary key."
+          ],
+          "answer": "A) The database scans the entire table, which makes it slow.",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "Bina index ke, database ko poori table scan karni padti hai (full table scan), jo slow hota hai."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "How does a primary index differ from a secondary index regarding the ordering of the data file?",
+          "options": [],
+          "answer": "A primary index is built on a primary key and the data file is sorted in the order of that key, whereas a secondary index is built on a non-key column where the data file is not sorted in that column's order.",
+          "source_lines": [
+            4,
+            5
+          ],
+          "source_quote": "Primary index: ye primary key par banta hai aur data file usi key ke order mein sorted hoti hai. Secondary index: ye non-key column par banta hai, data file us column ke order mein sorted nahi hoti."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "Why does a sparse index take up less space than a dense index?",
+          "options": [],
+          "answer": "A sparse index has entries for only some values (such as the first record of each block) rather than an entry for every search key value.",
+          "source_lines": [
+            6,
+            7
+          ],
+          "source_quote": "Sparse index: sirf kuch values ke liye entry hoti hai (jaise har block ka pehla record), isliye ye kam space leta hai."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "mcq",
+          "question": "If a database uses a B+ tree for indexing, where is all the data stored, and what feature makes range queries fast?",
+          "options": [
+            "A) All data is in root nodes, and root nodes are connected by a linked list.",
+            "B) All data is in leaf nodes, and leaf nodes are connected by a linked list.",
+            "C) All data is in sparse indexes, which eliminates full table scans.",
+            "D) All data is in non-key columns, and index updates are skipped."
+          ],
+          "answer": "B) All data is in leaf nodes, and leaf nodes are connected by a linked list.",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "Saara data leaf nodes mein hota hai aur leaf nodes ek linked list se jude hote hain, isliye range queries fast hoti hain."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "What is the trade-off of using an index on a database table regarding query performance and storage?",
+          "options": [],
+          "answer": "While indexes make SELECT queries fast, they cause INSERT, UPDATE, and DELETE queries to become slow because the index also has to be updated, and they require extra storage.",
+          "source_lines": [
+            9
+          ],
+          "source_quote": "Trade-off: index se SELECT queries fast hoti hain, lekin INSERT, UPDATE aur DELETE slow ho jaate hain kyunki index ko bhi update karna padta hai, aur extra storage lagta hai."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The answer matches the definition of an index given in line 2."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 3 explicitly states that without an index, the database must do a full table scan which is slow."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 4 and 5 fully support the comparison between primary and secondary indexes regarding file ordering."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 6 and 7 explain that a sparse index has entries only for some values, making it take less space."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 8 explicitly states that all data is in leaf nodes and leaf nodes are connected by a linked list making range queries fast."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Line 9 outlines the exact trade-offs regarding SELECT, INSERT, UPDATE, DELETE speeds and extra storage."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.42,
+      "input_tokens": 613,
+      "output_tokens": 273
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 9.5,
+      "input_tokens": 650,
+      "output_tokens": 475
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 3.08,
+      "input_tokens": 1036,
+      "output_tokens": 1068
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.84,
+      "input_tokens": 1087,
+      "output_tokens": 325
+    }
+  ],
+  "run_at": "2026-11-22T12:28:46"
 }

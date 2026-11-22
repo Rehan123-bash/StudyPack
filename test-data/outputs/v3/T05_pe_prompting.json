@@ -1,6 +1,35 @@
 {
   "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:51"
+  "error": "AttributeError: 'list' object has no attribute 'get'",
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 4.9,
+      "input_tokens": 675,
+      "output_tokens": 346
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.24,
+      "input_tokens": 740,
+      "output_tokens": 651
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.86,
+      "input_tokens": 1126,
+      "output_tokens": 1188
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.5,
+      "input_tokens": 1236,
+      "output_tokens": 348
+    }
+  ],
+  "run_at": "2026-11-22T12:20:11"
 }

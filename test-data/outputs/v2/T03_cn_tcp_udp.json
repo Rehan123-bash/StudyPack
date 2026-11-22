@@ -1,6 +1,131 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:23"
+  "status": "ok",
+  "topic": "Computer Networks - Transport Layer: TCP vs UDP",
+  "summary": "The transport layer provides process-to-process delivery using port numbers. It includes two main protocols: TCP and UDP. TCP is a connection-oriented, reliable protocol that uses a three-way handshake, sequence numbers, acknowledgements, flow control, and congestion control to ensure data arrives correctly and in order. It has a header size of 20 to 60 bytes and is used for HTTP/HTTPS, email, and file transfer. In contrast, UDP is a connectionless, unreliable protocol without handshakes, acknowledgements, or retransmission, making it faster and subject to lower delay. UDP has a fixed header size of 8 bytes and is used for DNS queries, online gaming, live video streaming, and VoIP. As a rule of thumb, choose TCP when every byte must arrive correctly and in order, and choose UDP when low delay matters more than losing a few packets.",
+  "key_terms": [
+    {
+      "term": "Transport layer",
+      "definition": "Provides process-to-process delivery using port numbers."
+    },
+    {
+      "term": "TCP",
+      "definition": "A connection-oriented and reliable transport protocol that delivers data in order."
+    },
+    {
+      "term": "Three-way handshake",
+      "definition": "A connection setup process using SYN, SYN-ACK, and ACK before TCP data is sent."
+    },
+    {
+      "term": "Flow control",
+      "definition": "A mechanism using a sliding window so a fast sender does not overwhelm a slow receiver."
+    },
+    {
+      "term": "Congestion control",
+      "definition": "A mechanism where the TCP sender slows down when the network is congested."
+    },
+    {
+      "term": "UDP",
+      "definition": "A connectionless, unreliable, and faster transport protocol with lower delay than TCP."
+    },
+    {
+      "term": "Header size",
+      "definition": "Ranges from 20 to 60 bytes for TCP and is fixed at 8 bytes for UDP."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What does the transport layer use to provide process-to-process delivery?",
+      "options": [
+        "IP addresses",
+        "Port numbers",
+        "MAC addresses",
+        "Sequence numbers"
+      ],
+      "answer": "Port numbers"
+    },
+    {
+      "id": "Q2",
+      "type": "true_false",
+      "question": "TCP is a connection-oriented protocol that uses a three-way handshake before data is sent.",
+      "options": [],
+      "answer": "True"
+    },
+    {
+      "id": "Q3",
+      "type": "short_answer",
+      "question": "What is the header size of UDP?",
+      "options": [],
+      "answer": "Fixed at 8 bytes"
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "Which protocol is used for DNS queries and live video streaming where speed matters more than perfect delivery?",
+      "options": [
+        "TCP",
+        "FTP",
+        "UDP",
+        "HTTP"
+      ],
+      "answer": "UDP"
+    },
+    {
+      "id": "Q5",
+      "type": "true_false",
+      "question": "UDP guarantees that all datagrams arrive in order and without any loss.",
+      "options": [],
+      "answer": "False"
+    },
+    {
+      "id": "Q6",
+      "type": "short_answer",
+      "question": "What mechanisms does TCP use for flow control and congestion control respectively?",
+      "options": [],
+      "answer": "Sliding window for flow control, and slowing down the sender for congestion control"
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.6,
+      "input_tokens": 356,
+      "output_tokens": 74
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.6,
+      "input_tokens": 447,
+      "output_tokens": 383
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.31,
+      "input_tokens": 451,
+      "output_tokens": 310
+    }
+  ],
+  "run_at": "2026-11-22T12:16:28"
 }

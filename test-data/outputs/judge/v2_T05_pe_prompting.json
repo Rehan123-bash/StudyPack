@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "What is given to the model in zero-shot prompting?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What can happen if the examples used in few-shot prompting",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Which prompting technique asks the model to reason",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does setting a role in role prompting",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Why is output format specification useful?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "In prompt chaining, how are complex tasks handled?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does a low temperature close to 0 produce?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What two methods help reduce hallucination?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.11,
+      "input_tokens": 1247,
+      "output_tokens": 340
+    }
+  ],
+  "run_at": "2026-11-22T12:21:09"
+}

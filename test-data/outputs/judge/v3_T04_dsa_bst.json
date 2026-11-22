@@ -1,0 +1,45 @@
+{
+  "questions": [
+    {
+      "question": "If keys are inserted into",
+      "supported": "yes",
+      "bloom_level": "Analyze"
+    },
+    {
+      "question": "When deleting a node that",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "How does an inorder traversal",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "During the insertion process",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "If you are searching for",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    },
+    {
+      "question": "How do self-balancing trees",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.11,
+      "input_tokens": 1297,
+      "output_tokens": 156
+    }
+  ],
+  "run_at": "2026-11-22T12:19:07"
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "What are the phases that make up the Software Development Life Cycle (SDLC)?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Which of the following best describes the Waterfall model's main weakness?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What are the four parts of each loop in the Spiral model?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "In the V-Model, which matching testing phase corresponds to module design?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "A team is developing a large, high-risk software project.",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.6,
+      "input_tokens": 1253,
+      "output_tokens": 243
+    }
+  ],
+  "run_at": "2026-11-22T12:23:58"
+}

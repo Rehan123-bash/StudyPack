@@ -1,6 +1,513 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:30"
+  "status": "ok",
+  "topic": "Binary Search Trees",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Binary Search Trees (BST)",
+      "lines": [
+        1,
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Search",
+      "lines": [
+        3
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Insertion",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Inorder traversal",
+      "lines": [
+        5
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Deletion",
+      "lines": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Time complexity",
+      "lines": [
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Self-balancing trees",
+      "lines": [
+        11
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "A binary search tree (BST) is a binary tree where the left subtree contains smaller keys and the right subtree contains larger keys than the node's key. Searching starts at the root and moves left or right until the key is found or a null link is reached. Insertion follows the search path and adds the new key at a null link as a leaf. An inorder traversal (left, root, right) visits keys in ascending sorted order. Deletion involves three cases: removing a leaf, replacing a node with its one child, or replacing a node with its inorder successor and deleting that successor. Operations have a time complexity of O(h) based on tree height h, which ranges from O(log n) for balanced trees to O(n) for skewed trees. Self-balancing trees like AVL trees use rotations to maintain a height close to log2(n).",
+  "key_terms": [
+    {
+      "term": "Binary Search Trees (BST)",
+      "definition": "A binary tree where, for every node, all keys in the left subtree are smaller than the node's key and all keys in the right subtree are larger.",
+      "lines": [
+        1,
+        2
+      ]
+    },
+    {
+      "term": "Search",
+      "definition": "Starts at the root and moves left if the key is smaller or right if it is larger, repeating until the key is found or a null link is reached.",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "term": "Insertion",
+      "definition": "Involves searching for the key and inserting the new node at the reached null link as a leaf.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Inorder traversal",
+      "definition": "A traversal order of left, root, and right that visits the keys in ascending sorted order.",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "term": "Deletion",
+      "definition": "Consists of three cases: removing a leaf, replacing a node with its one child, or replacing its key with its inorder successor and then deleting the successor.",
+      "lines": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "term": "Time complexity",
+      "definition": "Search, insertion, and deletion take O(h) time where h is the tree height, resulting in O(log n) for balanced trees and O(n) for skewed trees.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "term": "Self-balancing trees",
+      "definition": "Trees such as AVL trees that keep the height close to log2(n) by performing rotations after insertions and deletions.",
+      "lines": [
+        11
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "If keys are inserted into a BST in sorted order, how does the tree structure change and what is the resulting time complexity for operations compared to a balanced BST?",
+      "options": [],
+      "answer": "The tree becomes skewed like a linked list making the height h equal to n, which causes operations to take O(n) time instead of O(log n).",
+      "source_lines": [
+        10
+      ],
+      "source_quote": "If keys are inserted in sorted order, the tree becomes skewed like a linked list, h becomes n, and operations take O(n).",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The answer accurately reflects line 10 regarding sorted insertion skewing the tree and affecting time complexity."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "When deleting a node that has two children, what specific node from its subtree replaces its key?",
+      "options": [],
+      "answer": "Its inorder successor, which is defined as the smallest key in its right subtree.",
+      "source_lines": [
+        9
+      ],
+      "source_quote": "replace its key with its inorder successor (the smallest key in its right subtree), then delete the successor.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 9 explicitly states that a node with two children has its key replaced by its inorder successor, which is the smallest key in its right subtree."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "How does an inorder traversal visit the keys of a binary search tree in terms of their values?",
+      "options": [],
+      "answer": "It visits the keys in sorted (ascending) order by traversing the left subtree, the root, and then the right subtree.",
+      "source_lines": [
+        5
+      ],
+      "source_quote": "Inorder traversal (left, root, right) of a BST visits the keys in sorted (ascending) order.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 5 directly supports that inorder traversal visits keys in sorted ascending order via left, root, right."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "During the insertion process into a binary search tree, where is the new key placed once the search reaches a null link?",
+      "options": [],
+      "answer": "It is inserted directly at that null link location, meaning a new key is always inserted as a leaf.",
+      "source_lines": [
+        4
+      ],
+      "source_quote": "when you reach a null link, insert the new node there. A new key is always inserted as a leaf.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 4 explicitly states that when reaching a null link during insertion, the new node is inserted there as a leaf."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "If you are searching for a key in a binary search tree and the target key is smaller than the current root's key, which direction do you proceed?",
+      "options": [],
+      "answer": "You go left, repeating the process until the key is found or a null link is reached.",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "If it is smaller, go left; if it is larger, go right. Repeat until the key is found or a null link is reached.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 3 confirms that if a key is smaller than the root's key, you go left and repeat until found or a null link is reached."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "How do self-balancing trees like AVL trees maintain their efficient height?",
+      "options": [],
+      "answer": "They keep the height close to log2(n) by performing rotations after insertions and deletions.",
+      "source_lines": [
+        11
+      ],
+      "source_quote": "Self-balancing trees such as AVL trees keep the height close to log2(n) by doing rotations after insertions and deletions.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 11 states that self-balancing trees like AVL trees keep the height close to log2(n) by doing rotations after insertions and deletions."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 6,
+    "question_format": "short",
+    "difficulty": "challenging"
+  },
+  "stats": {
+    "generated": 6,
+    "verified": 6,
+    "removed": 0,
+    "quote_found": 6,
+    "line_count": 11
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Binary Search Trees",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Binary Search Trees (BST)",
+          "lines": [
+            1,
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Search",
+          "lines": [
+            3
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Insertion",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Inorder traversal",
+          "lines": [
+            5
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Deletion",
+          "lines": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Time complexity",
+          "lines": [
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Self-balancing trees",
+          "lines": [
+            11
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "A binary search tree (BST) is a binary tree where the left subtree contains smaller keys and the right subtree contains larger keys than the node's key. Searching starts at the root and moves left or right until the key is found or a null link is reached. Insertion follows the search path and adds the new key at a null link as a leaf. An inorder traversal (left, root, right) visits keys in ascending sorted order. Deletion involves three cases: removing a leaf, replacing a node with its one child, or replacing a node with its inorder successor and deleting that successor. Operations have a time complexity of O(h) based on tree height h, which ranges from O(log n) for balanced trees to O(n) for skewed trees. Self-balancing trees like AVL trees use rotations to maintain a height close to log2(n).",
+      "key_terms": [
+        {
+          "term": "Binary Search Trees (BST)",
+          "definition": "A binary tree where, for every node, all keys in the left subtree are smaller than the node's key and all keys in the right subtree are larger.",
+          "lines": [
+            1,
+            2
+          ]
+        },
+        {
+          "term": "Search",
+          "definition": "Starts at the root and moves left if the key is smaller or right if it is larger, repeating until the key is found or a null link is reached.",
+          "lines": [
+            3
+          ]
+        },
+        {
+          "term": "Insertion",
+          "definition": "Involves searching for the key and inserting the new node at the reached null link as a leaf.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Inorder traversal",
+          "definition": "A traversal order of left, root, and right that visits the keys in ascending sorted order.",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "term": "Deletion",
+          "definition": "Consists of three cases: removing a leaf, replacing a node with its one child, or replacing its key with its inorder successor and then deleting the successor.",
+          "lines": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "term": "Time complexity",
+          "definition": "Search, insertion, and deletion take O(h) time where h is the tree height, resulting in O(log n) for balanced trees and O(n) for skewed trees.",
+          "lines": [
+            10
+          ]
+        },
+        {
+          "term": "Self-balancing trees",
+          "definition": "Trees such as AVL trees that keep the height close to log2(n) by performing rotations after insertions and deletions.",
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "If keys are inserted into a BST in sorted order, how does the tree structure change and what is the resulting time complexity for operations compared to a balanced BST?",
+          "options": [],
+          "answer": "The tree becomes skewed like a linked list making the height h equal to n, which causes operations to take O(n) time instead of O(log n).",
+          "source_lines": [
+            10
+          ],
+          "source_quote": "If keys are inserted in sorted order, the tree becomes skewed like a linked list, h becomes n, and operations take O(n)."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "When deleting a node that has two children, what specific node from its subtree replaces its key?",
+          "options": [],
+          "answer": "Its inorder successor, which is defined as the smallest key in its right subtree.",
+          "source_lines": [
+            9
+          ],
+          "source_quote": "replace its key with its inorder successor (the smallest key in its right subtree), then delete the successor."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "How does an inorder traversal visit the keys of a binary search tree in terms of their values?",
+          "options": [],
+          "answer": "It visits the keys in sorted (ascending) order by traversing the left subtree, the root, and then the right subtree.",
+          "source_lines": [
+            5
+          ],
+          "source_quote": "Inorder traversal (left, root, right) of a BST visits the keys in sorted (ascending) order."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "During the insertion process into a binary search tree, where is the new key placed once the search reaches a null link?",
+          "options": [],
+          "answer": "It is inserted directly at that null link location, meaning a new key is always inserted as a leaf.",
+          "source_lines": [
+            4
+          ],
+          "source_quote": "when you reach a null link, insert the new node there. A new key is always inserted as a leaf."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "If you are searching for a key in a binary search tree and the target key is smaller than the current root's key, which direction do you proceed?",
+          "options": [],
+          "answer": "You go left, repeating the process until the key is found or a null link is reached.",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "If it is smaller, go left; if it is larger, go right. Repeat until the key is found or a null link is reached."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "How do self-balancing trees like AVL trees maintain their efficient height?",
+          "options": [],
+          "answer": "They keep the height close to log2(n) by performing rotations after insertions and deletions.",
+          "source_lines": [
+            11
+          ],
+          "source_quote": "Self-balancing trees such as AVL trees keep the height close to log2(n) by doing rotations after insertions and deletions."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The answer accurately reflects line 10 regarding sorted insertion skewing the tree and affecting time complexity."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 9 explicitly states that a node with two children has its key replaced by its inorder successor, which is the smallest key in its right subtree."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 5 directly supports that inorder traversal visits keys in sorted ascending order via left, root, right."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 4 explicitly states that when reaching a null link during insertion, the new node is inserted there as a leaf."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 3 confirms that if a key is smaller than the root's key, you go left and repeat until found or a null link is reached."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Line 11 states that self-balancing trees like AVL trees keep the height close to log2(n) by doing rotations after insertions and deletions."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.32,
+      "input_tokens": 702,
+      "output_tokens": 319
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.94,
+      "input_tokens": 752,
+      "output_tokens": 616
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.35,
+      "input_tokens": 1138,
+      "output_tokens": 882
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.39,
+      "input_tokens": 1059,
+      "output_tokens": 275
+    }
+  ],
+  "run_at": "2026-11-22T12:18:12"
 }

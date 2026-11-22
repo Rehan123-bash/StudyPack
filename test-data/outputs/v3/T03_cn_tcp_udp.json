@@ -1,6 +1,603 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:09"
+  "status": "ok",
+  "topic": "Transport Layer: TCP vs UDP",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Transport layer",
+      "lines": [
+        1,
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Port numbers",
+      "lines": [
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "TCP (Transmission Control Protocol)",
+      "lines": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Three-way handshake",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Flow control",
+      "lines": [
+        7
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Congestion control",
+      "lines": [
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "UDP (User Datagram Protocol)",
+      "lines": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Rule of thumb",
+      "lines": [
+        17
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "The transport layer provides process-to-process delivery using port numbers. It covers two main protocols: TCP and UDP. TCP is connection-oriented, reliable, delivers data in order, and includes flow control, congestion control, and a header size of 20 to 60 bytes, making it suitable for HTTP/HTTPS, email, and file transfer. UDP is connectionless, unreliable, faster, has a low fixed header size of 8 bytes, and is used for DNS queries, gaming, live video, and VoIP. The rule of thumb is to choose TCP when every byte must arrive correctly and in order, and UDP when low delay matters more than losing a few packets.",
+  "key_terms": [
+    {
+      "term": "Transport layer",
+      "definition": "The transport layer provides process-to-process delivery using port numbers.",
+      "lines": [
+        1,
+        2
+      ]
+    },
+    {
+      "term": "Port numbers",
+      "definition": "Port numbers are used by the transport layer to provide process-to-process delivery.",
+      "lines": [
+        2
+      ]
+    },
+    {
+      "term": "TCP (Transmission Control Protocol)",
+      "definition": "TCP is a connection-oriented, reliable protocol that delivers data in order, uses flow and congestion control, and has a header size of 20 to 60 bytes.",
+      "lines": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "term": "Three-way handshake",
+      "definition": "A three-way handshake using SYN, SYN-ACK, and ACK sets up a connection before TCP data is sent.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Flow control",
+      "definition": "Flow control uses a sliding window so that a fast sender does not overwhelm a slow receiver.",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "term": "Congestion control",
+      "definition": "Congestion control makes the sender slow down when the network is congested.",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "term": "UDP (User Datagram Protocol)",
+      "definition": "UDP is a connectionless, unreliable protocol with a fixed 8-byte header that is faster and has lower delay than TCP.",
+      "lines": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "term": "Rule of thumb",
+      "definition": "Choose TCP when every byte must arrive correctly and in order, and choose UDP when low delay matters more than losing a few packets.",
+      "lines": [
+        17
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is the header size of UDP?",
+      "options": [],
+      "answer": "The header size is fixed at 8 bytes.",
+      "source_lines": [
+        14
+      ],
+      "source_quote": "Header size is fixed at 8 bytes, so overhead is low.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 14 explicitly states that the UDP header size is fixed at 8 bytes."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "Which mechanism does TCP use to ensure that a fast sender does not overwhelm a slow receiver?",
+      "options": [
+        "A) Three-way handshake",
+        "B) Flow control using a sliding window",
+        "C) Fixed header size of 8 bytes",
+        "D) Congestion control"
+      ],
+      "answer": "B) Flow control using a sliding window",
+      "source_lines": [
+        7
+      ],
+      "source_quote": "Flow control using a sliding window, so a fast sender does not overwhelm a slow receiver.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 7 states that TCP uses flow control with a sliding window so a fast sender does not overwhelm a slow receiver."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What are the three steps of the TCP connection-setting handshake?",
+      "options": [],
+      "answer": "SYN, SYN-ACK, ACK",
+      "source_lines": [
+        4
+      ],
+      "source_quote": "a connection is set up with a three-way handshake (SYN, SYN-ACK, ACK) before data is sent.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 4 explicitly lists the three-way handshake steps as SYN, SYN-ACK, ACK."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "Why is UDP faster and why does it have lower delay than TCP?",
+      "options": [],
+      "answer": "UDP is connectionless with no handshake, has no acknowledgements or retransmissions, and has a smaller fixed header size of 8 bytes.",
+      "source_lines": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "source_quote": "Header size is fixed at 8 bytes, so overhead is low. - Faster, with lower delay, than TCP.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 12 through 15 directly support that UDP is connectionless, lacks acknowledgements, and has a smaller fixed header."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "mcq",
+      "question": "According to the rule of thumb from class, which protocol should you choose when low delay matters more than losing a few packets?",
+      "options": [
+        "A) TCP",
+        "B) UDP",
+        "C) FTP",
+        "D) HTTP"
+      ],
+      "answer": "B) UDP",
+      "source_lines": [
+        17
+      ],
+      "source_quote": "choose UDP when low delay matters more than losing a few packets.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 17 states the rule of thumb to choose UDP when low delay matters more than losing a few packets."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "What kind of delivery does the transport layer provide and what does it use to achieve it?",
+      "options": [],
+      "answer": "The transport layer provides process-to-process delivery using port numbers.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "The transport layer provides process-to-process delivery using port numbers.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 2 explicitly states that the transport layer provides process-to-process delivery using port numbers."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 6,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 6,
+    "verified": 6,
+    "removed": 0,
+    "quote_found": 6,
+    "line_count": 17
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Transport Layer: TCP vs UDP",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Transport layer",
+          "lines": [
+            1,
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Port numbers",
+          "lines": [
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "TCP (Transmission Control Protocol)",
+          "lines": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Three-way handshake",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Flow control",
+          "lines": [
+            7
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Congestion control",
+          "lines": [
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "UDP (User Datagram Protocol)",
+          "lines": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Rule of thumb",
+          "lines": [
+            17
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "The transport layer provides process-to-process delivery using port numbers. It covers two main protocols: TCP and UDP. TCP is connection-oriented, reliable, delivers data in order, and includes flow control, congestion control, and a header size of 20 to 60 bytes, making it suitable for HTTP/HTTPS, email, and file transfer. UDP is connectionless, unreliable, faster, has a low fixed header size of 8 bytes, and is used for DNS queries, gaming, live video, and VoIP. The rule of thumb is to choose TCP when every byte must arrive correctly and in order, and UDP when low delay matters more than losing a few packets.",
+      "key_terms": [
+        {
+          "term": "Transport layer",
+          "definition": "The transport layer provides process-to-process delivery using port numbers.",
+          "lines": [
+            1,
+            2
+          ]
+        },
+        {
+          "term": "Port numbers",
+          "definition": "Port numbers are used by the transport layer to provide process-to-process delivery.",
+          "lines": [
+            2
+          ]
+        },
+        {
+          "term": "TCP (Transmission Control Protocol)",
+          "definition": "TCP is a connection-oriented, reliable protocol that delivers data in order, uses flow and congestion control, and has a header size of 20 to 60 bytes.",
+          "lines": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "term": "Three-way handshake",
+          "definition": "A three-way handshake using SYN, SYN-ACK, and ACK sets up a connection before TCP data is sent.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Flow control",
+          "definition": "Flow control uses a sliding window so that a fast sender does not overwhelm a slow receiver.",
+          "lines": [
+            7
+          ]
+        },
+        {
+          "term": "Congestion control",
+          "definition": "Congestion control makes the sender slow down when the network is congested.",
+          "lines": [
+            8
+          ]
+        },
+        {
+          "term": "UDP (User Datagram Protocol)",
+          "definition": "UDP is a connectionless, unreliable protocol with a fixed 8-byte header that is faster and has lower delay than TCP.",
+          "lines": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "term": "Rule of thumb",
+          "definition": "Choose TCP when every byte must arrive correctly and in order, and choose UDP when low delay matters more than losing a few packets.",
+          "lines": [
+            17
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is the header size of UDP?",
+          "options": [],
+          "answer": "The header size is fixed at 8 bytes.",
+          "source_lines": [
+            14
+          ],
+          "source_quote": "Header size is fixed at 8 bytes, so overhead is low."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "Which mechanism does TCP use to ensure that a fast sender does not overwhelm a slow receiver?",
+          "options": [
+            "A) Three-way handshake",
+            "B) Flow control using a sliding window",
+            "C) Fixed header size of 8 bytes",
+            "D) Congestion control"
+          ],
+          "answer": "B) Flow control using a sliding window",
+          "source_lines": [
+            7
+          ],
+          "source_quote": "Flow control using a sliding window, so a fast sender does not overwhelm a slow receiver."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What are the three steps of the TCP connection-setting handshake?",
+          "options": [],
+          "answer": "SYN, SYN-ACK, ACK",
+          "source_lines": [
+            4
+          ],
+          "source_quote": "a connection is set up with a three-way handshake (SYN, SYN-ACK, ACK) before data is sent."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "Why is UDP faster and why does it have lower delay than TCP?",
+          "options": [],
+          "answer": "UDP is connectionless with no handshake, has no acknowledgements or retransmissions, and has a smaller fixed header size of 8 bytes.",
+          "source_lines": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "source_quote": "Header size is fixed at 8 bytes, so overhead is low. - Faster, with lower delay, than TCP."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "mcq",
+          "question": "According to the rule of thumb from class, which protocol should you choose when low delay matters more than losing a few packets?",
+          "options": [
+            "A) TCP",
+            "B) UDP",
+            "C) FTP",
+            "D) HTTP"
+          ],
+          "answer": "B) UDP",
+          "source_lines": [
+            17
+          ],
+          "source_quote": "choose UDP when low delay matters more than losing a few packets."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "What kind of delivery does the transport layer provide and what does it use to achieve it?",
+          "options": [],
+          "answer": "The transport layer provides process-to-process delivery using port numbers.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "The transport layer provides process-to-process delivery using port numbers."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "Line 14 explicitly states that the UDP header size is fixed at 8 bytes."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 7 states that TCP uses flow control with a sliding window so a fast sender does not overwhelm a slow receiver."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 4 explicitly lists the three-way handshake steps as SYN, SYN-ACK, ACK."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 12 through 15 directly support that UDP is connectionless, lacks acknowledgements, and has a smaller fixed header."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 17 states the rule of thumb to choose UDP when low delay matters more than losing a few packets."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Line 2 explicitly states that the transport layer provides process-to-process delivery using port numbers."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.29,
+      "input_tokens": 691,
+      "output_tokens": 356
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.82,
+      "input_tokens": 801,
+      "output_tokens": 624
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.4,
+      "input_tokens": 1187,
+      "output_tokens": 808
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.09,
+      "input_tokens": 1016,
+      "output_tokens": 251
+    }
+  ],
+  "run_at": "2026-11-22T12:15:59"
 }

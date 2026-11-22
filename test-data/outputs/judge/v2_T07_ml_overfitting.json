@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "What happens when a model learns",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What is the term for when",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What type of error is caused",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What error comes from being",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Which regularization method can shrink",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What regularization method shrinks weights",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Which method to reduce overfitting",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "How many times is the model",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.21,
+      "input_tokens": 1164,
+      "output_tokens": 313
+    }
+  ],
+  "run_at": "2026-11-22T12:26:22"
+}

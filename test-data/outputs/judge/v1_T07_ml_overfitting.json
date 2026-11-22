@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "What causes a model to overfit?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is the result of high bias in a model?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "How does making a model more complex affect bias and variance?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is the difference between L1 and L2 regularization regarding weights?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "How does k-fold cross-validation work?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 3.67,
+      "input_tokens": 1280,
+      "output_tokens": 226
+    }
+  ],
+  "run_at": "2026-11-22T12:26:18"
+}

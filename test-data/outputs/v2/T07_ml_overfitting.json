@@ -1,6 +1,147 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:47"
+  "status": "ok",
+  "topic": "Overfitting and Underfitting",
+  "summary": "Overfitting occurs when a model learns training data too well, including noise, resulting in poor performance on unseen data, whereas underfitting happens when a model is too simple to capture patterns, performing poorly on both training and test data. Bias is error from overly simple assumptions causing underfitting, and variance is error from sensitivity to training data changes causing overfitting. The bias-variance tradeoff involves balancing complexity to minimize unseen data error. Overfitting can be reduced by getting more training data, using simpler models, applying regularization like L1 and L2, using early stopping, and implementing dropout. Cross-validation splits data into k parts, training multiple times to reliably estimate unseen data performance.",
+  "key_terms": [
+    {
+      "term": "Overfitting",
+      "definition": "When a model learns training data too well, including noise, performing well on training data but poorly on unseen data."
+    },
+    {
+      "term": "Underfitting",
+      "definition": "When a model is too simple to capture data patterns, performing poorly on both training and test data."
+    },
+    {
+      "term": "Bias",
+      "definition": "The error from wrong or overly simple assumptions in the model, leading to underfitting."
+    },
+    {
+      "term": "Variance",
+      "definition": "The error from being too sensitive to small changes in the training data, leading to overfitting."
+    },
+    {
+      "term": "Bias-variance tradeoff",
+      "definition": "Making a model more complex usually lowers bias but raises variance, aiming for a balance with low error on unseen data."
+    },
+    {
+      "term": "Regularization",
+      "definition": "Adding a penalty for large weights to the loss function to reduce overfitting."
+    },
+    {
+      "term": "L1 regularization (Lasso)",
+      "definition": "A regularization method that can shrink some weights to exactly zero."
+    },
+    {
+      "term": "L2 regularization (Ridge)",
+      "definition": "A regularization method that shrinks weights towards zero but rarely makes them exactly zero."
+    },
+    {
+      "term": "Early stopping",
+      "definition": "Stopping training when the error on the validation set starts to increase."
+    },
+    {
+      "term": "Cross-validation",
+      "definition": "Splitting data into k parts and training k times to give a more reliable estimate of performance on unseen data."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "flashcard",
+      "question": "What happens when a model learns the training data too well, including its noise, leading to poor performance on unseen data?",
+      "options": [],
+      "answer": "Overfitting"
+    },
+    {
+      "id": "Q2",
+      "type": "flashcard",
+      "question": "What is the term for when a model is too simple to capture the pattern in the data and performs poorly on both training and test data?",
+      "options": [],
+      "answer": "Underfitting"
+    },
+    {
+      "id": "Q3",
+      "type": "flashcard",
+      "question": "What type of error is caused by wrong or overly simple assumptions in the model, leading to underfitting?",
+      "options": [],
+      "answer": "Bias"
+    },
+    {
+      "id": "Q4",
+      "type": "flashcard",
+      "question": "What error comes from being too sensitive to small changes in the training data, leading to overfitting?",
+      "options": [],
+      "answer": "Variance"
+    },
+    {
+      "id": "Q5",
+      "type": "flashcard",
+      "question": "Which regularization method can shrink some weights to exactly zero?",
+      "options": [],
+      "answer": "L1 regularization (Lasso)"
+    },
+    {
+      "id": "Q6",
+      "type": "flashcard",
+      "question": "What regularization method shrinks weights towards zero but rarely makes them exactly zero?",
+      "options": [],
+      "answer": "L2 regularization (Ridge)"
+    },
+    {
+      "id": "Q7",
+      "type": "flashcard",
+      "question": "Which method to reduce overfitting involves stopping training when the error on the validation set starts to increase?",
+      "options": [],
+      "answer": "Early stopping"
+    },
+    {
+      "id": "Q8",
+      "type": "flashcard",
+      "question": "How many times is the model trained in k-fold cross-validation?",
+      "options": [],
+      "answer": "k times"
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 6.82,
+      "input_tokens": 381,
+      "output_tokens": 112
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 9.5,
+      "input_tokens": 477,
+      "output_tokens": 550
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.84,
+      "input_tokens": 482,
+      "output_tokens": 528
+    }
+  ],
+  "run_at": "2026-11-22T12:25:51"
 }

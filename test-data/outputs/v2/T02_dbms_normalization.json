@@ -1,6 +1,162 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:02"
+  "status": "ok",
+  "topic": "Normalization",
+  "summary": "Normalization organizes database data to minimize redundancy and prevent insertion, update, and deletion anomalies using functional dependencies. It progresses through several normal forms. First Normal Form (1NF) requires all attributes to hold atomic values without repeating groups. Second Normal Form (2NF) builds on 1NF by ensuring no non-prime attribute has a partial dependency on a part of a composite primary key. Third Normal Form (3NF) requires 2NF compliance and removes transitive dependencies where a non-prime attribute depends on the key through another non-prime attribute. Boyce-Codd Normal Form (BCNF) is a stricter version of 3NF, requiring that for every functional dependency X -> Y, X must be a superkey.",
+  "key_terms": [
+    {
+      "term": "Normalization",
+      "definition": "The process of organizing data in a database to reduce redundancy and avoid insertion, update, and deletion anomalies."
+    },
+    {
+      "term": "Functional dependency",
+      "definition": "A relationship where the value of one attribute, X, determines the value of another, Y (X -> Y)."
+    },
+    {
+      "term": "First Normal Form (1NF)",
+      "definition": "A state where every attribute contains only atomic values and there are no repeating groups."
+    },
+    {
+      "term": "Second Normal Form (2NF)",
+      "definition": "A state in 1NF where every non-prime attribute is fully functionally dependent on the whole primary key."
+    },
+    {
+      "term": "Third Normal Form (3NF)",
+      "definition": "A state in 2NF where there is no transitive dependency of a non-prime attribute on the key."
+    },
+    {
+      "term": "Boyce-Codd Normal Form (BCNF)",
+      "definition": "A stricter version of 3NF requiring that for every functional dependency X -> Y, X must be a superkey."
+    },
+    {
+      "term": "Insertion anomaly",
+      "definition": "The inability to add some data without also adding other unrelated data."
+    },
+    {
+      "term": "Update anomaly",
+      "definition": "Data inconsistency caused by changing a fact in only some of the many rows where it is stored."
+    },
+    {
+      "term": "Deletion anomaly",
+      "definition": "The unintended removal of facts when deleting a single row."
+    },
+    {
+      "term": "Transitive dependency",
+      "definition": "A condition where A -> B and B -> C, meaning C depends on A through B."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is the process of organizing data in a database to reduce redundancy and avoid anomalies called?",
+      "options": [
+        "Functional dependency",
+        "Normalization",
+        "Transitive dependency",
+        "Decomposition"
+      ],
+      "answer": "Normalization"
+    },
+    {
+      "id": "Q2",
+      "type": "true_false",
+      "question": "In First Normal Form (1NF), every attribute must contain only atomic values and there can be no repeating groups.",
+      "options": [],
+      "answer": "True"
+    },
+    {
+      "id": "Q3",
+      "type": "short_answer",
+      "question": "What type of dependency occurs when a non-prime attribute depends on only part of a composite key, violating 2NF?",
+      "options": [],
+      "answer": "Partial dependency"
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "Which normal form requires the table to be in 2NF and have no transitive dependency of a non-prime attribute on the key?",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "Boyce-Codd Normal Form (BCNF)"
+      ],
+      "answer": "Third Normal Form (3NF)"
+    },
+    {
+      "id": "Q5",
+      "type": "short_answer",
+      "question": "In Boyce-Codd Normal Form (BCNF), for every functional dependency X -> Y, what must X be?",
+      "options": [],
+      "answer": "A superkey"
+    },
+    {
+      "id": "Q6",
+      "type": "true_false",
+      "question": "An update anomaly happens when we cannot add some data without adding other unrelated data.",
+      "options": [],
+      "answer": "False"
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What type of anomaly occurs when deleting one row accidentally removes other facts we wanted to keep?",
+      "options": [
+        "Insertion anomaly",
+        "Update anomaly",
+        "Deletion anomaly",
+        "Redundancy anomaly"
+      ],
+      "answer": "Deletion anomaly"
+    },
+    {
+      "id": "Q8",
+      "type": "short_answer",
+      "question": "In the notation of functional dependency, what does X -> Y mean?",
+      "options": [],
+      "answer": "The value of X determines the value of Y"
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 6.21,
+      "input_tokens": 497,
+      "output_tokens": 118
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.8,
+      "input_tokens": 603,
+      "output_tokens": 586
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.25,
+      "input_tokens": 607,
+      "output_tokens": 654
+    }
+  ],
+  "run_at": "2026-11-22T12:14:49"
 }

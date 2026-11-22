@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "What is a deadlock?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What are the four necessary conditions for a deadlock to occur called?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Explain the 'No preemption' condition for deadlocks.",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "In a Resource Allocation Graph (RAG), what does a request edge point to?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "If each resource type has only one instance, how can you determine from a Resource Allocation Graph (RAG) whether a deadlock exists?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "Compare how avoidance handles deadlocks versus how detection and recovery handles them according to the notes.",
+      "supported": "yes",
+      "bloom_level": "Analyze"
+    },
+    {
+      "question": "What is another name for the deadlock ignorance method?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Does an unsafe state always lead to a deadlock?",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.4,
+      "input_tokens": 1527,
+      "output_tokens": 373
+    }
+  ],
+  "run_at": "2026-11-22T12:11:36"
+}

@@ -1,6 +1,162 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:49:41"
+  "status": "ok",
+  "topic": "Operating Systems - Deadlocks",
+  "summary": "A deadlock occurs when processes are blocked, each holding a resource and waiting for another. Four necessary Coffman conditions must hold simultaneously: mutual exclusion, hold and wait, no preemption, and circular wait. Deadlocks can be analyzed using a Resource Allocation Graph (RAG). Operating systems handle deadlocks through prevention, avoidance (such as the Banker's algorithm), detection and recovery, or ignorance (the ostrich algorithm). A safe state allows resource allocation in a safe sequence to avoid deadlock, while an unsafe state may lead to one.",
+  "key_terms": [
+    {
+      "term": "Deadlock",
+      "definition": "A situation where a set of processes are blocked because each holds a resource and waits for another."
+    },
+    {
+      "term": "Coffman conditions",
+      "definition": "Four necessary conditions that must hold at the same time for a deadlock to occur."
+    },
+    {
+      "term": "Mutual exclusion",
+      "definition": "At least one resource is non-sharable, so only one process can use it at a time."
+    },
+    {
+      "term": "Hold and wait",
+      "definition": "A process holds at least one resource while waiting to acquire additional resources held by other processes."
+    },
+    {
+      "term": "No preemption",
+      "definition": "A resource can be released only voluntarily by the process holding it."
+    },
+    {
+      "term": "Circular wait",
+      "definition": "A set of processes waiting for resources in a circular chain."
+    },
+    {
+      "term": "Resource Allocation Graph",
+      "definition": "A directed graph with process nodes and resource nodes used to represent resource requests and assignments."
+    },
+    {
+      "term": "Banker's algorithm",
+      "definition": "An avoidance algorithm used by the OS to decide whether to grant a request."
+    },
+    {
+      "term": "Safe state",
+      "definition": "A state in which the system can allocate resources to every process in some order and still avoid deadlock."
+    },
+    {
+      "term": "Unsafe state",
+      "definition": "A state that does not always lead to deadlock, but may."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "Which of the following is NOT one of the four necessary Coffman conditions for a deadlock to occur?",
+      "options": [
+        "Mutual exclusion",
+        "Hold and wait",
+        "Dynamic priority",
+        "Circular wait"
+      ],
+      "answer": "Dynamic priority"
+    },
+    {
+      "id": "Q2",
+      "type": "true_false",
+      "question": "An unsafe state always leads to a deadlock.",
+      "options": [],
+      "answer": "False"
+    },
+    {
+      "id": "Q3",
+      "type": "short_answer",
+      "question": "What is the name of the avoidance algorithm mentioned in the lecture notes?",
+      "options": [],
+      "answer": "Banker's algorithm"
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "In a Resource Allocation Graph, what does a request edge go from and to?",
+      "options": [
+        "From a process to a resource",
+        "From a resource to a process",
+        "From a process to another process",
+        "From a resource to another resource"
+      ],
+      "answer": "From a process to a resource"
+    },
+    {
+      "id": "Q5",
+      "type": "short_answer",
+      "question": "What is another name for the deadlock ignorance method of pretending deadlocks never happen?",
+      "options": [],
+      "answer": "Ostrich algorithm"
+    },
+    {
+      "id": "Q6",
+      "type": "true_false",
+      "question": "Under the no preemption condition, a resource can be released only voluntarily by the process holding it.",
+      "options": [],
+      "answer": "True"
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "Which method for handling deadlocks involves making sure at least one of the four conditions can never hold?",
+      "options": [
+        "Detection and recovery",
+        "Avoidance",
+        "Prevention",
+        "Ignorance"
+      ],
+      "answer": "Prevention"
+    },
+    {
+      "id": "Q8",
+      "type": "short_answer",
+      "question": "What type of state is defined as a state in which the system can allocate resources to every process in some order and still avoid deadlock?",
+      "options": [],
+      "answer": "Safe state"
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 0.72,
+      "input_tokens": 459,
+      "output_tokens": 90
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.72,
+      "input_tokens": 570,
+      "output_tokens": 509
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.06,
+      "input_tokens": 574,
+      "output_tokens": 624
+    }
+  ],
+  "run_at": "2026-11-22T12:11:30"
 }

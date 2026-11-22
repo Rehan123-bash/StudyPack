@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "What are the three types",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does the functional dependency",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Why does a column",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "How is a partial",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What condition must be",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.06,
+      "input_tokens": 1410,
+      "output_tokens": 198
+    }
+  ],
+  "run_at": "2026-11-22T12:15:02"
+}

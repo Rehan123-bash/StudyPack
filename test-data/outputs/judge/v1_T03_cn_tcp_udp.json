@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "What mechanism does the transport layer",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What are the three steps of",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "How does TCP prevent a fast",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is the header size for",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "According to the class rule of",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.17,
+      "input_tokens": 1284,
+      "output_tokens": 206
+    }
+  ],
+  "run_at": "2026-11-22T12:17:04"
+}

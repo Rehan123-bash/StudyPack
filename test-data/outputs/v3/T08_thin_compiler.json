@@ -1,6 +1,424 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:54"
+  "status": "ok",
+  "topic": "Phases of Compiler Design",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Lexical analysis",
+      "lines": [
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Syntax analysis",
+      "lines": [
+        3
+      ],
+      "coverage": "mentioned_only"
+    },
+    {
+      "name": "Semantic analysis",
+      "lines": [
+        4
+      ],
+      "coverage": "mentioned_only"
+    },
+    {
+      "name": "Intermediate code generation",
+      "lines": [
+        5
+      ],
+      "coverage": "mentioned_only"
+    },
+    {
+      "name": "Code optimization",
+      "lines": [
+        6
+      ],
+      "coverage": "mentioned_only"
+    },
+    {
+      "name": "Code generation",
+      "lines": [
+        7
+      ],
+      "coverage": "mentioned_only"
+    },
+    {
+      "name": "Symbol table",
+      "lines": [
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Error handler",
+      "lines": [
+        9
+      ],
+      "coverage": "mentioned_only"
+    }
+  ],
+  "summary": "The lecture covers the phases of compiler design, which include lexical analysis, syntax analysis, semantic analysis, intermediate code generation, code optimization, and code generation. Lexical analysis reads the source code characters and groups them into tokens like keywords, identifiers, and operators. Additionally, the compiler uses a symbol table, which is a data structure storing information about identifiers such as name, type, and scope, and an error handler. The remaining material is to be read from the book.",
+  "key_terms": [
+    {
+      "term": "Lexical analysis",
+      "definition": "It reads the source code characters and groups them into tokens such as keywords, identifiers and operators.",
+      "lines": [
+        2
+      ]
+    },
+    {
+      "term": "Symbol table",
+      "definition": "It is a data structure that stores information about identifiers, such as their name, type and scope.",
+      "lines": [
+        8
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "mcq",
+      "question": "What is the primary function of lexical analysis in compiler design?",
+      "options": [
+        "A: Generates intermediate code",
+        "B: Reads the source code characters and groups them into tokens",
+        "C: Optimizes the machine code",
+        "D: Stores information about identifiers"
+      ],
+      "answer": "B: Reads the source code characters and groups them into tokens",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "Lexical analysis: reads the source code characters and groups them into tokens such as keywords, identifiers and operators.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 2 explicitly states that lexical analysis reads source code characters and groups them into tokens."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "What kind of elements are formed when lexical analysis groups source code characters?",
+      "options": [],
+      "answer": "It groups them into tokens, which include keywords, identifiers, and operators.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "reads the source code characters and groups them into tokens such as keywords, identifiers and operators.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 2 states that characters are grouped into tokens such as keywords, identifiers, and operators."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "Symbol table",
+      "options": [],
+      "answer": "A data structure that stores information about identifiers, such as their name, type and scope.",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "Symbol table: a data structure that stores information about identifiers, such as their name, type and scope.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 8 directly defines the symbol table with these exact details."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "If a compiler needs to store the name, type, and scope of an identifier, which data structure should it use based on the notes?",
+      "options": [],
+      "answer": "It should use a symbol table, since that is the data structure designed to store information about identifiers such as their name, type, and scope.",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "Symbol table: a data structure that stores information about identifiers, such as their name, type and scope.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 8 supports that the symbol table stores name, type, and scope of identifiers."
+    }
+  ],
+  "removed": [],
+  "gaps": [
+    {
+      "concept": "Syntax analysis",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "concept": "Semantic analysis",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "concept": "Intermediate code generation",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "concept": "Code optimization",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "concept": "Code generation",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "concept": "Error handler",
+      "lines": [
+        9
+      ]
+    }
+  ],
+  "note": "Only two concepts ('Lexical analysis' and 'Symbol table') have coverage 'explained' in the notes. The remaining 6 concepts are only mentioned by name without explanation, so questions could only be generated for these two concepts as per the rules.",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 4,
+    "verified": 4,
+    "removed": 0,
+    "quote_found": 4,
+    "line_count": 10
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Phases of Compiler Design",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Lexical analysis",
+          "lines": [
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Syntax analysis",
+          "lines": [
+            3
+          ],
+          "coverage": "mentioned_only"
+        },
+        {
+          "name": "Semantic analysis",
+          "lines": [
+            4
+          ],
+          "coverage": "mentioned_only"
+        },
+        {
+          "name": "Intermediate code generation",
+          "lines": [
+            5
+          ],
+          "coverage": "mentioned_only"
+        },
+        {
+          "name": "Code optimization",
+          "lines": [
+            6
+          ],
+          "coverage": "mentioned_only"
+        },
+        {
+          "name": "Code generation",
+          "lines": [
+            7
+          ],
+          "coverage": "mentioned_only"
+        },
+        {
+          "name": "Symbol table",
+          "lines": [
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Error handler",
+          "lines": [
+            9
+          ],
+          "coverage": "mentioned_only"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "The lecture covers the phases of compiler design, which include lexical analysis, syntax analysis, semantic analysis, intermediate code generation, code optimization, and code generation. Lexical analysis reads the source code characters and groups them into tokens like keywords, identifiers, and operators. Additionally, the compiler uses a symbol table, which is a data structure storing information about identifiers such as name, type, and scope, and an error handler. The remaining material is to be read from the book.",
+      "key_terms": [
+        {
+          "term": "Lexical analysis",
+          "definition": "It reads the source code characters and groups them into tokens such as keywords, identifiers and operators.",
+          "lines": [
+            2
+          ]
+        },
+        {
+          "term": "Symbol table",
+          "definition": "It is a data structure that stores information about identifiers, such as their name, type and scope.",
+          "lines": [
+            8
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "mcq",
+          "question": "What is the primary function of lexical analysis in compiler design?",
+          "options": [
+            "A: Generates intermediate code",
+            "B: Reads the source code characters and groups them into tokens",
+            "C: Optimizes the machine code",
+            "D: Stores information about identifiers"
+          ],
+          "answer": "B: Reads the source code characters and groups them into tokens",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "Lexical analysis: reads the source code characters and groups them into tokens such as keywords, identifiers and operators."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "What kind of elements are formed when lexical analysis groups source code characters?",
+          "options": [],
+          "answer": "It groups them into tokens, which include keywords, identifiers, and operators.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "reads the source code characters and groups them into tokens such as keywords, identifiers and operators."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "Symbol table",
+          "options": [],
+          "answer": "A data structure that stores information about identifiers, such as their name, type and scope.",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "Symbol table: a data structure that stores information about identifiers, such as their name, type and scope."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "If a compiler needs to store the name, type, and scope of an identifier, which data structure should it use based on the notes?",
+          "options": [],
+          "answer": "It should use a symbol table, since that is the data structure designed to store information about identifiers such as their name, type, and scope.",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "Symbol table: a data structure that stores information about identifiers, such as their name, type and scope."
+        }
+      ],
+      "note": "Only two concepts ('Lexical analysis' and 'Symbol table') have coverage 'explained' in the notes. The remaining 6 concepts are only mentioned by name without explanation, so questions could only be generated for these two concepts as per the rules."
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "Line 2 explicitly states that lexical analysis reads source code characters and groups them into tokens."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 2 states that characters are grouped into tokens such as keywords, identifiers, and operators."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 8 directly defines the symbol table with these exact details."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 8 supports that the symbol table stores name, type, and scope of identifiers."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.42,
+      "input_tokens": 470,
+      "output_tokens": 349
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.07,
+      "input_tokens": 536,
+      "output_tokens": 221
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 10.66,
+      "input_tokens": 922,
+      "output_tokens": 610
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 8.6,
+      "input_tokens": 657,
+      "output_tokens": 148
+    }
+  ],
+  "run_at": "2026-11-22T12:27:01"
 }

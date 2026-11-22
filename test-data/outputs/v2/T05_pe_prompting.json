@@ -1,6 +1,159 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:05"
+  "status": "ok",
+  "topic": "Prompt Engineering",
+  "summary": "Prompt engineering techniques help guide language model outputs effectively. Zero-shot prompting relies only on instructions, while few-shot prompting includes examples to demonstrate format and style, though overly similar examples can cause excessive copying. Chain-of-thought prompting asks the model to reason step-by-step for multi-step problems. Role prompting assigns a persona to set the tone and focus, and output format specification dictates exact structures like JSON schemas or tables. Prompt chaining divides complex tasks into smaller, manageable steps where outputs feed subsequent prompts. Temperature controls output randomness, ranging from predictable (low) to creative (high). Finally, hallucination involves producing false text, which can be mitigated by grounding the model in source documents.",
+  "key_terms": [
+    {
+      "term": "Zero-shot prompting",
+      "definition": "The model is given only an instruction with no examples, working well for simple, common tasks."
+    },
+    {
+      "term": "Few-shot prompting",
+      "definition": "The prompt includes a few worked input and output examples to show the expected format and style."
+    },
+    {
+      "term": "Chain-of-thought (CoT) prompting",
+      "definition": "The prompt asks the model to reason step by step before providing the final answer."
+    },
+    {
+      "term": "Role prompting",
+      "definition": "The prompt assigns the model a specific role to set the tone and focus of the answer."
+    },
+    {
+      "term": "Output format specification",
+      "definition": "Telling the model the exact format, such as a JSON schema or table, to make outputs machine-readable."
+    },
+    {
+      "term": "Prompt chaining",
+      "definition": "A complex task is split into smaller steps where the output of one prompt becomes the input of the next."
+    },
+    {
+      "term": "Temperature",
+      "definition": "A control for randomness, where a low value gives consistent outputs and a high value gives creative ones."
+    },
+    {
+      "term": "Hallucination",
+      "definition": "When the model produces fluent text that is false or unsupported by the given source."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "What is given to the model in zero-shot prompting?",
+      "options": [
+        "A few worked examples",
+        "Only an instruction",
+        "A strict code reviewer role",
+        "A JSON schema"
+      ],
+      "answer": "Only an instruction"
+    },
+    {
+      "id": "Q2",
+      "type": "short_answer",
+      "question": "What can happen if the examples used in few-shot prompting are too similar to each other?",
+      "options": [],
+      "answer": "The model can copy them too closely."
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "Which prompting technique asks the model to reason step by step before giving the final answer?",
+      "options": [
+        "Role prompting",
+        "Prompt chaining",
+        "Chain-of-thought (CoT) prompting",
+        "Zero-shot prompting"
+      ],
+      "answer": "Chain-of-thought (CoT) prompting"
+    },
+    {
+      "id": "Q4",
+      "type": "short_answer",
+      "question": "What does setting a role in role prompting do for the answer?",
+      "options": [],
+      "answer": "It sets the tone and focus of the answer."
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "Why is output format specification useful?",
+      "options": [
+        "It reduces hallucination",
+        "It makes the output easier for programs to read and check",
+        "It controls randomness",
+        "It improves accuracy on multi-step problems"
+      ],
+      "answer": "It makes the output easier for programs to read and check."
+    },
+    {
+      "id": "Q6",
+      "type": "short_answer",
+      "question": "In prompt chaining, how are complex tasks handled?",
+      "options": [],
+      "answer": "A complex task is split into smaller steps, and the output of one prompt becomes the input of the next."
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "question": "What does a low temperature close to 0 produce?",
+      "options": [
+        "More varied, creative outputs",
+        "More consistent, predictable outputs",
+        "Fluent text that is false",
+        "Multi-step arithmetic solutions"
+      ],
+      "answer": "More consistent, predictable outputs"
+    },
+    {
+      "id": "Q8",
+      "type": "short_answer",
+      "question": "What two methods help reduce hallucination?",
+      "options": [],
+      "answer": "Grounding the model in provided documents and asking it to cite them."
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 0.8,
+      "input_tokens": 372,
+      "output_tokens": 82
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.78,
+      "input_tokens": 451,
+      "output_tokens": 493
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.85,
+      "input_tokens": 455,
+      "output_tokens": 507
+    }
+  ],
+  "run_at": "2026-11-22T12:20:50"
 }

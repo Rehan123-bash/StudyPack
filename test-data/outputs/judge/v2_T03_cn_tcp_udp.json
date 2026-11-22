@@ -1,0 +1,45 @@
+{
+  "questions": [
+    {
+      "question": "What does the transport layer use",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "TCP is a connection-oriented protocol",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What is the header size of UDP",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Which protocol is used for DNS",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "UDP guarantees that all datagrams",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What mechanisms does TCP use",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 3.74,
+      "input_tokens": 1051,
+      "output_tokens": 245
+    }
+  ],
+  "run_at": "2026-11-22T12:17:13"
+}

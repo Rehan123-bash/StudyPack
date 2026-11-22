@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "What is zero-shot prompting?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What is a potential issue if you use examples",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What type of problems are best suited",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "How does output format specification",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "How can you reduce hallucination",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.03,
+      "input_tokens": 1177,
+      "output_tokens": 209
+    }
+  ],
+  "run_at": "2026-11-22T12:20:57"
+}

@@ -1,6 +1,623 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:49:48"
+  "status": "ok",
+  "topic": "Database Normalization",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Normalization",
+      "lines": [
+        1,
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Functional dependency",
+      "lines": [
+        3
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "First Normal Form (1NF)",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Second Normal Form (2NF)",
+      "lines": [
+        5,
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Third Normal Form (3NF)",
+      "lines": [
+        7,
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "BCNF (Boyce-Codd Normal Form)",
+      "lines": [
+        9
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Anomalies",
+      "lines": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "Normalization is the process of organizing database data to reduce redundancy and avoid insertion, update, and deletion anomalies. It relies on functional dependencies, where one attribute determines another (X -> Y). Database design progresses through several normal forms. First Normal Form (1NF) requires every attribute to contain only atomic values with no repeating groups. Second Normal Form (2NF) requires the table to be in 1NF and have no partial dependencies, meaning non-prime attributes must be fully dependent on the whole primary key. Third Normal Form (3NF) requires the table to be in 2NF and have no transitive dependencies, where a non-prime attribute depends on the key through another attribute. Boyce-Codd Normal Form (BCNF) is a stricter version of 3NF requiring that for every functional dependency X -> Y, X must be a superkey. Finally, anomalies include insertion anomalies where unrelated data is forced together, update anomalies caused by redundant storage leading to inconsistency, and deletion anomalies where removing a row accidentally deletes other desired facts.",
+  "key_terms": [
+    {
+      "term": "Normalization",
+      "definition": "Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies.",
+      "lines": [
+        1,
+        2
+      ]
+    },
+    {
+      "term": "Functional dependency",
+      "definition": "Functional dependency means that the value of X determines the value of Y, denoted as X -> Y.",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "term": "First Normal Form (1NF)",
+      "definition": "First Normal Form (1NF) means every attribute contains only atomic values and there are no repeating groups.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Second Normal Form (2NF)",
+      "definition": "Second Normal Form (2NF) requires the table to be in 1NF and every non-prime attribute to be fully functionally dependent on the whole primary key.",
+      "lines": [
+        5,
+        6
+      ]
+    },
+    {
+      "term": "Third Normal Form (3NF)",
+      "definition": "Third Normal Form (3NF) requires the table to be in 2NF and have no transitive dependency of a non-prime attribute on the key.",
+      "lines": [
+        7,
+        8
+      ]
+    },
+    {
+      "term": "BCNF (Boyce-Codd Normal Form)",
+      "definition": "BCNF is a stricter version of 3NF where for every functional dependency X -> Y, X must be a superkey.",
+      "lines": [
+        9
+      ]
+    },
+    {
+      "term": "Anomalies",
+      "definition": "Anomalies refer to insertion, update, and deletion issues caused by poor data organization, such as data inconsistency or inability to add data without unrelated information.",
+      "lines": [
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is the primary purpose of normalization?",
+      "options": [],
+      "answer": "Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies.",
+      "source_lines": [
+        1,
+        2
+      ],
+      "source_quote": "Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The lecture notes explicitly define normalization as organizing data to reduce redundancy and avoid anomalies."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "What does a functional dependency represented as X -> Y mean?",
+      "options": [
+        "A) The value of Y determines the value of X.",
+        "B) The value of X determines the value of Y.",
+        "C) X and Y must always contain atomic values.",
+        "D) X is a superkey for the table."
+      ],
+      "answer": "B) The value of X determines the value of Y.",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "Functional dependency: X -> Y means that the value of X determines the value of Y.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 3 explicitly states that X -> Y means the value of X determines the value of Y."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "A column in a database table holds the value \"Maths, Physics\" in a single cell. Which normal form does this violate and why?",
+      "options": [],
+      "answer": "This violates First Normal Form (1NF) because every attribute must contain only atomic (indivisible) values and there must be no repeating groups.",
+      "source_lines": [
+        4
+      ],
+      "source_quote": "First Normal Form (1NF): every attribute contains only atomic (indivisible) values and there are no repeating groups. A column holding \"Maths, Physics\" in one cell violates 1NF.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 4 explicitly states that holding 'Maths, Physics' in one cell violates 1NF because attributes must be atomic."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "What is a partial dependency in the context of Second Normal Form (2NF)?",
+      "options": [],
+      "answer": "A partial dependency is when a non-prime attribute depends on only part of a composite key, which violates 2NF.",
+      "source_lines": [
+        5
+      ],
+      "source_quote": "A partial dependency, where a non-prime attribute depends on only part of a composite key, violates 2NF.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 5 explicitly defines a partial dependency as a non-prime attribute depending on only part of a composite key."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "In a table Student(RollNo, DeptID, DeptName) with key RollNo, we have RollNo -> DeptID and DeptID -> DeptName. What type of dependency causes a violation of 3NF here?",
+      "options": [],
+      "answer": "A transitive dependency, because DeptName is transitively dependent on RollNo through DeptID (A -> B and B -> C).",
+      "source_lines": [
+        7,
+        8
+      ],
+      "source_quote": "A transitive dependency is when A -> B and B -> C, so C depends on A through B.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 7 and 8 describe this exact transitive dependency where DeptName depends on RollNo through DeptID."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "How does BCNF (Boyce-Codd Normal Form) differ from 3NF?",
+      "options": [
+        "A) BCNF allows partial dependencies while 3NF does not.",
+        "B) BCNF is a stricter version where for every functional dependency X -> Y, X must be a superkey.",
+        "C) BCNF only applies to tables with composite keys.",
+        "D) BCNF removes the requirement for atomic values."
+      ],
+      "answer": "B) BCNF is a stricter version where for every functional dependency X -> Y, X must be a superkey.",
+      "source_lines": [
+        9
+      ],
+      "source_quote": "BCNF (Boyce-Codd Normal Form) is a stricter version of 3NF: for every functional dependency X -> Y, X must be a superkey.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 9 states that BCNF is a stricter version of 3NF where X must be a superkey for every X -> Y."
+    },
+    {
+      "id": "Q7",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "Which database anomaly occurs when we cannot add some data without adding other unrelated data?",
+      "options": [],
+      "answer": "Insertion anomaly",
+      "source_lines": [
+        10,
+        11
+      ],
+      "source_quote": "- Insertion anomaly: we cannot add some data without adding other unrelated data.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 10 and 11 define the insertion anomaly as not being able to add data without unrelated data."
+    },
+    {
+      "id": "Q8",
+      "bloom_level": "Analyze",
+      "type": "mcq",
+      "question": "Consider an update scenario where the same fact is stored in many rows, and changing it in one row makes the data inconsistent. What is this called?",
+      "options": [
+        "A) Insertion anomaly",
+        "B) Deletion anomaly",
+        "C) Update anomaly",
+        "D) Functional dependency violation"
+      ],
+      "answer": "C) Update anomaly",
+      "source_lines": [
+        10,
+        12
+      ],
+      "source_quote": "- Update anomaly: the same fact is stored in many rows, so changing it in one row and not the others makes the data inconsistent.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 10 and 12 define the update anomaly as storing the same fact in many rows causing inconsistency when changed in only one."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 8,
+    "verified": 8,
+    "removed": 0,
+    "quote_found": 8,
+    "line_count": 13
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Database Normalization",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Normalization",
+          "lines": [
+            1,
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Functional dependency",
+          "lines": [
+            3
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "First Normal Form (1NF)",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Second Normal Form (2NF)",
+          "lines": [
+            5,
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Third Normal Form (3NF)",
+          "lines": [
+            7,
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "BCNF (Boyce-Codd Normal Form)",
+          "lines": [
+            9
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Anomalies",
+          "lines": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "Normalization is the process of organizing database data to reduce redundancy and avoid insertion, update, and deletion anomalies. It relies on functional dependencies, where one attribute determines another (X -> Y). Database design progresses through several normal forms. First Normal Form (1NF) requires every attribute to contain only atomic values with no repeating groups. Second Normal Form (2NF) requires the table to be in 1NF and have no partial dependencies, meaning non-prime attributes must be fully dependent on the whole primary key. Third Normal Form (3NF) requires the table to be in 2NF and have no transitive dependencies, where a non-prime attribute depends on the key through another attribute. Boyce-Codd Normal Form (BCNF) is a stricter version of 3NF requiring that for every functional dependency X -> Y, X must be a superkey. Finally, anomalies include insertion anomalies where unrelated data is forced together, update anomalies caused by redundant storage leading to inconsistency, and deletion anomalies where removing a row accidentally deletes other desired facts.",
+      "key_terms": [
+        {
+          "term": "Normalization",
+          "definition": "Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies.",
+          "lines": [
+            1,
+            2
+          ]
+        },
+        {
+          "term": "Functional dependency",
+          "definition": "Functional dependency means that the value of X determines the value of Y, denoted as X -> Y.",
+          "lines": [
+            3
+          ]
+        },
+        {
+          "term": "First Normal Form (1NF)",
+          "definition": "First Normal Form (1NF) means every attribute contains only atomic values and there are no repeating groups.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Second Normal Form (2NF)",
+          "definition": "Second Normal Form (2NF) requires the table to be in 1NF and every non-prime attribute to be fully functionally dependent on the whole primary key.",
+          "lines": [
+            5,
+            6
+          ]
+        },
+        {
+          "term": "Third Normal Form (3NF)",
+          "definition": "Third Normal Form (3NF) requires the table to be in 2NF and have no transitive dependency of a non-prime attribute on the key.",
+          "lines": [
+            7,
+            8
+          ]
+        },
+        {
+          "term": "BCNF (Boyce-Codd Normal Form)",
+          "definition": "BCNF is a stricter version of 3NF where for every functional dependency X -> Y, X must be a superkey.",
+          "lines": [
+            9
+          ]
+        },
+        {
+          "term": "Anomalies",
+          "definition": "Anomalies refer to insertion, update, and deletion issues caused by poor data organization, such as data inconsistency or inability to add data without unrelated information.",
+          "lines": [
+            10,
+            11,
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is the primary purpose of normalization?",
+          "options": [],
+          "answer": "Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies.",
+          "source_lines": [
+            1,
+            2
+          ],
+          "source_quote": "Normalization is the process of organizing data in a database to reduce redundancy and avoid insertion, update and deletion anomalies."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "What does a functional dependency represented as X -> Y mean?",
+          "options": [
+            "A) The value of Y determines the value of X.",
+            "B) The value of X determines the value of Y.",
+            "C) X and Y must always contain atomic values.",
+            "D) X is a superkey for the table."
+          ],
+          "answer": "B) The value of X determines the value of Y.",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "Functional dependency: X -> Y means that the value of X determines the value of Y."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "A column in a database table holds the value \"Maths, Physics\" in a single cell. Which normal form does this violate and why?",
+          "options": [],
+          "answer": "This violates First Normal Form (1NF) because every attribute must contain only atomic (indivisible) values and there must be no repeating groups.",
+          "source_lines": [
+            4
+          ],
+          "source_quote": "First Normal Form (1NF): every attribute contains only atomic (indivisible) values and there are no repeating groups. A column holding \"Maths, Physics\" in one cell violates 1NF."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "What is a partial dependency in the context of Second Normal Form (2NF)?",
+          "options": [],
+          "answer": "A partial dependency is when a non-prime attribute depends on only part of a composite key, which violates 2NF.",
+          "source_lines": [
+            5
+          ],
+          "source_quote": "A partial dependency, where a non-prime attribute depends on only part of a composite key, violates 2NF."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "In a table Student(RollNo, DeptID, DeptName) with key RollNo, we have RollNo -> DeptID and DeptID -> DeptName. What type of dependency causes a violation of 3NF here?",
+          "options": [],
+          "answer": "A transitive dependency, because DeptName is transitively dependent on RollNo through DeptID (A -> B and B -> C).",
+          "source_lines": [
+            7,
+            8
+          ],
+          "source_quote": "A transitive dependency is when A -> B and B -> C, so C depends on A through B."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "How does BCNF (Boyce-Codd Normal Form) differ from 3NF?",
+          "options": [
+            "A) BCNF allows partial dependencies while 3NF does not.",
+            "B) BCNF is a stricter version where for every functional dependency X -> Y, X must be a superkey.",
+            "C) BCNF only applies to tables with composite keys.",
+            "D) BCNF removes the requirement for atomic values."
+          ],
+          "answer": "B) BCNF is a stricter version where for every functional dependency X -> Y, X must be a superkey.",
+          "source_lines": [
+            9
+          ],
+          "source_quote": "BCNF (Boyce-Codd Normal Form) is a stricter version of 3NF: for every functional dependency X -> Y, X must be a superkey."
+        },
+        {
+          "id": "Q7",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "Which database anomaly occurs when we cannot add some data without adding other unrelated data?",
+          "options": [],
+          "answer": "Insertion anomaly",
+          "source_lines": [
+            10,
+            11
+          ],
+          "source_quote": "- Insertion anomaly: we cannot add some data without adding other unrelated data."
+        },
+        {
+          "id": "Q8",
+          "bloom_level": "Analyze",
+          "type": "mcq",
+          "question": "Consider an update scenario where the same fact is stored in many rows, and changing it in one row makes the data inconsistent. What is this called?",
+          "options": [
+            "A) Insertion anomaly",
+            "B) Deletion anomaly",
+            "C) Update anomaly",
+            "D) Functional dependency violation"
+          ],
+          "answer": "C) Update anomaly",
+          "source_lines": [
+            10,
+            12
+          ],
+          "source_quote": "- Update anomaly: the same fact is stored in many rows, so changing it in one row and not the others makes the data inconsistent."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The lecture notes explicitly define normalization as organizing data to reduce redundancy and avoid anomalies."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 3 explicitly states that X -> Y means the value of X determines the value of Y."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 4 explicitly states that holding 'Maths, Physics' in one cell violates 1NF because attributes must be atomic."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 5 explicitly defines a partial dependency as a non-prime attribute depending on only part of a composite key."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 7 and 8 describe this exact transitive dependency where DeptName depends on RollNo through DeptID."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Line 9 states that BCNF is a stricter version of 3NF where X must be a superkey for every X -> Y."
+        },
+        {
+          "id": "Q7",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 10 and 11 define the insertion anomaly as not being able to add data without unrelated data."
+        },
+        {
+          "id": "Q8",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 10 and 12 define the update anomaly as storing the same fact in many rows causing inconsistency when changed in only one."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.39,
+      "input_tokens": 817,
+      "output_tokens": 346
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.67,
+      "input_tokens": 892,
+      "output_tokens": 564
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 3.52,
+      "input_tokens": 1278,
+      "output_tokens": 1300
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.39,
+      "input_tokens": 1455,
+      "output_tokens": 343
+    }
+  ],
+  "run_at": "2026-11-22T12:13:06"
 }

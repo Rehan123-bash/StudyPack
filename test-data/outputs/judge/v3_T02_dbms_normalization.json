@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "What is the primary purpose of normalization?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does a functional dependency represented as X -> Y mean?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "A column in a database table holds the value",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    },
+    {
+      "question": "What is a partial dependency in the context of Second",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "In a table Student(RollNo, DeptID, DeptName) with key",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    },
+    {
+      "question": "How does BCNF (Boyce-Codd Normal Form) differ from",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "Which database anomaly occurs when we cannot add some",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Consider an update scenario where the same fact is",
+      "supported": "yes",
+      "bloom_level": "Apply"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.38,
+      "input_tokens": 1663,
+      "output_tokens": 356
+    }
+  ],
+  "run_at": "2026-11-22T12:14:55"
+}

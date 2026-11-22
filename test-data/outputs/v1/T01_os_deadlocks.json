@@ -1,6 +1,15 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:49:34"
+  "status": "ok",
+  "raw_text": "**1. Summary**\nA deadlock occurs when blocked processes are each holding a resource and waiting for another held within the set. For a deadlock to happen, four Coffman conditions must occur simultaneously: mutual exclusion, hold and wait, no preemption, and circular wait. A Resource Allocation Graph (RAG) uses process and resource nodes connected by request and assignment edges to help identify deadlocks, where a cycle indicates a deadlock if each resource type has a single instance. Operating systems handle deadlocks through four methods: prevention (ensuring at least one condition never holds), avoidance (using extra information for requests, such as the Banker's algorithm), detection and recovery (detecting deadlocks and recovering via termination or preemption), and ignorance (the ostrich algorithm, pretending they never happen, which is used by most general-purpose OS). A safe state allows the system to allocate resources to every process in a safe sequence without deadlock, whereas an unsafe state may or may not lead to a deadlock.\n\n**2. 10 Key Terms**\n1. **Deadlock:** A situation where processes are blocked because each holds a resource and waits for another held within the set.\n2. **Mutual Exclusion:** A Coffman condition where at least one resource is non-sharable, allowing only one process to use it at a time.\n3. **Hold and Wait:** A Coffman condition where a process holds at least one resource while waiting to acquire additional ones.\n4. **No Preemption:** A Coffman condition stating a resource can only be released voluntarily by the process holding it.\n5. **Circular Wait:** A Coffman condition where a set of processes wait for resources in a closed chain.\n6. **Resource Allocation Graph (RAG):** A directed graph with process and resource nodes used to represent requests and assignments.\n7. **Banker's Algorithm:** A deadlock avoidance algorithm that uses extra information about future requests.\n8. **Ostrich Algorithm:** The method of ignorance where the operating system pretends deadlocks never happen.\n9. **Safe State:** A state where the system can allocate resources to every process in a safe sequence to avoid deadlock.\n10. **Unsafe State:** A state that does not always lead to a deadlock, but may.\n\n**3. 5 Practice Questions with Answers**\n1. **Question:** What are the four Coffman conditions necessary for a deadlock to occur?\n   **Answer:** Mutual exclusion, hold and wait, no preemption, and circular wait.\n2. **Question:** What does a cycle in a Resource Allocation Graph (RAG) indicate if each resource type has only one instance?\n   **Answer:** A deadlock exists.\n3. **Question:** What is the purpose of the Banker's algorithm?\n   **Answer:** It is a deadlock avoidance algorithm used by the OS to decide whether to grant a request using extra information about future requests.\n4. **Question:** What is another name for the deadlock ignorance method used by most general-purpose operating systems?\n   **Answer:** The ostrich algorithm.\n5. **Question:** Does an unsafe state always lead to a deadlock?\n   **Answer:** No, an unsafe state does not always lead to deadlock, but it may.",
+  "api_calls": 1,
+  "calls": [
+    {
+      "prompt_id": "v1_P0",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.1,
+      "input_tokens": 465,
+      "output_tokens": 674
+    }
+  ],
+  "run_at": "2026-11-22T12:10:27"
 }

@@ -1,6 +1,735 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:49:27"
+  "status": "ok",
+  "topic": "Operating Systems Deadlocks",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Deadlock",
+      "lines": [
+        1,
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Four necessary conditions (Coffman conditions)",
+      "lines": [
+        3
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Mutual exclusion",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Hold and wait",
+      "lines": [
+        5
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "No preemption",
+      "lines": [
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Circular wait",
+      "lines": [
+        7
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Resource Allocation Graph (RAG)",
+      "lines": [
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Methods for handling deadlocks",
+      "lines": [
+        9
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Prevention",
+      "lines": [
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Avoidance",
+      "lines": [
+        11
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Banker's algorithm",
+      "lines": [
+        11
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Detection and recovery",
+      "lines": [
+        12
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Ignorance",
+      "lines": [
+        13
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Safe state",
+      "lines": [
+        14
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "A deadlock occurs when a set of processes are blocked because each process holds a resource and waits for another held by someone else. Four Coffman conditions must hold simultaneously for a deadlock: mutual exclusion, hold and wait, no preemption, and circular wait. A Resource Allocation Graph (RAG) is a directed graph where cycles indicate deadlocks if each resource type has a single instance. Systems can handle deadlocks through four methods: prevention by ensuring at least one condition never holds, avoidance using extra information such as the Banker's algorithm, detection and recovery, and ignorance using the ostrich algorithm. Additionally, a safe state allows the system to allocate resources to every process in a safe sequence avoiding deadlock, while an unsafe state may lead to a deadlock.",
+  "key_terms": [
+    {
+      "term": "Deadlock",
+      "definition": "A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set.",
+      "lines": [
+        2
+      ]
+    },
+    {
+      "term": "Mutual exclusion",
+      "definition": "Mutual exclusion means at least one resource is non-sharable, so only one process can use it at a time.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Hold and wait",
+      "definition": "Hold and wait occurs when a process holds at least one resource while waiting to acquire additional resources held by other processes.",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "term": "No preemption",
+      "definition": "No preemption means a resource can be released only voluntarily by the process holding it.",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "term": "Circular wait",
+      "definition": "Circular wait is present when there is a set of processes where each waits for a resource held by the next process in the set.",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "term": "Resource Allocation Graph (RAG)",
+      "definition": "A Resource Allocation Graph is a directed graph with process nodes and resource nodes where request edges go from processes to resources and assignment edges go from resources to processes.",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "term": "Prevention",
+      "definition": "Prevention involves making sure at least one of the four deadlock conditions can never hold.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "term": "Avoidance",
+      "definition": "Avoidance is a method where the operating system uses extra information about future requests to decide whether to grant a request.",
+      "lines": [
+        11
+      ]
+    },
+    {
+      "term": "Banker's algorithm",
+      "definition": "The Banker's algorithm is an avoidance algorithm used by the operating system.",
+      "lines": [
+        11
+      ]
+    },
+    {
+      "term": "Safe state",
+      "definition": "A safe state is a state in which the system can allocate resources to every process in some order and still avoid deadlock.",
+      "lines": [
+        14
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is a deadlock?",
+      "options": [],
+      "answer": "A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The answer directly quotes the definition of a deadlock provided in line 2."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Remember",
+      "type": "mcq",
+      "question": "What are the four necessary conditions for a deadlock to occur called?",
+      "options": [
+        "A. Banker's conditions",
+        "B. Coffman conditions",
+        "C. Ostrich conditions",
+        "D. Allocation conditions"
+      ],
+      "answer": "B. Coffman conditions",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "Four necessary conditions (Coffman conditions) must hold at the same time for a deadlock to occur:",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 3 explicitly states the four necessary conditions are called Coffman conditions."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "Explain the 'No preemption' condition for deadlocks.",
+      "options": [],
+      "answer": "The 'No preemption' condition means that a resource can only be released voluntarily by the process that is currently holding it.",
+      "source_lines": [
+        6
+      ],
+      "source_quote": "3. No preemption: a resource can be released only voluntarily by the process holding it.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 6 states that a resource can be released only voluntarily by the process holding it."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "In a Resource Allocation Graph (RAG), what does a request edge point to?",
+      "options": [
+        "A. From a process to a resource",
+        "B. From a resource to a process",
+        "C. From a process to another process",
+        "D. From a resource to another resource"
+      ],
+      "answer": "A. From a process to a resource",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "A request edge goes from a process to a resource; an assignment edge goes from a resource to a process.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 8 explicitly states that a request edge goes from a process to a resource."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "If each resource type has only one instance, how can you determine from a Resource Allocation Graph (RAG) whether a deadlock exists?",
+      "options": [],
+      "answer": "A deadlock exists if there is a cycle in the graph.",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "If each resource type has only one instance, a cycle in the graph means a deadlock exists.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 8 states that if each resource type has only one instance, a cycle in the graph means a deadlock exists."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "Compare how avoidance handles deadlocks versus how detection and recovery handles them according to the notes.",
+      "options": [],
+      "answer": "Avoidance uses extra information about future requests to decide whether to grant a request in advance, whereas detection and recovery allows deadlocks to happen, detects them afterwards, and then recovers by terminating processes or preempting resources.",
+      "source_lines": [
+        11,
+        12
+      ],
+      "source_quote": "Avoidance: the OS uses extra information about future requests to decide whether to grant a request. The Banker's algorithm is an avoidance algorithm.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Lines 11 and 12 describe avoidance using extra information and detection/recovery allowing deadlocks and recovering via termination or preemption."
+    },
+    {
+      "id": "Q7",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is another name for the deadlock ignorance method?",
+      "options": [],
+      "answer": "The ostrich algorithm",
+      "source_lines": [
+        13
+      ],
+      "source_quote": "Ignorance: pretend deadlocks never happen (the ostrich algorithm), used by most general-purpose operating systems.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 13 states that the ignorance method is also known as the ostrich algorithm."
+    },
+    {
+      "id": "Q8",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "Does an unsafe state always lead to a deadlock?",
+      "options": [
+        "A. Yes, it always leads directly to a deadlock.",
+        "B. No, an unsafe state does not always lead to deadlock, but it may.",
+        "C. No, an unsafe state guarantees no deadlock will ever occur.",
+        "D. Yes, unless the Banker's algorithm is disabled."
+      ],
+      "answer": "B. No, an unsafe state does not always lead to deadlock, but it may.",
+      "source_lines": [
+        14
+      ],
+      "source_quote": "An unsafe state does not always lead to deadlock, but it may.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 14 explicitly states that an unsafe state does not always lead to deadlock, but it may."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 8,
+    "verified": 8,
+    "removed": 0,
+    "quote_found": 8,
+    "line_count": 14
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Operating Systems Deadlocks",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Deadlock",
+          "lines": [
+            1,
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Four necessary conditions (Coffman conditions)",
+          "lines": [
+            3
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Mutual exclusion",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Hold and wait",
+          "lines": [
+            5
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "No preemption",
+          "lines": [
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Circular wait",
+          "lines": [
+            7
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Resource Allocation Graph (RAG)",
+          "lines": [
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Methods for handling deadlocks",
+          "lines": [
+            9
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Prevention",
+          "lines": [
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Avoidance",
+          "lines": [
+            11
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Banker's algorithm",
+          "lines": [
+            11
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Detection and recovery",
+          "lines": [
+            12
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Ignorance",
+          "lines": [
+            13
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Safe state",
+          "lines": [
+            14
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "A deadlock occurs when a set of processes are blocked because each process holds a resource and waits for another held by someone else. Four Coffman conditions must hold simultaneously for a deadlock: mutual exclusion, hold and wait, no preemption, and circular wait. A Resource Allocation Graph (RAG) is a directed graph where cycles indicate deadlocks if each resource type has a single instance. Systems can handle deadlocks through four methods: prevention by ensuring at least one condition never holds, avoidance using extra information such as the Banker's algorithm, detection and recovery, and ignorance using the ostrich algorithm. Additionally, a safe state allows the system to allocate resources to every process in a safe sequence avoiding deadlock, while an unsafe state may lead to a deadlock.",
+      "key_terms": [
+        {
+          "term": "Deadlock",
+          "definition": "A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set.",
+          "lines": [
+            2
+          ]
+        },
+        {
+          "term": "Mutual exclusion",
+          "definition": "Mutual exclusion means at least one resource is non-sharable, so only one process can use it at a time.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Hold and wait",
+          "definition": "Hold and wait occurs when a process holds at least one resource while waiting to acquire additional resources held by other processes.",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "term": "No preemption",
+          "definition": "No preemption means a resource can be released only voluntarily by the process holding it.",
+          "lines": [
+            6
+          ]
+        },
+        {
+          "term": "Circular wait",
+          "definition": "Circular wait is present when there is a set of processes where each waits for a resource held by the next process in the set.",
+          "lines": [
+            7
+          ]
+        },
+        {
+          "term": "Resource Allocation Graph (RAG)",
+          "definition": "A Resource Allocation Graph is a directed graph with process nodes and resource nodes where request edges go from processes to resources and assignment edges go from resources to processes.",
+          "lines": [
+            8
+          ]
+        },
+        {
+          "term": "Prevention",
+          "definition": "Prevention involves making sure at least one of the four deadlock conditions can never hold.",
+          "lines": [
+            10
+          ]
+        },
+        {
+          "term": "Avoidance",
+          "definition": "Avoidance is a method where the operating system uses extra information about future requests to decide whether to grant a request.",
+          "lines": [
+            11
+          ]
+        },
+        {
+          "term": "Banker's algorithm",
+          "definition": "The Banker's algorithm is an avoidance algorithm used by the operating system.",
+          "lines": [
+            11
+          ]
+        },
+        {
+          "term": "Safe state",
+          "definition": "A safe state is a state in which the system can allocate resources to every process in some order and still avoid deadlock.",
+          "lines": [
+            14
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is a deadlock?",
+          "options": [],
+          "answer": "A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by some other process in the set."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Remember",
+          "type": "mcq",
+          "question": "What are the four necessary conditions for a deadlock to occur called?",
+          "options": [
+            "A. Banker's conditions",
+            "B. Coffman conditions",
+            "C. Ostrich conditions",
+            "D. Allocation conditions"
+          ],
+          "answer": "B. Coffman conditions",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "Four necessary conditions (Coffman conditions) must hold at the same time for a deadlock to occur:"
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "Explain the 'No preemption' condition for deadlocks.",
+          "options": [],
+          "answer": "The 'No preemption' condition means that a resource can only be released voluntarily by the process that is currently holding it.",
+          "source_lines": [
+            6
+          ],
+          "source_quote": "3. No preemption: a resource can be released only voluntarily by the process holding it."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "In a Resource Allocation Graph (RAG), what does a request edge point to?",
+          "options": [
+            "A. From a process to a resource",
+            "B. From a resource to a process",
+            "C. From a process to another process",
+            "D. From a resource to another resource"
+          ],
+          "answer": "A. From a process to a resource",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "A request edge goes from a process to a resource; an assignment edge goes from a resource to a process."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "If each resource type has only one instance, how can you determine from a Resource Allocation Graph (RAG) whether a deadlock exists?",
+          "options": [],
+          "answer": "A deadlock exists if there is a cycle in the graph.",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "If each resource type has only one instance, a cycle in the graph means a deadlock exists."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "Compare how avoidance handles deadlocks versus how detection and recovery handles them according to the notes.",
+          "options": [],
+          "answer": "Avoidance uses extra information about future requests to decide whether to grant a request in advance, whereas detection and recovery allows deadlocks to happen, detects them afterwards, and then recovers by terminating processes or preempting resources.",
+          "source_lines": [
+            11,
+            12
+          ],
+          "source_quote": "Avoidance: the OS uses extra information about future requests to decide whether to grant a request. The Banker's algorithm is an avoidance algorithm."
+        },
+        {
+          "id": "Q7",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is another name for the deadlock ignorance method?",
+          "options": [],
+          "answer": "The ostrich algorithm",
+          "source_lines": [
+            13
+          ],
+          "source_quote": "Ignorance: pretend deadlocks never happen (the ostrich algorithm), used by most general-purpose operating systems."
+        },
+        {
+          "id": "Q8",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "Does an unsafe state always lead to a deadlock?",
+          "options": [
+            "A. Yes, it always leads directly to a deadlock.",
+            "B. No, an unsafe state does not always lead to deadlock, but it may.",
+            "C. No, an unsafe state guarantees no deadlock will ever occur.",
+            "D. Yes, unless the Banker's algorithm is disabled."
+          ],
+          "answer": "B. No, an unsafe state does not always lead to deadlock, but it may.",
+          "source_lines": [
+            14
+          ],
+          "source_quote": "An unsafe state does not always lead to deadlock, but it may."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The answer directly quotes the definition of a deadlock provided in line 2."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 3 explicitly states the four necessary conditions are called Coffman conditions."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 6 states that a resource can be released only voluntarily by the process holding it."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 8 explicitly states that a request edge goes from a process to a resource."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 8 states that if each resource type has only one instance, a cycle in the graph means a deadlock exists."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Lines 11 and 12 describe avoidance using extra information and detection/recovery allowing deadlocks and recovering via termination or preemption."
+        },
+        {
+          "id": "Q7",
+          "verdict": "SUPPORTED",
+          "reason": "Line 13 states that the ignorance method is also known as the ostrich algorithm."
+        },
+        {
+          "id": "Q8",
+          "verdict": "SUPPORTED",
+          "reason": "Line 14 explicitly states that an unsafe state does not always lead to deadlock, but it may."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.86,
+      "input_tokens": 786,
+      "output_tokens": 572
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.67,
+      "input_tokens": 979,
+      "output_tokens": 574
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.94,
+      "input_tokens": 1365,
+      "output_tokens": 1183
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 3.68,
+      "input_tokens": 1331,
+      "output_tokens": 311
+    }
+  ],
+  "run_at": "2026-11-22T12:10:21"
 }

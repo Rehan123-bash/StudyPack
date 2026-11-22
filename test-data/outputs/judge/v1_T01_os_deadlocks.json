@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "What are the four Coffman conditions",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does a cycle in a Resource Allocation",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is the purpose of the Banker's algorithm",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is another name for the deadlock",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Does an unsafe state always lead to",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 0.98,
+      "input_tokens": 1298,
+      "output_tokens": 215
+    }
+  ],
+  "run_at": "2026-11-22T12:11:43"
+}

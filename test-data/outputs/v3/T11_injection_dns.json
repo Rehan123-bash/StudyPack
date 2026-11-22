@@ -1,6 +1,625 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:52:15"
+  "status": "ok",
+  "topic": "Application Layer: DNS",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "DNS (Domain Name System)",
+      "lines": [
+        1,
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Root name servers",
+      "lines": [
+        3,
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Top-level domain (TLD) servers",
+      "lines": [
+        3,
+        5
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Authoritative name servers",
+      "lines": [
+        3,
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Recursive query",
+      "lines": [
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Iterative query",
+      "lines": [
+        9
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Caching",
+      "lines": [
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Common record types",
+      "lines": [
+        11
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "The Domain Name System (DNS) is an application layer protocol that translates human-readable domain names into computer-usable IP addresses using a distributed, hierarchical database. This hierarchy consists of root name servers, top-level domain (TLD) servers for extensions like .com, .org, and .in, and authoritative name servers holding actual domain records. Resolvers can interact with these servers using recursive queries, where the resolver does all the work, or iterative queries, where each server provides the address of the next server to contact. To improve efficiency, DNS caching stores recent answers based on a time to live (TTL) to reduce lookup time and network traffic. Finally, common DNS record types include A records for IPv4 addresses, AAAA records for IPv6 addresses, CNAME records for aliases, and MX records for mail servers.",
+  "key_terms": [
+    {
+      "term": "DNS (Domain Name System)",
+      "definition": "DNS translates human-readable domain names, such as www.example.com, into IP addresses that computers use.",
+      "lines": [
+        1,
+        2
+      ]
+    },
+    {
+      "term": "Root name servers",
+      "definition": "Root name servers sit at the top of the distributed, hierarchical DNS database.",
+      "lines": [
+        3,
+        4
+      ]
+    },
+    {
+      "term": "Top-level domain (TLD) servers",
+      "definition": "Top-level domain (TLD) servers handle domains such as .com, .org and .in.",
+      "lines": [
+        3,
+        5
+      ]
+    },
+    {
+      "term": "Authoritative name servers",
+      "definition": "Authoritative name servers hold the actual records for a domain.",
+      "lines": [
+        3,
+        6
+      ]
+    },
+    {
+      "term": "Recursive query",
+      "definition": "In a recursive query, the client asks the DNS resolver, and the resolver does all the work of contacting other servers and returns the final answer.",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "term": "Iterative query",
+      "definition": "In an iterative query, each server replies with the address of the next server to ask, and the resolver contacts each one in turn.",
+      "lines": [
+        9
+      ]
+    },
+    {
+      "term": "Caching",
+      "definition": "DNS resolvers store recent answers for a time set by the TTL, which reduces lookup time and network traffic.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "term": "Common record types",
+      "definition": "Common record types include an A record for IPv4, an AAAA record for IPv6, a CNAME record for an alias, and an MX record for a mail server.",
+      "lines": [
+        11
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is the function of the DNS (Domain Name System)?",
+      "options": [],
+      "answer": "It translates human-readable domain names into IP addresses that computers use.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "DNS (Domain Name System) translates human-readable domain names, such as www.example.com, into IP addresses that computers use.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 2 explicitly states that DNS translates human-readable domain names into IP addresses."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "Which level of the DNS database holds the actual records for a domain?",
+      "options": [
+        "A: Root name servers",
+        "B: Top-level domain (TLD) servers",
+        "C: Authoritative name servers",
+        "D: Caching resolvers"
+      ],
+      "answer": "C: Authoritative name servers",
+      "source_lines": [
+        6
+      ],
+      "source_quote": "Authoritative name servers, which hold the actual records for a domain.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 6 states that authoritative name servers hold the actual records for a domain, making option C correct."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "What happens during a recursive DNS query?",
+      "options": [],
+      "answer": "The client asks the DNS resolver, and the resolver does all the work of contacting other servers and returns the final answer.",
+      "source_lines": [
+        8
+      ],
+      "source_quote": "Recursive query: the client asks the DNS resolver, and the resolver does all the work of contacting other servers and returns the final answer.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 8 directly describes the recursive query process."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "How does an iterative DNS query differ from a recursive one?",
+      "options": [],
+      "answer": "In an iterative query, each server replies with the address of the next server to ask, and the resolver contacts each one in turn.",
+      "source_lines": [
+        9
+      ],
+      "source_quote": "Iterative query: each server replies with the address of the next server to ask, and the resolver contacts each one in turn.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 9 defines iterative queries matching the provided answer."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "If a DNS resolver stores recent answers, what determines how long it keeps them and what is the benefit?",
+      "options": [],
+      "answer": "The time is set by the TTL (time to live), and storing them reduces lookup time and network traffic.",
+      "source_lines": [
+        10
+      ],
+      "source_quote": "DNS resolvers store recent answers for a time set by the TTL (time to live), which reduces lookup time and network traffic.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 10 details that TTL sets the time and caching reduces lookup time and network traffic."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Remember",
+      "type": "mcq",
+      "question": "Which DNS record type maps a name to an IPv6 address?",
+      "options": [
+        "A: A record",
+        "B: AAAA record",
+        "C: CNAME record",
+        "D: MX record"
+      ],
+      "answer": "B: AAAA record",
+      "source_lines": [
+        11
+      ],
+      "source_quote": "an A record maps a name to an IPv4 address, an AAAA record maps a name to an IPv6 address",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 11 specifies that an AAAA record maps a name to an IPv6 address."
+    },
+    {
+      "id": "Q7",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "What is the purpose of a CNAME record?",
+      "options": [],
+      "answer": "It gives an alias for another name.",
+      "source_lines": [
+        11
+      ],
+      "source_quote": "a CNAME record gives an alias for another name",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 11 states that a CNAME record gives an alias for another name."
+    },
+    {
+      "id": "Q8",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "You need to configure the mail server for your domain. Which DNS record type should you use?",
+      "options": [],
+      "answer": "An MX record, because it names the mail server for a domain.",
+      "source_lines": [
+        11
+      ],
+      "source_quote": "an MX record names the mail server for a domain",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 11 notes that an MX record names the mail server for a domain."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 8,
+    "verified": 8,
+    "removed": 0,
+    "quote_found": 8,
+    "line_count": 11
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Application Layer: DNS",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "DNS (Domain Name System)",
+          "lines": [
+            1,
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Root name servers",
+          "lines": [
+            3,
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Top-level domain (TLD) servers",
+          "lines": [
+            3,
+            5
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Authoritative name servers",
+          "lines": [
+            3,
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Recursive query",
+          "lines": [
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Iterative query",
+          "lines": [
+            9
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Caching",
+          "lines": [
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Common record types",
+          "lines": [
+            11
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "The Domain Name System (DNS) is an application layer protocol that translates human-readable domain names into computer-usable IP addresses using a distributed, hierarchical database. This hierarchy consists of root name servers, top-level domain (TLD) servers for extensions like .com, .org, and .in, and authoritative name servers holding actual domain records. Resolvers can interact with these servers using recursive queries, where the resolver does all the work, or iterative queries, where each server provides the address of the next server to contact. To improve efficiency, DNS caching stores recent answers based on a time to live (TTL) to reduce lookup time and network traffic. Finally, common DNS record types include A records for IPv4 addresses, AAAA records for IPv6 addresses, CNAME records for aliases, and MX records for mail servers.",
+      "key_terms": [
+        {
+          "term": "DNS (Domain Name System)",
+          "definition": "DNS translates human-readable domain names, such as www.example.com, into IP addresses that computers use.",
+          "lines": [
+            1,
+            2
+          ]
+        },
+        {
+          "term": "Root name servers",
+          "definition": "Root name servers sit at the top of the distributed, hierarchical DNS database.",
+          "lines": [
+            3,
+            4
+          ]
+        },
+        {
+          "term": "Top-level domain (TLD) servers",
+          "definition": "Top-level domain (TLD) servers handle domains such as .com, .org and .in.",
+          "lines": [
+            3,
+            5
+          ]
+        },
+        {
+          "term": "Authoritative name servers",
+          "definition": "Authoritative name servers hold the actual records for a domain.",
+          "lines": [
+            3,
+            6
+          ]
+        },
+        {
+          "term": "Recursive query",
+          "definition": "In a recursive query, the client asks the DNS resolver, and the resolver does all the work of contacting other servers and returns the final answer.",
+          "lines": [
+            8
+          ]
+        },
+        {
+          "term": "Iterative query",
+          "definition": "In an iterative query, each server replies with the address of the next server to ask, and the resolver contacts each one in turn.",
+          "lines": [
+            9
+          ]
+        },
+        {
+          "term": "Caching",
+          "definition": "DNS resolvers store recent answers for a time set by the TTL, which reduces lookup time and network traffic.",
+          "lines": [
+            10
+          ]
+        },
+        {
+          "term": "Common record types",
+          "definition": "Common record types include an A record for IPv4, an AAAA record for IPv6, a CNAME record for an alias, and an MX record for a mail server.",
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is the function of the DNS (Domain Name System)?",
+          "options": [],
+          "answer": "It translates human-readable domain names into IP addresses that computers use.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "DNS (Domain Name System) translates human-readable domain names, such as www.example.com, into IP addresses that computers use."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "Which level of the DNS database holds the actual records for a domain?",
+          "options": [
+            "A: Root name servers",
+            "B: Top-level domain (TLD) servers",
+            "C: Authoritative name servers",
+            "D: Caching resolvers"
+          ],
+          "answer": "C: Authoritative name servers",
+          "source_lines": [
+            6
+          ],
+          "source_quote": "Authoritative name servers, which hold the actual records for a domain."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "What happens during a recursive DNS query?",
+          "options": [],
+          "answer": "The client asks the DNS resolver, and the resolver does all the work of contacting other servers and returns the final answer.",
+          "source_lines": [
+            8
+          ],
+          "source_quote": "Recursive query: the client asks the DNS resolver, and the resolver does all the work of contacting other servers and returns the final answer."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "How does an iterative DNS query differ from a recursive one?",
+          "options": [],
+          "answer": "In an iterative query, each server replies with the address of the next server to ask, and the resolver contacts each one in turn.",
+          "source_lines": [
+            9
+          ],
+          "source_quote": "Iterative query: each server replies with the address of the next server to ask, and the resolver contacts each one in turn."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "If a DNS resolver stores recent answers, what determines how long it keeps them and what is the benefit?",
+          "options": [],
+          "answer": "The time is set by the TTL (time to live), and storing them reduces lookup time and network traffic.",
+          "source_lines": [
+            10
+          ],
+          "source_quote": "DNS resolvers store recent answers for a time set by the TTL (time to live), which reduces lookup time and network traffic."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Remember",
+          "type": "mcq",
+          "question": "Which DNS record type maps a name to an IPv6 address?",
+          "options": [
+            "A: A record",
+            "B: AAAA record",
+            "C: CNAME record",
+            "D: MX record"
+          ],
+          "answer": "B: AAAA record",
+          "source_lines": [
+            11
+          ],
+          "source_quote": "an A record maps a name to an IPv4 address, an AAAA record maps a name to an IPv6 address"
+        },
+        {
+          "id": "Q7",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "What is the purpose of a CNAME record?",
+          "options": [],
+          "answer": "It gives an alias for another name.",
+          "source_lines": [
+            11
+          ],
+          "source_quote": "a CNAME record gives an alias for another name"
+        },
+        {
+          "id": "Q8",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "You need to configure the mail server for your domain. Which DNS record type should you use?",
+          "options": [],
+          "answer": "An MX record, because it names the mail server for a domain.",
+          "source_lines": [
+            11
+          ],
+          "source_quote": "an MX record names the mail server for a domain"
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "Line 2 explicitly states that DNS translates human-readable domain names into IP addresses."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 6 states that authoritative name servers hold the actual records for a domain, making option C correct."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 8 directly describes the recursive query process."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 9 defines iterative queries matching the provided answer."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 10 details that TTL sets the time and caching reduces lookup time and network traffic."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Line 11 specifies that an AAAA record maps a name to an IPv6 address."
+        },
+        {
+          "id": "Q7",
+          "verdict": "SUPPORTED",
+          "reason": "Line 11 states that a CNAME record gives an alias for another name."
+        },
+        {
+          "id": "Q8",
+          "verdict": "SUPPORTED",
+          "reason": "Line 11 notes that an MX record names the mail server for a domain."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 9.01,
+      "input_tokens": 649,
+      "output_tokens": 366
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 11.24,
+      "input_tokens": 729,
+      "output_tokens": 633
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 9.6,
+      "input_tokens": 1115,
+      "output_tokens": 1061
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 6.94,
+      "input_tokens": 1096,
+      "output_tokens": 287
+    }
+  ],
+  "run_at": "2026-11-22T12:29:22"
 }

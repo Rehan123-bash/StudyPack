@@ -1,6 +1,15 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:19"
+  "status": "ok",
+  "raw_text": "### 1. Summary\nThe Software Development Life Cycle (SDLC) encompasses the phases of requirements, design, implementation, testing, deployment, and maintenance used to build software. \n\nSeveral models define how these phases are executed:\n- **Waterfall model:** Follows a fixed, sequential order where each phase finishes before the next begins. It is simple for clear requirements, but makes late changes hard and costly.\n- **Iterative model:** Builds software through repeated cycles, creating a working version that improves in each iteration.\n- **Spiral model:** Combines iteration with risk analysis through loops consisting of planning, risk analysis, engineering, and evaluation, making it ideal for large, high-risk projects.\n- **V-Model:** Extends the waterfall approach by pairing each development phase with a corresponding testing phase (e.g., acceptance testing matches requirements analysis).\n- **Agile model:** Delivers software in short 1-to-4-week iterations called sprints, valuing customer collaboration, working software, and responsiveness to change. Scrum is a popular Agile framework featuring roles like the Product Owner and Scrum Master.\n\n***\n\n### 2. 10 Key Terms\n1. **Software Development Life Cycle (SDLC):** The set of phases used to build software, including requirements, design, implementation, testing, deployment, and maintenance.\n2. **Waterfall Model:** A model where phases are completed sequentially in a fixed order and each phase must finish before the next begins.\n3. **Iterative Model:** A model where software is built through repeated cycles, with each iteration producing an improved working version.\n4. **Spiral Model:** A model combining iterative development with risk analysis through loops containing planning, risk analysis, engineering, and evaluation.\n5. **V-Model:** An extension of the waterfall model where every development phase has a matching testing phase.\n6. **Agile Model:** A model that delivers software in short iterations and values working software, customer collaboration, and responding to change.\n7. **Sprints:** Short iterations in the Agile model that usually last 1 to 4 weeks.\n8. **Scrum:** A popular Agile framework that includes specific roles such as Product Owner and Scrum Master.\n9. **Product Owner:** A role within the Scrum framework.\n10. **Scrum Master:** A role within the Scrum framework.\n\n***\n\n### 3. 5 Practice Questions with Answers\n\n**Question 1:** What are the six phases that make up the Software Development Life Cycle (SDLC)?  \n**Answer:** Requirements, design, implementation, testing, deployment, and maintenance.\n\n**Question 2:** When does working software appear in the Waterfall model?  \n**Answer:** Working software appears only late in the project.\n\n**Question 3:** What are the four parts of each loop in the Spiral model?  \n**Answer:** Planning, risk analysis, engineering, and evaluation.\n\n**Question 4:** In the V-Model, which testing phase matches requirements analysis?  \n**Answer:** Acceptance testing matches requirements analysis.\n\n**Question 5:** How long do sprints typically last in the Agile model?  \n**Answer:** 1 to 4 weeks.",
+  "api_calls": 1,
+  "calls": [
+    {
+      "prompt_id": "v1_P0",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 11.58,
+      "input_tokens": 326,
+      "output_tokens": 666
+    }
+  ],
+  "run_at": "2026-11-22T12:22:10"
 }

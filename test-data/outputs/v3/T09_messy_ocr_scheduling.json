@@ -1,6 +1,684 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:52:01"
+  "status": "ok",
+  "topic": "CPU Scheduling",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "CPU scheduling",
+      "lines": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "FCFS (First Come First Serve)",
+      "lines": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "convoy effect",
+      "lines": [
+        7,
+        8
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "SJF (Shortest Job First)",
+      "lines": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "starvation",
+      "lines": [
+        12
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Round Robin (RR)",
+      "lines": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Waiting time",
+      "lines": [
+        20
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Turnaround time",
+      "lines": [
+        20,
+        21
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "CPU scheduling decides which process in the ready queue gets the CPU next. FCFS (First Come First Serve) runs the first-arriving process first; it is non-preemptive and simple, but can cause the convoy effect where short processes wait behind a long one. SJF (Shortest Job First) runs the process with the smallest burst time first, offering the minimum average waiting time, though it requires knowing burst times in advance and can cause starvation for long processes. Round Robin (RR) gives each process a fixed time quantum before moving it to the back of the ready queue, making it preemptive and good for time-sharing systems, though a quantum that is too large makes it act like FCFS and one that is too small causes excessive context switches. Finally, waiting time is calculated as turnaround time minus burst time, and turnaround time is completion time minus arrival time.",
+  "key_terms": [
+    {
+      "term": "CPU scheduling",
+      "definition": "CPU scheduling decides which process in the ready queue gets the CPU next.",
+      "lines": [
+        3,
+        4
+      ]
+    },
+    {
+      "term": "FCFS (First Come First Serve)",
+      "definition": "FCFS is a non-preemptive and simple scheduling method where the process that arrives first is run first.",
+      "lines": [
+        5,
+        6
+      ]
+    },
+    {
+      "term": "convoy effect",
+      "definition": "The convoy effect is an issue where short processes wait behind one long process.",
+      "lines": [
+        7,
+        8
+      ]
+    },
+    {
+      "term": "SJF (Shortest Job First)",
+      "definition": "SJF is a scheduling method where the process with the smallest burst time runs first to give the minimum average waiting time.",
+      "lines": [
+        9,
+        10
+      ]
+    },
+    {
+      "term": "starvation",
+      "definition": "Starvation is a potential outcome of SJF where long processes are neglected.",
+      "lines": [
+        12
+      ]
+    },
+    {
+      "term": "Round Robin (RR)",
+      "definition": "Round Robin is a preemptive scheduling method good for time-sharing systems where each process gets a fixed time quantum before going to the back of the ready queue.",
+      "lines": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "term": "Waiting time",
+      "definition": "Waiting time is calculated as turnaround time minus burst time.",
+      "lines": [
+        20
+      ]
+    },
+    {
+      "term": "Turnaround time",
+      "definition": "Turnaround time is calculated as completion time minus arrival time.",
+      "lines": [
+        20,
+        21
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is the primary function of CPU scheduling?",
+      "options": [],
+      "answer": "CPU scheduling decides which process in the ready queue gets the CPU next.",
+      "source_lines": [
+        3,
+        4
+      ],
+      "source_quote": "CPU scheduling decides which process in the ready queue gets the CPU next.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes explicitly state that CPU scheduling decides which process in the ready queue gets the CPU next."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "Which scheduling algorithm is non-preemptive and runs the process that arrives first?",
+      "options": [
+        "A) SJF",
+        "B) FCFS",
+        "C) Round Robin",
+        "D) Time-sharing"
+      ],
+      "answer": "B) FCFS",
+      "source_lines": [
+        5,
+        6
+      ],
+      "source_quote": "FCFS (First Come First Serve) : the process that arrives first is run first.  Non-preemptive.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state FCFS is non-preemptive and runs the process that arrives first."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "short",
+      "question": "What is the convoy effect in the context of FCFS scheduling?",
+      "options": [],
+      "answer": "The convoy effect occurs when short processes have to wait behind one long process.",
+      "source_lines": [
+        7,
+        8
+      ],
+      "source_quote": "can cause the convoy effect - short processes wait behind one long process.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that FCFS can cause the convoy effect where short processes wait behind one long process."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "What is a major requirement of the Shortest Job First (SJF) scheduling algorithm?",
+      "options": [
+        "A) It needs to know burst times in advance.",
+        "B) It requires a fixed time quantum.",
+        "C) It must always be preemptive.",
+        "D) It requires processes to arrive simultaneously."
+      ],
+      "answer": "A) It needs to know burst times in advance.",
+      "source_lines": [
+        9,
+        10,
+        11
+      ],
+      "source_quote": "needs to know burst times in advance.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes explicitly mention that SJF needs to know burst times in advance."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Analyze",
+      "type": "short",
+      "question": "What happens in a Round Robin scheduler if the time quantum is set too small?",
+      "options": [],
+      "answer": "If the time quantum is too small, too much time is spent on context switches.",
+      "source_lines": [
+        17,
+        18,
+        19
+      ],
+      "source_quote": "if too small , too much time is spent on context switches .",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that if the time quantum is too small, too much time is spent on context switches."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "How is Waiting time calculated?",
+      "options": [],
+      "answer": "Waiting time = Turnaround time - Burst time",
+      "source_lines": [
+        20
+      ],
+      "source_quote": "Waiting time = Turnaround time - Burst time",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes directly state that Waiting time = Turnaround time - Burst time."
+    }
+  ],
+  "removed": [
+    {
+      "id": "Q7",
+      "bloom_level": "Apply",
+      "type": "short",
+      "question": "If a process has a Completion time of 15 ms and an Arrival time of 3 ms, what is its Turnaround time?",
+      "options": [],
+      "answer": "The Turnaround time is 12 ms, calculated as Completion time (15) minus Arrival time (3).",
+      "source_lines": [
+        21
+      ],
+      "source_quote": "Turnaround time = Completion time - Arrival time",
+      "quote_found": true,
+      "verdict": "PARTLY",
+      "verdict_reason": "The notes provide the formula Turnaround time = Completion time - Arrival time, but calculating the arithmetic using outside math is not strictly contained in the text itself.",
+      "removed_because": "checker said PARTLY: The notes provide the formula Turnaround time = Completion time - Arrival time, but calculating the arithmetic using outside math is not strictly contained in the text itself."
+    },
+    {
+      "id": "Q8",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "Which scheduling algorithm is described as good for time-sharing systems?",
+      "options": [
+        "A) FCFS",
+        "B) SJF",
+        "C) Round Robin",
+        "D) Convoy effect"
+      ],
+      "answer": "C) Round Robin",
+      "source_lines": [
+        14,
+        16
+      ],
+      "source_quote": "Round Robin (RR) : each process gets a fixed time quantum ... Good for time-sharing systems.",
+      "quote_found": false,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The notes state that Round Robin is good for time-sharing systems.",
+      "removed_because": "source quote not found in the notes"
+    }
+  ],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "mixed",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 8,
+    "verified": 6,
+    "removed": 2,
+    "quote_found": 7,
+    "line_count": 21
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "CPU Scheduling",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "CPU scheduling",
+          "lines": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "FCFS (First Come First Serve)",
+          "lines": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "convoy effect",
+          "lines": [
+            7,
+            8
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "SJF (Shortest Job First)",
+          "lines": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "starvation",
+          "lines": [
+            12
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Round Robin (RR)",
+          "lines": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Waiting time",
+          "lines": [
+            20
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Turnaround time",
+          "lines": [
+            20,
+            21
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "CPU scheduling decides which process in the ready queue gets the CPU next. FCFS (First Come First Serve) runs the first-arriving process first; it is non-preemptive and simple, but can cause the convoy effect where short processes wait behind a long one. SJF (Shortest Job First) runs the process with the smallest burst time first, offering the minimum average waiting time, though it requires knowing burst times in advance and can cause starvation for long processes. Round Robin (RR) gives each process a fixed time quantum before moving it to the back of the ready queue, making it preemptive and good for time-sharing systems, though a quantum that is too large makes it act like FCFS and one that is too small causes excessive context switches. Finally, waiting time is calculated as turnaround time minus burst time, and turnaround time is completion time minus arrival time.",
+      "key_terms": [
+        {
+          "term": "CPU scheduling",
+          "definition": "CPU scheduling decides which process in the ready queue gets the CPU next.",
+          "lines": [
+            3,
+            4
+          ]
+        },
+        {
+          "term": "FCFS (First Come First Serve)",
+          "definition": "FCFS is a non-preemptive and simple scheduling method where the process that arrives first is run first.",
+          "lines": [
+            5,
+            6
+          ]
+        },
+        {
+          "term": "convoy effect",
+          "definition": "The convoy effect is an issue where short processes wait behind one long process.",
+          "lines": [
+            7,
+            8
+          ]
+        },
+        {
+          "term": "SJF (Shortest Job First)",
+          "definition": "SJF is a scheduling method where the process with the smallest burst time runs first to give the minimum average waiting time.",
+          "lines": [
+            9,
+            10
+          ]
+        },
+        {
+          "term": "starvation",
+          "definition": "Starvation is a potential outcome of SJF where long processes are neglected.",
+          "lines": [
+            12
+          ]
+        },
+        {
+          "term": "Round Robin (RR)",
+          "definition": "Round Robin is a preemptive scheduling method good for time-sharing systems where each process gets a fixed time quantum before going to the back of the ready queue.",
+          "lines": [
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "term": "Waiting time",
+          "definition": "Waiting time is calculated as turnaround time minus burst time.",
+          "lines": [
+            20
+          ]
+        },
+        {
+          "term": "Turnaround time",
+          "definition": "Turnaround time is calculated as completion time minus arrival time.",
+          "lines": [
+            20,
+            21
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is the primary function of CPU scheduling?",
+          "options": [],
+          "answer": "CPU scheduling decides which process in the ready queue gets the CPU next.",
+          "source_lines": [
+            3,
+            4
+          ],
+          "source_quote": "CPU scheduling decides which process in the ready queue gets the CPU next."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "Which scheduling algorithm is non-preemptive and runs the process that arrives first?",
+          "options": [
+            "A) SJF",
+            "B) FCFS",
+            "C) Round Robin",
+            "D) Time-sharing"
+          ],
+          "answer": "B) FCFS",
+          "source_lines": [
+            5,
+            6
+          ],
+          "source_quote": "FCFS (First Come First Serve) : the process that arrives first is run first.  Non-preemptive."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "short",
+          "question": "What is the convoy effect in the context of FCFS scheduling?",
+          "options": [],
+          "answer": "The convoy effect occurs when short processes have to wait behind one long process.",
+          "source_lines": [
+            7,
+            8
+          ],
+          "source_quote": "can cause the convoy effect - short processes wait behind one long process."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "What is a major requirement of the Shortest Job First (SJF) scheduling algorithm?",
+          "options": [
+            "A) It needs to know burst times in advance.",
+            "B) It requires a fixed time quantum.",
+            "C) It must always be preemptive.",
+            "D) It requires processes to arrive simultaneously."
+          ],
+          "answer": "A) It needs to know burst times in advance.",
+          "source_lines": [
+            9,
+            10,
+            11
+          ],
+          "source_quote": "needs to know burst times in advance."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Analyze",
+          "type": "short",
+          "question": "What happens in a Round Robin scheduler if the time quantum is set too small?",
+          "options": [],
+          "answer": "If the time quantum is too small, too much time is spent on context switches.",
+          "source_lines": [
+            17,
+            18,
+            19
+          ],
+          "source_quote": "if too small , too much time is spent on context switches ."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "How is Waiting time calculated?",
+          "options": [],
+          "answer": "Waiting time = Turnaround time - Burst time",
+          "source_lines": [
+            20
+          ],
+          "source_quote": "Waiting time = Turnaround time - Burst time"
+        },
+        {
+          "id": "Q7",
+          "bloom_level": "Apply",
+          "type": "short",
+          "question": "If a process has a Completion time of 15 ms and an Arrival time of 3 ms, what is its Turnaround time?",
+          "options": [],
+          "answer": "The Turnaround time is 12 ms, calculated as Completion time (15) minus Arrival time (3).",
+          "source_lines": [
+            21
+          ],
+          "source_quote": "Turnaround time = Completion time - Arrival time"
+        },
+        {
+          "id": "Q8",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "Which scheduling algorithm is described as good for time-sharing systems?",
+          "options": [
+            "A) FCFS",
+            "B) SJF",
+            "C) Round Robin",
+            "D) Convoy effect"
+          ],
+          "answer": "C) Round Robin",
+          "source_lines": [
+            14,
+            16
+          ],
+          "source_quote": "Round Robin (RR) : each process gets a fixed time quantum ... Good for time-sharing systems."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The notes explicitly state that CPU scheduling decides which process in the ready queue gets the CPU next."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state FCFS is non-preemptive and runs the process that arrives first."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that FCFS can cause the convoy effect where short processes wait behind one long process."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "The notes explicitly mention that SJF needs to know burst times in advance."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that if the time quantum is too small, too much time is spent on context switches."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "The notes directly state that Waiting time = Turnaround time - Burst time."
+        },
+        {
+          "id": "Q7",
+          "verdict": "PARTLY",
+          "reason": "The notes provide the formula Turnaround time = Completion time - Arrival time, but calculating the arithmetic using outside math is not strictly contained in the text itself."
+        },
+        {
+          "id": "Q8",
+          "verdict": "SUPPORTED",
+          "reason": "The notes state that Round Robin is good for time-sharing systems."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 8.29,
+      "input_tokens": 660,
+      "output_tokens": 369
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.65,
+      "input_tokens": 787,
+      "output_tokens": 514
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.91,
+      "input_tokens": 1173,
+      "output_tokens": 1072
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 7.31,
+      "input_tokens": 1159,
+      "output_tokens": 311
+    }
+  ],
+  "run_at": "2026-11-22T12:28:03"
 }

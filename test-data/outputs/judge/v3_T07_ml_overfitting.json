@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "What is overfitting?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What causes underfitting?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does high bias lead to?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What does high variance lead to?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What is the effect of making a model more complex",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    },
+    {
+      "question": "What is L1 regularization (Lasso) able to do",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "When should early stopping be used?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "What happens during Dropout in neural networks?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.33,
+      "input_tokens": 1332,
+      "output_tokens": 323
+    }
+  ],
+  "run_at": "2026-11-22T12:25:57"
+}

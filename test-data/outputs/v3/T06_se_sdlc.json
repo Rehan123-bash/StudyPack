@@ -1,6 +1,487 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:12"
+  "status": "ok",
+  "topic": "Software Engineering SDLC Models",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Software Development Life Cycle (SDLC)",
+      "lines": [
+        2
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Waterfall model",
+      "lines": [
+        3
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Iterative model",
+      "lines": [
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Spiral model",
+      "lines": [
+        5
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "V-Model",
+      "lines": [
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Agile model",
+      "lines": [
+        7
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "The Software Development Life Cycle (SDLC) is the set of phases used to build software, including requirements, design, implementation, testing, deployment, and maintenance. The Waterfall model executes these phases one after another in a fixed order, making it simple to manage when requirements are clear, though changes are difficult and working software appears late. The Iterative model builds software in repeated cycles, where each iteration produces a working version that gets improved. The Spiral model combines iterative development with risk analysis through four parts in each loop: planning, risk analysis, engineering, and evaluation, making it suited for large, high-risk projects. The V-Model extends the waterfall approach by pairing each development phase with a matching testing phase. Finally, the Agile model delivers software in short iterations called sprints, prioritizing working software, customer collaboration, and responding to change, with Scrum being a popular framework featuring roles like Product Owner and Scrum Master.",
+  "key_terms": [
+    {
+      "term": "Software Development Life Cycle (SDLC)",
+      "definition": "The Software Development Life Cycle (SDLC) is the set of phases used to build software: requirements, design, implementation, testing, deployment and maintenance.",
+      "lines": [
+        2
+      ]
+    },
+    {
+      "term": "Waterfall model",
+      "definition": "The Waterfall model is a process where phases are done one after another in a fixed order, and each phase must finish before the next begins.",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "term": "Iterative model",
+      "definition": "The Iterative model builds software in repeated cycles where each iteration produces a working version that is improved in the next iteration.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "term": "Spiral model",
+      "definition": "The Spiral model combines iterative development with risk analysis, with each loop consisting of planning, risk analysis, engineering, and evaluation.",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "term": "V-Model",
+      "definition": "The V-Model is an extension of waterfall where each development phase has a matching testing phase.",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "term": "Agile model",
+      "definition": "The Agile model delivers software in short iterations called sprints and values working software, customer collaboration, and responding to change.",
+      "lines": [
+        7
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "mcq",
+      "question": "What are the phases that make up the Software Development Life Cycle (SDLC)?",
+      "options": [
+        "A: requirements, design, implementation, testing, deployment and maintenance",
+        "B: planning, risk analysis, engineering and evaluation",
+        "C: sprints, backlog refinement, deployment and review",
+        "D: unit testing, module design, acceptance testing and requirements analysis"
+      ],
+      "answer": "A: requirements, design, implementation, testing, deployment and maintenance",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "requirements, design, implementation, testing, deployment and maintenance",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 2 explicitly lists requirements, design, implementation, testing, deployment, and maintenance as the phases of SDLC."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "Which of the following best describes the Waterfall model's main weakness?",
+      "options": [
+        "A: It does not use any testing phases.",
+        "B: Changes are hard and costly once a phase is finished, and working software appears only late.",
+        "C: It cannot be used for large projects.",
+        "D: Sprints are too short to complete any design work."
+      ],
+      "answer": "B: Changes are hard and costly once a phase is finished, and working software appears only late.",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "Its weakness is that changes are hard and costly once a phase is finished, and working software appears only late in the project.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 3 explicitly states that the weakness of the Waterfall model is that changes are hard and costly once a phase is finished and working software appears only late."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "mcq",
+      "question": "What are the four parts of each loop in the Spiral model?",
+      "options": [
+        "A: requirements, design, implementation, testing",
+        "B: planning, risk analysis, engineering and evaluation",
+        "C: unit testing, module design, acceptance testing, deployment",
+        "D: sprints, roles, reviews, maintenance"
+      ],
+      "answer": "B: planning, risk analysis, engineering and evaluation",
+      "source_lines": [
+        5
+      ],
+      "source_quote": "Each loop of the spiral has four parts: planning, risk analysis, engineering and evaluation.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 5 states that each loop of the spiral has four parts: planning, risk analysis, engineering and evaluation."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Apply",
+      "type": "mcq",
+      "question": "In the V-Model, which matching testing phase corresponds to module design?",
+      "options": [
+        "A: Acceptance testing",
+        "B: Requirements analysis",
+        "C: Unit testing",
+        "D: Sprint review"
+      ],
+      "answer": "C: Unit testing",
+      "source_lines": [
+        6
+      ],
+      "source_quote": "unit testing matches module design and acceptance testing matches requirements analysis.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 6 states that unit testing matches module design in the V-Model."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Apply",
+      "type": "mcq",
+      "question": "A team is developing a large, high-risk software project. Based on the notes, which model is best suited for this?",
+      "options": [
+        "A: Waterfall model",
+        "B: Spiral model",
+        "C: V-Model",
+        "D: Scrum framework"
+      ],
+      "answer": "B: Spiral model",
+      "source_lines": [
+        5
+      ],
+      "source_quote": "It is suited to large, high-risk projects.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 5 states that the Spiral model is suited to large, high-risk projects."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 5,
+    "question_format": "mcq",
+    "difficulty": "mixed"
+  },
+  "stats": {
+    "generated": 5,
+    "verified": 5,
+    "removed": 0,
+    "quote_found": 5,
+    "line_count": 7
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Software Engineering SDLC Models",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Software Development Life Cycle (SDLC)",
+          "lines": [
+            2
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Waterfall model",
+          "lines": [
+            3
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Iterative model",
+          "lines": [
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Spiral model",
+          "lines": [
+            5
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "V-Model",
+          "lines": [
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Agile model",
+          "lines": [
+            7
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "The Software Development Life Cycle (SDLC) is the set of phases used to build software, including requirements, design, implementation, testing, deployment, and maintenance. The Waterfall model executes these phases one after another in a fixed order, making it simple to manage when requirements are clear, though changes are difficult and working software appears late. The Iterative model builds software in repeated cycles, where each iteration produces a working version that gets improved. The Spiral model combines iterative development with risk analysis through four parts in each loop: planning, risk analysis, engineering, and evaluation, making it suited for large, high-risk projects. The V-Model extends the waterfall approach by pairing each development phase with a matching testing phase. Finally, the Agile model delivers software in short iterations called sprints, prioritizing working software, customer collaboration, and responding to change, with Scrum being a popular framework featuring roles like Product Owner and Scrum Master.",
+      "key_terms": [
+        {
+          "term": "Software Development Life Cycle (SDLC)",
+          "definition": "The Software Development Life Cycle (SDLC) is the set of phases used to build software: requirements, design, implementation, testing, deployment and maintenance.",
+          "lines": [
+            2
+          ]
+        },
+        {
+          "term": "Waterfall model",
+          "definition": "The Waterfall model is a process where phases are done one after another in a fixed order, and each phase must finish before the next begins.",
+          "lines": [
+            3
+          ]
+        },
+        {
+          "term": "Iterative model",
+          "definition": "The Iterative model builds software in repeated cycles where each iteration produces a working version that is improved in the next iteration.",
+          "lines": [
+            4
+          ]
+        },
+        {
+          "term": "Spiral model",
+          "definition": "The Spiral model combines iterative development with risk analysis, with each loop consisting of planning, risk analysis, engineering, and evaluation.",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "term": "V-Model",
+          "definition": "The V-Model is an extension of waterfall where each development phase has a matching testing phase.",
+          "lines": [
+            6
+          ]
+        },
+        {
+          "term": "Agile model",
+          "definition": "The Agile model delivers software in short iterations called sprints and values working software, customer collaboration, and responding to change.",
+          "lines": [
+            7
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "mcq",
+          "question": "What are the phases that make up the Software Development Life Cycle (SDLC)?",
+          "options": [
+            "A: requirements, design, implementation, testing, deployment and maintenance",
+            "B: planning, risk analysis, engineering and evaluation",
+            "C: sprints, backlog refinement, deployment and review",
+            "D: unit testing, module design, acceptance testing and requirements analysis"
+          ],
+          "answer": "A: requirements, design, implementation, testing, deployment and maintenance",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "requirements, design, implementation, testing, deployment and maintenance"
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "Which of the following best describes the Waterfall model's main weakness?",
+          "options": [
+            "A: It does not use any testing phases.",
+            "B: Changes are hard and costly once a phase is finished, and working software appears only late.",
+            "C: It cannot be used for large projects.",
+            "D: Sprints are too short to complete any design work."
+          ],
+          "answer": "B: Changes are hard and costly once a phase is finished, and working software appears only late.",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "Its weakness is that changes are hard and costly once a phase is finished, and working software appears only late in the project."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "mcq",
+          "question": "What are the four parts of each loop in the Spiral model?",
+          "options": [
+            "A: requirements, design, implementation, testing",
+            "B: planning, risk analysis, engineering and evaluation",
+            "C: unit testing, module design, acceptance testing, deployment",
+            "D: sprints, roles, reviews, maintenance"
+          ],
+          "answer": "B: planning, risk analysis, engineering and evaluation",
+          "source_lines": [
+            5
+          ],
+          "source_quote": "Each loop of the spiral has four parts: planning, risk analysis, engineering and evaluation."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Apply",
+          "type": "mcq",
+          "question": "In the V-Model, which matching testing phase corresponds to module design?",
+          "options": [
+            "A: Acceptance testing",
+            "B: Requirements analysis",
+            "C: Unit testing",
+            "D: Sprint review"
+          ],
+          "answer": "C: Unit testing",
+          "source_lines": [
+            6
+          ],
+          "source_quote": "unit testing matches module design and acceptance testing matches requirements analysis."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Apply",
+          "type": "mcq",
+          "question": "A team is developing a large, high-risk software project. Based on the notes, which model is best suited for this?",
+          "options": [
+            "A: Waterfall model",
+            "B: Spiral model",
+            "C: V-Model",
+            "D: Scrum framework"
+          ],
+          "answer": "B: Spiral model",
+          "source_lines": [
+            5
+          ],
+          "source_quote": "It is suited to large, high-risk projects."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "Line 2 explicitly lists requirements, design, implementation, testing, deployment, and maintenance as the phases of SDLC."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "Line 3 explicitly states that the weakness of the Waterfall model is that changes are hard and costly once a phase is finished and working software appears only late."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 5 states that each loop of the spiral has four parts: planning, risk analysis, engineering and evaluation."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 6 states that unit testing matches module design in the V-Model."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 5 states that the Spiral model is suited to large, high-risk projects."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.83,
+      "input_tokens": 616,
+      "output_tokens": 273
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.5,
+      "input_tokens": 638,
+      "output_tokens": 454
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.5,
+      "input_tokens": 1025,
+      "output_tokens": 869
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.38,
+      "input_tokens": 1012,
+      "output_tokens": 279
+    }
+  ],
+  "run_at": "2026-11-22T12:21:53"
 }

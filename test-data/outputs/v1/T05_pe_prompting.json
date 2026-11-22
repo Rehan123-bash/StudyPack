@@ -1,6 +1,15 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:58"
+  "status": "ok",
+  "raw_text": "### 1. Summary\nPrompt Engineering Week 4 covers various prompting techniques and controls. Zero-shot prompting gives only an instruction with no examples for simple tasks. Few-shot prompting includes worked input-output examples, though overly similar examples cause the model to copy them too closely. Chain-of-thought (CoT) prompting has the model reason step by step to improve accuracy on multi-step problems like arithmetic and logic. Role prompting assigns a specific role, setting the answer's tone and focus. Output format specification dictates the exact format, such as a JSON schema or table, making program reading easier. Prompt chaining splits complex tasks into smaller, independently testable steps where one output becomes the next input. Temperature controls randomness, with low temperatures yielding predictable outputs and high temperatures yielding creative ones. Finally, hallucination occurs when models produce unsupported or false text; this is reduced by grounding the model in provided documents and asking for citations.\n\n---\n\n### 2. Key Terms\n1. **Zero-shot prompting**: Giving the model only an instruction with no examples.\n2. **Few-shot prompting**: Including a few worked input and output examples in the prompt before the real input.\n3. **Chain-of-thought (CoT) prompting**: Asking the model to reason step by step before giving the final answer.\n4. **Role prompting**: Giving the model a role to set the tone and focus of the answer.\n5. **Output format specification**: Telling the model the exact format, like a JSON schema or a table, for easier program reading.\n6. **Prompt chaining**: Splitting a complex task into smaller steps where the output of one prompt becomes the input of the next.\n7. **Temperature**: A setting that controls the randomness of the model's outputs.\n8. **Low temperature**: A temperature close to 0 that gives more consistent and predictable outputs.\n9. **Higher temperature**: A temperature setting that gives more varied and creative outputs.\n10. **Hallucination**: When the model produces fluent text that is false or not supported by the given source.\n\n---\n\n### 3. Practice Questions and Answers\n\n**Question 1:** What is zero-shot prompting?\n*Answer:* Zero-shot prompting is when the model is given only an instruction, with no examples.\n\n**Question 2:** What is a potential issue if you use examples that are too similar to each other in few-shot prompting?\n*Answer:* It can make the model copy them too closely.\n\n**Question 3:** What type of problems are best suited for chain-of-thought prompting?\n*Answer:* Multi-step problems such as arithmetic and logic puzzles.\n\n**Question 4:** How does output format specification make the output easier to handle?\n*Answer:* Telling the model the exact format (such as a JSON schema or a table) makes the output easier for programs to read and check.\n\n**Question 5:** How can you reduce hallucination in a model?\n*Answer:* By grounding the model in provided documents and asking it to cite them.",
+  "api_calls": 1,
+  "calls": [
+    {
+      "prompt_id": "v1_P0",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.33,
+      "input_tokens": 378,
+      "output_tokens": 640
+    }
+  ],
+  "run_at": "2026-11-22T12:20:18"
 }

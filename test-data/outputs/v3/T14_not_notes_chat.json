@@ -1,6 +1,33 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:52:29"
+  "status": "rejected",
+  "reason": "The text is a casual chat between friends about going to the canteen, buying groceries, and watching a movie, not academic lecture or study notes.",
+  "api_calls": 1,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": false,
+      "reason": "The text is a casual chat between friends about going to the canteen, buying groceries, and watching a movie, not academic lecture or study notes.",
+      "topic": "Casual chat and shopping list",
+      "languages": [
+        "English"
+      ],
+      "concepts": []
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 0.83,
+      "input_tokens": 427,
+      "output_tokens": 75
+    }
+  ],
+  "run_at": "2026-11-22T12:30:18"
 }

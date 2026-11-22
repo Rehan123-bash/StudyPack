@@ -1,6 +1,695 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:33"
+  "status": "ok",
+  "topic": "Overfitting and Underfitting",
+  "languages": [
+    "English"
+  ],
+  "concepts": [
+    {
+      "name": "Overfitting",
+      "lines": [
+        2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Underfitting",
+      "lines": [
+        3,
+        4
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Bias",
+      "lines": [
+        4,
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Variance",
+      "lines": [
+        5,
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "The bias-variance tradeoff",
+      "lines": [
+        6
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Regularization",
+      "lines": [
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "L1 regularization (Lasso)",
+      "lines": [
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "L2 regularization (Ridge)",
+      "lines": [
+        10
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Early stopping",
+      "lines": [
+        11
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Dropout",
+      "lines": [
+        12
+      ],
+      "coverage": "explained"
+    },
+    {
+      "name": "Cross-validation",
+      "lines": [
+        13
+      ],
+      "coverage": "explained"
+    }
+  ],
+  "summary": "Lecture 5 covers overfitting and underfitting in machine learning. Overfitting occurs when a model learns training data noise too well, performing well on training data but poorly on unseen data, whereas underfitting happens when a model is too simple to capture data patterns, performing poorly on both training and test data. Bias is error from overly simple assumptions leading to underfitting, and variance is error from sensitivity to training data changes leading to overfitting. The bias-variance tradeoff means increasing model complexity lowers bias but raises variance, aiming for a balance. Overfitting can be reduced by gathering more training data, using simpler models, applying regularization, using early stopping, or using dropout. Regularization adds a penalty for large weights, including L1 regularization (Lasso) which shrinks some weights to zero and L2 regularization (Ridge) which shrinks weights towards zero. Early stopping halts training when validation error increases, and dropout randomly turns off neurons. Finally, k-fold cross-validation splits data into k parts, training the model k times with different validation sets and averaging the results for a reliable performance estimate.",
+  "key_terms": [
+    {
+      "term": "Overfitting",
+      "definition": "Overfitting happens when a model learns the training data too well, including its noise, so it performs very well on training data but poorly on new, unseen data.",
+      "lines": [
+        2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "term": "Underfitting",
+      "definition": "Underfitting happens when a model is too simple to capture the pattern in the data, so it performs poorly on both training data and test data.",
+      "lines": [
+        3,
+        4
+      ]
+    },
+    {
+      "term": "Bias",
+      "definition": "Bias is the error from wrong or overly simple assumptions in the model.",
+      "lines": [
+        4,
+        6
+      ]
+    },
+    {
+      "term": "Variance",
+      "definition": "Variance is the error from being too sensitive to small changes in the training data.",
+      "lines": [
+        5,
+        6
+      ]
+    },
+    {
+      "term": "The bias-variance tradeoff",
+      "definition": "Making a model more complex usually lowers bias but raises variance, with the goal of finding a balance that gives low error on unseen data.",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "term": "Regularization",
+      "definition": "Regularization is a way to reduce overfitting by adding a penalty for large weights to the loss function.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "term": "L1 regularization (Lasso)",
+      "definition": "L1 regularization (Lasso) can shrink some weights to exactly zero.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "term": "L2 regularization (Ridge)",
+      "definition": "L2 regularization (Ridge) shrinks weights towards zero but rarely makes them exactly zero.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "term": "Early stopping",
+      "definition": "Early stopping is a way to reduce overfitting by stopping training when the error on the validation set starts to increase.",
+      "lines": [
+        11
+      ]
+    },
+    {
+      "term": "Cross-validation",
+      "definition": "In k-fold cross-validation the data is split into k parts, the model is trained k times using a different part as the validation set each time, and the results are averaged to give a more reliable estimate of performance on unseen data.",
+      "lines": [
+        13
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is overfitting?",
+      "options": [],
+      "answer": "Overfitting happens when a model learns the training data too well, including its noise, so it performs very well on training data but poorly on new, unseen data.",
+      "source_lines": [
+        2
+      ],
+      "source_quote": "Overfitting happens when a model learns the training data too well, including its noise, so it performs very well on training data but poorly on new, unseen data.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The answer is directly quoted from line 2."
+    },
+    {
+      "id": "Q2",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What causes underfitting?",
+      "options": [],
+      "answer": "Underfitting happens when a model is too simple to capture the pattern in the data, so it performs poorly on both training data and test data.",
+      "source_lines": [
+        3
+      ],
+      "source_quote": "Underfitting happens when a model is too simple to capture the pattern in the data, so it performs poorly on both training data and test data.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "The answer matches the definition of underfitting in line 3."
+    },
+    {
+      "id": "Q3",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "What does high bias lead to?",
+      "options": [],
+      "answer": "High bias leads to underfitting.",
+      "source_lines": [
+        4
+      ],
+      "source_quote": "High bias leads to underfitting.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 4 explicitly states that high bias leads to underfitting."
+    },
+    {
+      "id": "Q4",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "What does high variance lead to?",
+      "options": [],
+      "answer": "High variance leads to overfitting.",
+      "source_lines": [
+        5
+      ],
+      "source_quote": "High variance leads to overfitting.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 5 explicitly states that high variance leads to overfitting."
+    },
+    {
+      "id": "Q5",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "What is the effect of making a model more complex in the bias-variance tradeoff?",
+      "options": [],
+      "answer": "Making a model more complex usually lowers bias but raises variance.",
+      "source_lines": [
+        6
+      ],
+      "source_quote": "making a model more complex usually lowers bias but raises variance.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 6 states that making a model more complex usually lowers bias but raises variance."
+    },
+    {
+      "id": "Q6",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "What is L1 regularization (Lasso) able to do to weights?",
+      "options": [],
+      "answer": "L1 regularization (Lasso) can shrink some weights to exactly zero.",
+      "source_lines": [
+        10
+      ],
+      "source_quote": "L1 regularization (Lasso) can shrink some weights to exactly zero;",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 10 states that L1 regularization can shrink some weights to exactly zero."
+    },
+    {
+      "id": "Q7",
+      "bloom_level": "Remember",
+      "type": "flashcard",
+      "question": "When should early stopping be used?",
+      "options": [],
+      "answer": "Stop training when the error on the validation set starts to increase.",
+      "source_lines": [
+        11
+      ],
+      "source_quote": "stop training when the error on the validation set starts to increase.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 11 describes early stopping as stopping training when validation error starts to increase."
+    },
+    {
+      "id": "Q8",
+      "bloom_level": "Understand",
+      "type": "flashcard",
+      "question": "What happens during Dropout in neural networks?",
+      "options": [],
+      "answer": "Some neurons are randomly switched off during training.",
+      "source_lines": [
+        12
+      ],
+      "source_quote": "randomly switch off some neurons during training.",
+      "quote_found": true,
+      "verdict": "SUPPORTED",
+      "verdict_reason": "Line 12 states dropout is randomly switching off some neurons during training."
+    }
+  ],
+  "removed": [],
+  "gaps": [],
+  "note": "",
+  "settings": {
+    "num_questions": 8,
+    "question_format": "flashcard",
+    "difficulty": "easy"
+  },
+  "stats": {
+    "generated": 8,
+    "verified": 8,
+    "removed": 0,
+    "quote_found": 8,
+    "line_count": 13
+  },
+  "api_calls": 4,
+  "log": [
+    {
+      "step": "P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P3",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "P4",
+      "json_valid": false,
+      "parsed": true
+    }
+  ],
+  "steps": {
+    "P1": {
+      "is_lecture_notes": true,
+      "reason": "",
+      "topic": "Overfitting and Underfitting",
+      "languages": [
+        "English"
+      ],
+      "concepts": [
+        {
+          "name": "Overfitting",
+          "lines": [
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Underfitting",
+          "lines": [
+            3,
+            4
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Bias",
+          "lines": [
+            4,
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Variance",
+          "lines": [
+            5,
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "The bias-variance tradeoff",
+          "lines": [
+            6
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Regularization",
+          "lines": [
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "L1 regularization (Lasso)",
+          "lines": [
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "L2 regularization (Ridge)",
+          "lines": [
+            10
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Early stopping",
+          "lines": [
+            11
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Dropout",
+          "lines": [
+            12
+          ],
+          "coverage": "explained"
+        },
+        {
+          "name": "Cross-validation",
+          "lines": [
+            13
+          ],
+          "coverage": "explained"
+        }
+      ]
+    },
+    "P2": {
+      "summary": "Lecture 5 covers overfitting and underfitting in machine learning. Overfitting occurs when a model learns training data noise too well, performing well on training data but poorly on unseen data, whereas underfitting happens when a model is too simple to capture data patterns, performing poorly on both training and test data. Bias is error from overly simple assumptions leading to underfitting, and variance is error from sensitivity to training data changes leading to overfitting. The bias-variance tradeoff means increasing model complexity lowers bias but raises variance, aiming for a balance. Overfitting can be reduced by gathering more training data, using simpler models, applying regularization, using early stopping, or using dropout. Regularization adds a penalty for large weights, including L1 regularization (Lasso) which shrinks some weights to zero and L2 regularization (Ridge) which shrinks weights towards zero. Early stopping halts training when validation error increases, and dropout randomly turns off neurons. Finally, k-fold cross-validation splits data into k parts, training the model k times with different validation sets and averaging the results for a reliable performance estimate.",
+      "key_terms": [
+        {
+          "term": "Overfitting",
+          "definition": "Overfitting happens when a model learns the training data too well, including its noise, so it performs very well on training data but poorly on new, unseen data.",
+          "lines": [
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "term": "Underfitting",
+          "definition": "Underfitting happens when a model is too simple to capture the pattern in the data, so it performs poorly on both training data and test data.",
+          "lines": [
+            3,
+            4
+          ]
+        },
+        {
+          "term": "Bias",
+          "definition": "Bias is the error from wrong or overly simple assumptions in the model.",
+          "lines": [
+            4,
+            6
+          ]
+        },
+        {
+          "term": "Variance",
+          "definition": "Variance is the error from being too sensitive to small changes in the training data.",
+          "lines": [
+            5,
+            6
+          ]
+        },
+        {
+          "term": "The bias-variance tradeoff",
+          "definition": "Making a model more complex usually lowers bias but raises variance, with the goal of finding a balance that gives low error on unseen data.",
+          "lines": [
+            6
+          ]
+        },
+        {
+          "term": "Regularization",
+          "definition": "Regularization is a way to reduce overfitting by adding a penalty for large weights to the loss function.",
+          "lines": [
+            10
+          ]
+        },
+        {
+          "term": "L1 regularization (Lasso)",
+          "definition": "L1 regularization (Lasso) can shrink some weights to exactly zero.",
+          "lines": [
+            10
+          ]
+        },
+        {
+          "term": "L2 regularization (Ridge)",
+          "definition": "L2 regularization (Ridge) shrinks weights towards zero but rarely makes them exactly zero.",
+          "lines": [
+            10
+          ]
+        },
+        {
+          "term": "Early stopping",
+          "definition": "Early stopping is a way to reduce overfitting by stopping training when the error on the validation set starts to increase.",
+          "lines": [
+            11
+          ]
+        },
+        {
+          "term": "Cross-validation",
+          "definition": "In k-fold cross-validation the data is split into k parts, the model is trained k times using a different part as the validation set each time, and the results are averaged to give a more reliable estimate of performance on unseen data.",
+          "lines": [
+            13
+          ]
+        }
+      ]
+    },
+    "P3": {
+      "questions": [
+        {
+          "id": "Q1",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is overfitting?",
+          "options": [],
+          "answer": "Overfitting happens when a model learns the training data too well, including its noise, so it performs very well on training data but poorly on new, unseen data.",
+          "source_lines": [
+            2
+          ],
+          "source_quote": "Overfitting happens when a model learns the training data too well, including its noise, so it performs very well on training data but poorly on new, unseen data."
+        },
+        {
+          "id": "Q2",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What causes underfitting?",
+          "options": [],
+          "answer": "Underfitting happens when a model is too simple to capture the pattern in the data, so it performs poorly on both training data and test data.",
+          "source_lines": [
+            3
+          ],
+          "source_quote": "Underfitting happens when a model is too simple to capture the pattern in the data, so it performs poorly on both training data and test data."
+        },
+        {
+          "id": "Q3",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "What does high bias lead to?",
+          "options": [],
+          "answer": "High bias leads to underfitting.",
+          "source_lines": [
+            4
+          ],
+          "source_quote": "High bias leads to underfitting."
+        },
+        {
+          "id": "Q4",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "What does high variance lead to?",
+          "options": [],
+          "answer": "High variance leads to overfitting.",
+          "source_lines": [
+            5
+          ],
+          "source_quote": "High variance leads to overfitting."
+        },
+        {
+          "id": "Q5",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "What is the effect of making a model more complex in the bias-variance tradeoff?",
+          "options": [],
+          "answer": "Making a model more complex usually lowers bias but raises variance.",
+          "source_lines": [
+            6
+          ],
+          "source_quote": "making a model more complex usually lowers bias but raises variance."
+        },
+        {
+          "id": "Q6",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "What is L1 regularization (Lasso) able to do to weights?",
+          "options": [],
+          "answer": "L1 regularization (Lasso) can shrink some weights to exactly zero.",
+          "source_lines": [
+            10
+          ],
+          "source_quote": "L1 regularization (Lasso) can shrink some weights to exactly zero;"
+        },
+        {
+          "id": "Q7",
+          "bloom_level": "Remember",
+          "type": "flashcard",
+          "question": "When should early stopping be used?",
+          "options": [],
+          "answer": "Stop training when the error on the validation set starts to increase.",
+          "source_lines": [
+            11
+          ],
+          "source_quote": "stop training when the error on the validation set starts to increase."
+        },
+        {
+          "id": "Q8",
+          "bloom_level": "Understand",
+          "type": "flashcard",
+          "question": "What happens during Dropout in neural networks?",
+          "options": [],
+          "answer": "Some neurons are randomly switched off during training.",
+          "source_lines": [
+            12
+          ],
+          "source_quote": "randomly switch off some neurons during training."
+        }
+      ],
+      "note": ""
+    },
+    "P4": {
+      "checks": [
+        {
+          "id": "Q1",
+          "verdict": "SUPPORTED",
+          "reason": "The answer is directly quoted from line 2."
+        },
+        {
+          "id": "Q2",
+          "verdict": "SUPPORTED",
+          "reason": "The answer matches the definition of underfitting in line 3."
+        },
+        {
+          "id": "Q3",
+          "verdict": "SUPPORTED",
+          "reason": "Line 4 explicitly states that high bias leads to underfitting."
+        },
+        {
+          "id": "Q4",
+          "verdict": "SUPPORTED",
+          "reason": "Line 5 explicitly states that high variance leads to overfitting."
+        },
+        {
+          "id": "Q5",
+          "verdict": "SUPPORTED",
+          "reason": "Line 6 states that making a model more complex usually lowers bias but raises variance."
+        },
+        {
+          "id": "Q6",
+          "verdict": "SUPPORTED",
+          "reason": "Line 10 states that L1 regularization can shrink some weights to exactly zero."
+        },
+        {
+          "id": "Q7",
+          "verdict": "SUPPORTED",
+          "reason": "Line 11 describes early stopping as stopping training when validation error starts to increase."
+        },
+        {
+          "id": "Q8",
+          "verdict": "SUPPORTED",
+          "reason": "Line 12 states dropout is randomly switching off some neurons during training."
+        }
+      ]
+    }
+  },
+  "calls": [
+    {
+      "prompt_id": "P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 9.43,
+      "input_tokens": 700,
+      "output_tokens": 434
+    },
+    {
+      "prompt_id": "P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 10.11,
+      "input_tokens": 853,
+      "output_tokens": 813
+    },
+    {
+      "prompt_id": "P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 2.32,
+      "input_tokens": 1240,
+      "output_tokens": 899
+    },
+    {
+      "prompt_id": "P4",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 10.84,
+      "input_tokens": 1052,
+      "output_tokens": 273
+    }
+  ],
+  "run_at": "2026-11-22T12:25:15"
 }

@@ -1,0 +1,45 @@
+{
+  "questions": [
+    {
+      "question": "Q1. In a binary search tree",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q2. What is the time complexity",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q3. Where is a new key",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q4. Which traversal of a BST",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q5. What does a self-balancing",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q6. What happens to the height",
+      "supported": "yes",
+      "bloom_level": "Understand"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.89,
+      "input_tokens": 1160,
+      "output_tokens": 256
+    }
+  ],
+  "run_at": "2026-11-22T12:19:16"
+}

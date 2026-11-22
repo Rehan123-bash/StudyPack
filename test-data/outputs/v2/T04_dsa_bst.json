@@ -1,6 +1,149 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:50:44"
+  "status": "ok",
+  "topic": "Binary Search Trees (BST)",
+  "summary": "A Binary Search Tree (BST) is a binary tree where left subtree keys are smaller and right subtree keys are larger than the node's key. Search, insertion, and deletion operations take O(h) time, depending on tree height h. In a balanced BST, operations take O(log n) time, while a skewed tree resulting from sorted insertions takes O(n) time. Inorder traversal visits keys in ascending order. Deletion handles leaf nodes, nodes with one child, and nodes with two children using their inorder successor. Self-balancing trees like AVL trees use rotations to maintain a height close to log2(n).",
+  "key_terms": [
+    {
+      "term": "Binary Search Tree",
+      "definition": "A binary tree where left subtree keys are smaller and right subtree keys are larger than the node's key."
+    },
+    {
+      "term": "Search",
+      "definition": "Process of starting at the root and going left or right until the key is found or a null link is reached."
+    },
+    {
+      "term": "Insertion",
+      "definition": "Adding a new key as a leaf where a null link is reached during search."
+    },
+    {
+      "term": "Inorder traversal",
+      "definition": "Visiting keys in left, root, right order to yield sorted ascending order."
+    },
+    {
+      "term": "Deletion",
+      "definition": "Removing a node considering three cases: leaf, one child, or two children."
+    },
+    {
+      "term": "Time complexity",
+      "definition": "Operation cost of O(h) based on tree height h, ranging from O(log n) to O(n)."
+    },
+    {
+      "term": "Skewed tree",
+      "definition": "A tree resulting from sorted insertions where height becomes n like a linked list."
+    },
+    {
+      "term": "Self-balancing trees",
+      "definition": "Trees that keep height close to log2(n) using rotations after insertions and deletions."
+    },
+    {
+      "term": "AVL trees",
+      "definition": "A type of self-balancing tree that maintains optimal height through rotations."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "In a binary search tree, where are all keys in the left subtree relative to the node's key?",
+      "options": [
+        "Larger",
+        "Smaller",
+        "Equal",
+        "Random"
+      ],
+      "answer": "Smaller"
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "What is the time complexity of search, insertion, and deletion in a BST?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(h)",
+        "O(n log n)"
+      ],
+      "answer": "O(h)"
+    },
+    {
+      "id": "Q3",
+      "type": "short",
+      "question": "Where is a new key always inserted in a binary search tree?",
+      "options": [],
+      "answer": "As a leaf"
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "Which traversal of a BST visits the keys in sorted ascending order?",
+      "options": [
+        "Preorder traversal",
+        "Postorder traversal",
+        "Inorder traversal",
+        "Level-order traversal"
+      ],
+      "answer": "Inorder traversal"
+    },
+    {
+      "id": "Q5",
+      "type": "short",
+      "question": "What does a self-balancing tree like an AVL tree do after insertions and deletions to keep the height close to log2(n)?",
+      "options": [],
+      "answer": "Rotations"
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "question": "What happens to the height of a BST if keys are inserted in sorted order?",
+      "options": [
+        "It becomes log2(n)",
+        "It becomes 1",
+        "It becomes n",
+        "It becomes zero"
+      ],
+      "answer": "It becomes n"
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 0.82,
+      "input_tokens": 387,
+      "output_tokens": 112
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.45,
+      "input_tokens": 483,
+      "output_tokens": 406
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.3,
+      "input_tokens": 487,
+      "output_tokens": 365
+    }
+  ],
+  "run_at": "2026-11-22T12:18:54"
 }

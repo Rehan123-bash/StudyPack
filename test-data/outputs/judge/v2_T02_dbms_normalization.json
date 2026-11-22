@@ -1,0 +1,55 @@
+{
+  "questions": [
+    {
+      "question": "Q1. What is the process of organizing data in a database to reduce redundancy and avoid anomalies called?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q2. In First Normal Form (1NF), every attribute must contain only atomic values and there can be no repeating groups.",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q3. What type of dependency occurs when a non-prime attribute depends on only part of a composite key, violating 2NF?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q4. Which normal form requires the table to be in 2NF and have no transitive dependency of a non-prime attribute on the key?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q5. In Boyce-Codd Normal Form (BCNF), for every functional dependency X -> Y, what must X be?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q6. An update anomaly happens when we cannot add some data without adding other unrelated data.",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q7. What type of anomaly occurs when deleting one row accidentally removes other facts we wanted to keep?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    },
+    {
+      "question": "Q8. In the notation of functional dependency, what does X -> Y mean?",
+      "supported": "yes",
+      "bloom_level": "Remember"
+    }
+  ],
+  "outside_statements": 0,
+  "calls": [
+    {
+      "prompt_id": "E1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.75,
+      "input_tokens": 1410,
+      "output_tokens": 450
+    }
+  ],
+  "run_at": "2026-11-22T12:15:10"
+}

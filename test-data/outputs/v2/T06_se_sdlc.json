@@ -1,6 +1,139 @@
 {
-  "status": "error",
-  "error": "ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "calls": [],
-  "run_at": "2026-11-22T11:51:26"
+  "status": "ok",
+  "topic": "Software Development Life Cycle (SDLC) Models",
+  "summary": "The Software Development Life Cycle (SDLC) defines the phases for building software: requirements, design, implementation, testing, deployment, and maintenance. Various models structure these phases differently. The Waterfall model executes phases sequentially in a fixed order, making it simple for clear requirements but inflexible to change. The Iterative model builds software through repeated cycles producing working versions. The Spiral model combines iterative development with risk analysis across loops of planning, risk analysis, engineering, and evaluation, ideal for high-risk projects. The V-Model extends Waterfall by pairing each development phase with a matching testing phase. Finally, the Agile model delivers software in short iterations called sprints, focusing on working software, customer collaboration, and adapting to change, with Scrum being a popular framework featuring roles like Product Owner and Scrum Master.",
+  "key_terms": [
+    {
+      "term": "Software Development Life Cycle (SDLC)",
+      "definition": "The set of phases used to build software: requirements, design, implementation, testing, deployment and maintenance."
+    },
+    {
+      "term": "Waterfall model",
+      "definition": "A model where phases are done one after another in a fixed order and each phase must finish before the next begins."
+    },
+    {
+      "term": "Iterative model",
+      "definition": "A model where software is built in repeated cycles, with each iteration producing a working version that is improved in the next."
+    },
+    {
+      "term": "Spiral model",
+      "definition": "A model combining iterative development with risk analysis, suited to large, high-risk projects."
+    },
+    {
+      "term": "V-Model",
+      "definition": "An extension of waterfall where each development phase has a matching testing phase."
+    },
+    {
+      "term": "Agile model",
+      "definition": "A model where software is delivered in short iterations called sprints, valuing working software, customer collaboration, and responding to change."
+    },
+    {
+      "term": "Scrum",
+      "definition": "A popular Agile framework with roles such as Product Owner and Scrum Master."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "question": "Which SDLC model is characterized by phases that must be done one after another in a fixed order, where each phase must finish before the next begins?",
+      "options": [
+        "Agile model",
+        "Waterfall model",
+        "Spiral model",
+        "Iterative model"
+      ],
+      "answer": "Waterfall model"
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "question": "Which model combines iterative development with risk analysis and is suited to large, high-risk projects?",
+      "options": [
+        "V-Model",
+        "Spiral model",
+        "Waterfall model",
+        "Iterative model"
+      ],
+      "answer": "Spiral model"
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "question": "In which model does each development phase have a matching testing phase, such as acceptance testing matching requirements analysis?",
+      "options": [
+        "V-Model",
+        "Scrum",
+        "Spiral model",
+        "Iterative model"
+      ],
+      "answer": "V-Model"
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "question": "In the Agile model, software is delivered in short iterations called sprints that are usually how long?",
+      "options": [
+        "1 to 4 weeks long",
+        "1 to 4 months long",
+        "2 to 6 weeks long",
+        "6 months long"
+      ],
+      "answer": "1 to 4 weeks long"
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "question": "What are the roles mentioned in Scrum, which is a popular Agile framework?",
+      "options": [
+        "Project Manager and Developer",
+        "Product Owner and Scrum Master",
+        "Team Lead and Tester",
+        "System Analyst and Architect"
+      ],
+      "answer": "Product Owner and Scrum Master"
+    }
+  ],
+  "api_calls": 3,
+  "log": [
+    {
+      "step": "v2_P1",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P2",
+      "json_valid": true,
+      "parsed": true
+    },
+    {
+      "step": "v2_P3",
+      "json_valid": true,
+      "parsed": true
+    }
+  ],
+  "calls": [
+    {
+      "prompt_id": "v2_P1",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 0.72,
+      "input_tokens": 320,
+      "output_tokens": 78
+    },
+    {
+      "prompt_id": "v2_P2",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 8.89,
+      "input_tokens": 390,
+      "output_tokens": 471
+    },
+    {
+      "prompt_id": "v2_P3",
+      "model": "gemini-3.5-flash-lite",
+      "seconds": 1.66,
+      "input_tokens": 395,
+      "output_tokens": 512
+    }
+  ],
+  "run_at": "2026-11-22T12:23:00"
 }
