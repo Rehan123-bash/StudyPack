@@ -136,6 +136,9 @@ def cached_run(path, fresh, fn, llm):
         result = {"status": "error", "error": str(e)}
     except Exception as e:
         result = {"status": "error", "error": f"{type(e).__name__}: {e}"}
+        if any(code in str(e) for code in ("NOT_FOUND", "PERMISSION_DENIED", "API_KEY_INVALID", "INVALID_ARGUMENT")):
+            print(f"\nSTOPPED: the API refused the request, so the other tests would fail too:\n{e}")
+            sys.exit(2)
     result["calls"] = llm.calls[before:]
     result["run_at"] = dt.datetime.now().isoformat(timespec="seconds")
     save(path, result)

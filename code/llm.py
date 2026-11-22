@@ -5,7 +5,7 @@ import os
 import re
 import time
 
-DEFAULT_MODEL = "gemini-2.5-flash-lite"
+DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 
 def get_api_key():
