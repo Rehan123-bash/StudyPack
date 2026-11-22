@@ -82,10 +82,10 @@ if st.button("Build study pack", type="primary", use_container_width=True):
             )
         except Exception as e:
             status.update(label="Something went wrong", state="error")
-            st.error(f"{type(e).__name__}: {e}")
-            st.stop()
-        status.update(label="Done" if pack["status"] == "ok" else "Could not build a pack",
-                      state="complete" if pack["status"] == "ok" else "error", expanded=False)
+            pack = {"status": "error", "reason": f"Something went wrong: {type(e).__name__}: {e}. Please try again."}
+        if pack["status"] != "error":
+            status.update(label="Done" if pack["status"] == "ok" else "Could not build a pack",
+                          state="complete" if pack["status"] == "ok" else "error", expanded=False)
     st.session_state["pack"] = pack
     st.session_state["model"] = model
 

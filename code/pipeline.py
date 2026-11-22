@@ -79,12 +79,29 @@ def check_input(notes):
     return None
 
 
+LIST_KEYS = {"P1": "concepts", "P2": "key_terms", "P3": "questions", "P4": "checks",
+             "v2_P1": "concepts", "v2_P2": "key_terms", "v2_P3": "questions"}
+
+
+def _dicts(items):
+    """Keep only dict items (the model sometimes returns a bare string inside a list)."""
+    return [x for x in (items or []) if isinstance(x, dict)]
+
+
 def _call_json(llm, prompt_id, system, user, log):
     raw = llm.generate(prompt_id, system, user, temperature=TEMPERATURES.get(prompt_id), json_mode=True)
     data, strict = parse_json(raw)
-    log.append({"step": prompt_id, "json_valid": strict, "parsed": data is not None})
-    if data is None:
-        raise ValueError(f"{prompt_id} did not return JSON. Raw reply starts: {raw[:200]!r}")
+    # The model sometimes wraps the object in a list ([{...}]) or returns only the list. Repair it, but
+    # record the step as not strictly valid so the test results show it.
+    if isinstance(data, list):
+        strict = False
+        if len(data) == 1 and isinstance(data[0], dict) and LIST_KEYS.get(prompt_id, "") in data[0]:
+            data = data[0]
+        else:
+            data = {LIST_KEYS.get(prompt_id, "items"): data}
+    log.append({"step": prompt_id, "json_valid": strict, "parsed": isinstance(data, dict)})
+    if not isinstance(data, dict):
+        raise ValueError(f"{prompt_id} did not return a JSON object. Raw reply starts: {raw[:200]!r}")
     return data
 
 
@@ -108,7 +125,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
         return {"status": "rejected", "reason": s1.get("reason") or "This does not look like lecture notes.",
                 "api_calls": 1, "log": log, "steps": {"P1": s1}}
 
-    concepts = s1.get("concepts", []) or []
+    concepts = _dicts(s1.get("concepts"))
     explained = [c for c in concepts if c.get("coverage") == "explained"]
     gaps = [
         {"concept": c.get("name", ""), "lines": c.get("lines", [])}
@@ -130,7 +147,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
         s3 = _call_json(llm, "P3", sys3, fill(usr3, numbered_notes=numbered, concepts_json=concepts_json,
                                                num_questions=num_questions, question_format=question_format,
                                                difficulty=difficulty), log)
-        questions = s3.get("questions", []) or []
+        questions = _dicts(s3.get("questions"))
         note = s3.get("note", "") or ""
         steps["P3"] = json.loads(json.dumps(s3))  # raw copy before code adds fields
         calls = 3
@@ -145,7 +162,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
                     for q in questions]
             s4 = _call_json(llm, "P4", sys4, fill(usr4, numbered_notes=numbered,
                                                    questions_json=json.dumps(slim, ensure_ascii=False)), log)
-            checks = {c.get("id"): c for c in s4.get("checks", []) or []}
+            checks = {c.get("id"): c for c in _dicts(s4.get("checks"))}
             steps["P4"] = s4
             calls = 4
     else:
@@ -173,7 +190,7 @@ def run_final(notes, llm, num_questions=8, question_format="mixed", difficulty="
         "languages": s1.get("languages", []),
         "concepts": concepts,
         "summary": s2.get("summary", ""),
-        "key_terms": s2.get("key_terms", []) or [],
+        "key_terms": _dicts(s2.get("key_terms")),
         "questions": verified,
         "removed": removed,
         "gaps": gaps,
