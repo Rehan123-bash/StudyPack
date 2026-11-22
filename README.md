@@ -6,7 +6,7 @@ StudyPack turns one topic's lecture notes into a short summary, key terms and pr
 Every answer is checked against the notes before the student sees it, and each question shows the exact line of the notes it came from.
 Topics the notes only name but never explain are flagged as gaps.
 
-- **Prototype:** `<paste Streamlit app link>`
+- **Prototype:** https://studypack-tokentitans.streamlit.app/
 - **Team:** Token Titans (PE-B65-07)
 - **Repository:** https://github.com/rehan123-bash/StudyPack
 

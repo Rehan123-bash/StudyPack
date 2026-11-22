@@ -18,12 +18,18 @@ MODELS = list(dict.fromkeys([DEFAULT_MODEL, "gemini-3.5-flash-lite", "gemini-3.1
 st.set_page_config(page_title="StudyPack", page_icon="📚", layout="wide")
 
 
-def api_key():
-    try:
-        key = st.secrets.get("GEMINI_API_KEY")
-    except Exception:
-        key = None
-    return key or os.environ.get("GEMINI_API_KEY")
+def api_keys():
+    """Main key plus an optional backup key (another team member's project) from secrets or environment."""
+    keys = []
+    for name in ("GEMINI_API_KEY", "GEMINI_API_KEY_2"):
+        try:
+            value = st.secrets.get(name)
+        except Exception:
+            value = None
+        value = value or os.environ.get(name)
+        if value:
+            keys.append(value)
+    return keys
 
 
 def read_upload(upload):
@@ -47,9 +53,10 @@ with st.sidebar:
     fmt = st.radio("Question format", list(pipeline.FORMATS), index=0)
     diff = st.radio("Difficulty", list(pipeline.DIFFICULTIES), index=0)
     model = st.selectbox("Model", MODELS, index=0)
-    key = api_key()
-    if not key:
-        key = st.text_input("Gemini API key (only for running locally)", type="password")
+    keys = api_keys()
+    if not keys:
+        typed = st.text_input("Gemini API key (only for running locally)", type="password")
+        keys = [typed] if typed else []
     st.divider()
     st.caption("Use course notes only. Do not paste names, roll numbers or other personal data: on the free tier, "
                "Google may use inputs to improve its models. AI output can still be wrong, so check anything important.")
@@ -70,10 +77,10 @@ with tab_upload:
 notes = read_upload(upload) if upload else pasted
 
 if st.button("Build study pack", type="primary", use_container_width=True):
-    if not key:
+    if not keys:
         st.error("No API key found. Add GEMINI_API_KEY to the app secrets, or paste a key in the sidebar.")
         st.stop()
-    llm = GeminiLLM(key, model=model)
+    llm = GeminiLLM(keys, model=model)
     with st.status("Building your study pack...", expanded=True) as status:
         try:
             pack = pipeline.run_final(
